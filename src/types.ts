@@ -1,5 +1,5 @@
 /**
- * Type definitions for the afetch API client.
+ * Type definitions for the what-the-fetch API client.
  *
  * @module
  */

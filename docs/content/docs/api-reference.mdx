@@ -1,6 +1,6 @@
 ---
 title: API Reference
-description: Complete API documentation for afetch with detailed examples and type signatures
+description: Complete API documentation for what-the-fetch with detailed examples and type signatures
 ---
 
 ## Main Function
@@ -33,7 +33,7 @@ function createFetch<Schema extends ApiSchema>(
 **Example:**
 
 ```typescript
-import { createFetch } from 'afetch';
+import { createFetch } from 'what-the-fetch';
 import { z } from 'zod';
 
 const api = {
@@ -315,7 +315,7 @@ const user = await apiFetch(
 ### Multiple Endpoints with Shared Schemas
 
 ```typescript
-import { createFetch } from 'afetch';
+import { createFetch } from 'what-the-fetch';
 import { z } from 'zod';
 
 // Define reusable schemas
@@ -357,7 +357,7 @@ const apiFetch = createFetch(api, 'https://api.example.com');
 ### Building a Complete API Client
 
 ```typescript
-import { createFetch } from 'afetch';
+import { createFetch } from 'what-the-fetch';
 import { z } from 'zod';
 
 // Define comprehensive API schema
@@ -466,7 +466,7 @@ const user = await client.getUser(123);
 
 ## Standard Schema Support
 
-afetch works with any schema library that implements [Standard Schema](https://standardschema.dev/):
+what-the-fetch works with any schema library that implements [Standard Schema](https://standardschema.dev/):
 
 ### Zod
 
@@ -513,7 +513,7 @@ const api = {
 
 ### HTTP Errors
 
-afetch automatically throws an error for non-2xx status codes:
+what-the-fetch automatically throws an error for non-2xx status codes:
 
 ```typescript
 try {
@@ -573,7 +573,7 @@ const user = await apiFetch('/users/:id', {
 
 ### Autocomplete Support
 
-When using afetch in TypeScript, you get full autocomplete for:
+When using what-the-fetch in TypeScript, you get full autocomplete for:
 
 - Available API paths
 - Required options (params, query, body)
@@ -600,7 +600,7 @@ await apiFetch('/invalid', {});
 
 ## Performance Considerations
 
-afetch is designed to be performant:
+what-the-fetch is designed to be performant:
 
 - **Small bundle size**: Minimal dependencies (only fast-url for URL building and Standard Schema spec)
 - **Efficient URL building**: Leverages fast-url library's optimized implementation
@@ -609,7 +609,7 @@ afetch is designed to be performant:
 
 ### Bundle Size
 
-afetch adds minimal overhead to your bundle:
+what-the-fetch adds minimal overhead to your bundle:
 
 - Core library: ~2KB minified + gzipped
 - Plus your choice of schema library (Zod, Valibot, etc.)
@@ -618,7 +618,7 @@ afetch adds minimal overhead to your bundle:
 
 ## Browser and Runtime Compatibility
 
-afetch works in all modern JavaScript environments:
+what-the-fetch works in all modern JavaScript environments:
 
 - ✅ Node.js 18+
 - ✅ Bun

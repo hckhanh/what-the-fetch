@@ -1,10 +1,10 @@
-# afetch
+# what-the-fetch
 
 ## 1.0.0
 
 ### Major Changes
 
-- 5687b56: Initial release of afetch - a type-safe API client with schema validation using Standard Schema.
+- 5687b56: Initial release of what-the-fetch - a type-safe API client with schema validation using Standard Schema.
 
   **Breaking Changes:**
 
@@ -27,7 +27,7 @@
   **Example:**
 
   ```typescript
-  import { createFetch } from "afetch";
+  import { createFetch } from "what-the-fetch";
   import { z } from "zod";
 
   const api = {

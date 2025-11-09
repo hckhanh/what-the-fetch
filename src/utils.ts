@@ -1,5 +1,5 @@
 /**
- * Utility functions for afetch.
+ * Utility functions for what-the-fetch.
  *
  * @module
  */

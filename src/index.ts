@@ -8,7 +8,7 @@
  *
  * @example
  * ```typescript
- * import { createFetch } from '@hckhanh/afetch';
+ * import { createFetch } from '@hckhanh/what-the-fetch';
  * import { z } from 'zod';
  *
  * const api = {
@@ -43,7 +43,7 @@ export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
  *
  * @example
  * ```typescript
- * import { createFetch } from '@hckhanh/afetch';
+ * import { createFetch } from '@hckhanh/what-the-fetch';
  * import { z } from 'zod';
  *
  * const api = {

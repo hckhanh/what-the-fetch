@@ -16,7 +16,7 @@ export async function GET(
   return new ImageResponse(
     <DefaultImage
       description={page.data.description}
-      site='afetch'
+      site='what-the-fetch'
       title={page.data.title}
     />,
     {

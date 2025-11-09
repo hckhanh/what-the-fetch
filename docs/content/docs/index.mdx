@@ -1,21 +1,21 @@
 ---
 title: Introduction
-description: Learn about afetch – a type-safe API client with schema validation using Standard Schema
+description: Learn about what-the-fetch – a type-safe API client with schema validation using Standard Schema
 ---
 
 import { Feather, ShieldCheck, Lock, Code, Wrench, Zap } from 'lucide-react';
 
-**afetch** is a type-safe API client library that integrates schema validation with fetch requests, leveraging the Standard Schema specification for maximum flexibility and type safety.
+**what-the-fetch** is a type-safe API client library that integrates schema validation with fetch requests, leveraging the Standard Schema specification for maximum flexibility and type safety.
 
-<Callout title="Why afetch?" type="info">
-  Building API clients manually is error-prone and lacks type safety. afetch
+<Callout title="Why what-the-fetch?" type="info">
+  Building API clients manually is error-prone and lacks type safety. what-the-fetch
   handles type-safe URL construction, automatic request/response validation,
   and full TypeScript inference automatically.
 </Callout>
 
-## Why afetch?
+## Why what-the-fetch?
 
-Building API clients manually is tedious and error-prone. afetch solves common problems developers face when working with APIs:
+Building API clients manually is tedious and error-prone. what-the-fetch solves common problems developers face when working with APIs:
 
 ### Problems with Manual API Clients
 
@@ -25,9 +25,9 @@ Building API clients manually is tedious and error-prone. afetch solves common p
 - **🔴 URL building errors**: String concatenation leads to malformed URLs
 - **🔴 Poor developer experience**: No autocomplete, no compile-time checks
 
-### How afetch Solves These Issues
+### How what-the-fetch Solves These Issues
 
-**afetch** provides a complete solution for type-safe API clients:
+**what-the-fetch** provides a complete solution for type-safe API clients:
 
 1. **End-to-end type safety**:
 
@@ -106,11 +106,11 @@ const data = await response.json();
 
 ## The Solution
 
-afetch provides a type-safe API client with automatic validation:
+what-the-fetch provides a type-safe API client with automatic validation:
 
 ```typescript
 // ✅ Type-safe with validation
-import { createFetch } from 'afetch';
+import { createFetch } from 'what-the-fetch';
 import { z } from 'zod';
 
 const api = {
@@ -138,15 +138,15 @@ const user = await apiFetch('/users/:id', {
 - ✅ Easy to read and maintain
 
 <Callout title="Type Safety & Validation" type="success">
-  afetch handles type-safe URL construction, automatic validation, and full
+  what-the-fetch handles type-safe URL construction, automatic validation, and full
   TypeScript inference - catching errors at compile time instead of runtime.
 </Callout>
 
 
 
-## When to Use afetch
+## When to Use what-the-fetch
 
-afetch is ideal for:
+what-the-fetch is ideal for:
 
 - 🌐 **REST API clients**: Building type-safe wrappers around REST APIs
 - 🔗 **Microservices**: Creating typed clients for service-to-service communication
@@ -156,12 +156,12 @@ afetch is ideal for:
 
 ## Quick Example
 
-Here's a real-world example showing how afetch simplifies API client development:
+Here's a real-world example showing how what-the-fetch simplifies API client development:
 
-<Tabs items={['With afetch', 'Without afetch']}>
-  <Tab value="With afetch">
+<Tabs items={['With what-the-fetch', 'Without what-the-fetch']}>
+  <Tab value="With what-the-fetch">
     ```typescript
-    import { createFetch } from 'afetch';
+    import { createFetch } from 'what-the-fetch';
     import { z } from 'zod';
     
     // Define API schema once
@@ -187,7 +187,7 @@ Here's a real-world example showing how afetch simplifies API client development
     // user is typed as { id: number; name: string; email: string }
     ```
   </Tab>
-  <Tab value="Without afetch">
+  <Tab value="Without what-the-fetch">
     ```typescript
     // Define types manually
     interface User {

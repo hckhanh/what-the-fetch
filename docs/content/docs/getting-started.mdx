@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: Quick start guide to install and use afetch in your JavaScript or TypeScript project
+description: Quick start guide to install and use what-the-fetch in your JavaScript or TypeScript project
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout';
@@ -10,32 +10,32 @@ import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 ## Installation
 
-Install afetch using your preferred package manager:
+Install what-the-fetch using your preferred package manager:
 
 <Tabs items={['bun', 'pnpm', 'yarn', 'npm', 'jsr']}>
   <Tab value="bun">
     ```bash
-    bun add afetch
+    bun add what-the-fetch
     ```
   </Tab>
   <Tab value="pnpm">
     ```bash
-    pnpm add afetch
+    pnpm add what-the-fetch
     ```
   </Tab>
   <Tab value="yarn">
     ```bash
-    yarn add afetch
+    yarn add what-the-fetch
     ```
   </Tab>
   <Tab value="npm">
     ```bash
-    npm install afetch
+    npm install what-the-fetch
     ```
   </Tab>
   <Tab value="jsr">
     ```bash
-    deno add jsr:@hckhanh/afetch
+    deno add jsr:@hckhanh/what-the-fetch
     ```
   </Tab>
 </Tabs>
@@ -61,7 +61,7 @@ You'll also need a schema validation library that implements Standard Schema:
 </Tabs>
 
 <Callout title="TypeScript Support" type="info">
-  afetch is written in TypeScript and includes type definitions out of the
+  what-the-fetch is written in TypeScript and includes type definitions out of the
   box. No need to install separate `@types` packages!
 </Callout>
 
@@ -70,7 +70,7 @@ You'll also need a schema validation library that implements Standard Schema:
 ### Importing
 
 ```typescript
-import { createFetch } from 'afetch';
+import { createFetch } from 'what-the-fetch';
 import { z } from 'zod'; // or your preferred schema library
 ```
 
@@ -83,7 +83,7 @@ Here are some common use cases to get you started:
 Define a schema and make a type-safe request:
 
 ```typescript
-import { createFetch } from 'afetch';
+import { createFetch } from 'what-the-fetch';
 import { z } from 'zod';
 
 const api = {
@@ -164,7 +164,7 @@ const newUser = await apiFetch('/users', {
 
 ## Step-by-Step Tutorial
 
-Let's build a complete type-safe API client using afetch:
+Let's build a complete type-safe API client using what-the-fetch:
 
 <Steps>
   <Step>
@@ -221,7 +221,7 @@ Let's build a complete type-safe API client using afetch:
     Use createFetch to build your typed API client:
     
     ```typescript
-    import { createFetch } from 'afetch';
+    import { createFetch } from 'what-the-fetch';
     
     const apiFetch = createFetch(api, 'https://api.blog.com');
     ```
@@ -271,12 +271,12 @@ Let's build a complete type-safe API client using afetch:
 
 ### Using Different Schema Libraries
 
-afetch works with any Standard Schema implementation:
+what-the-fetch works with any Standard Schema implementation:
 
 <Tabs items={['Zod', 'Valibot', 'ArkType']}>
   <Tab value="Zod">
     ```typescript
-    import { createFetch } from 'afetch';
+    import { createFetch } from 'what-the-fetch';
     import { z } from 'zod';
     
     const api = {
@@ -291,7 +291,7 @@ afetch works with any Standard Schema implementation:
   </Tab>
   <Tab value="Valibot">
     ```typescript
-    import { createFetch } from 'afetch';
+    import { createFetch } from 'what-the-fetch';
     import * as v from 'valibot';
     
     const api = {
@@ -306,7 +306,7 @@ afetch works with any Standard Schema implementation:
   </Tab>
   <Tab value="ArkType">
     ```typescript
-    import { createFetch } from 'afetch';
+    import { createFetch } from 'what-the-fetch';
     import { type } from 'arktype';
     
     const api = {
@@ -389,7 +389,7 @@ const posts = await apiFetch('/posts', { query: { limit: 10 } });
 
 ## Schema Validation Benefits
 
-afetch validates both requests and responses automatically:
+what-the-fetch validates both requests and responses automatically:
 
 ```typescript
 const api = {
@@ -431,7 +431,7 @@ try {
 
 ## Error Handling
 
-afetch provides clear error messages for both validation and HTTP errors:
+what-the-fetch provides clear error messages for both validation and HTTP errors:
 
 ```typescript
 const api = {
@@ -456,7 +456,7 @@ try {
 
 ### Handling HTTP Errors
 
-afetch automatically throws on non-2xx status codes:
+what-the-fetch automatically throws on non-2xx status codes:
 
 ```typescript
 try {

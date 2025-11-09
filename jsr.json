@@ -1,5 +1,5 @@
 {
-  "name": "@hckhanh/afetch",
+  "name": "@hckhanh/what-the-fetch",
   "version": "0.0.0-development",
   "license": "MIT",
   "exports": "./src/index.ts",
