@@ -1,7 +1,7 @@
 {
   "name": "fast-url",
   "description": "A folk version of the `urlcat` library focus on performance and simplicity.",
-  "version": "6.0.1",
+  "version": "0.0.0",
   "author": {
     "name": "Khánh Hoàng",
     "email": "hi@khanh.id",
