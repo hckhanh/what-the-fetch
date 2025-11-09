@@ -1,126 +1,189 @@
-# fast-url [![NPM Downloads](https://img.shields.io/npm/dw/fast-url)](https://www.npmjs.com/package/fast-url) [![JSR](https://jsr.io/badges/@hckhanh/fast-url/weekly-downloads)](https://jsr.io/@hckhanh/fast-url)
+# afetch
 
-A folk version of the [urlcat](https://github.com/balazsbotond/urlcat) focuses on performance and simplicity.
-Build correct URLs easily. A fast, minimal fork of urlcat focused on performance and simplicity.
+Type-safe API client with schema validation using Standard Schema.
 
-[![Test](https://github.com/hckhanh/fast-url/actions/workflows/test.yml/badge.svg)](https://github.com/hckhanh/fast-url/actions/workflows/test.yml)
-[![codecov](https://codecov.io/github/hckhanh/fast-url/graph/badge.svg?token=6W7S96H6OT)](https://codecov.io/github/hckhanh/fast-url)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=hckhanh_fast-url&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=hckhanh_fast-url)
-[![Bundle Size](https://badgen.net/bundlephobia/minzip/fast-url)](https://bundlephobia.com/result?p=fast-url)
-[![CodSpeed](https://img.shields.io/endpoint?url=https://codspeed.io/badge.json)](https://codspeed.io/hckhanh/fast-url)
+[![Test](https://github.com/hckhanh/afetch/actions/workflows/test.yml/badge.svg)](https://github.com/hckhanh/afetch/actions/workflows/test.yml)
+[![codecov](https://codecov.io/github/hckhanh/afetch/graph/badge.svg?token=6W7S96H6OT)](https://codecov.io/github/hckhanh/afetch)
+[![Bundle Size](https://badgen.net/bundlephobia/minzip/afetch)](https://bundlephobia.com/result?p=afetch)
 
-fast-url is a tiny JavaScript/TypeScript library that makes building URLs convenient and prevents common mistakes.
+afetch is a type-safe API client library that integrates schema validation with fetch requests, leveraging the Standard Schema specification for maximum flexibility and type safety.
 
 ## Features
 
-- Lightweight: Only one dependency (fast-querystring) and minimal bundle size
-- Type safe: Written in TypeScript with full type definitions
-- URL safe: Automatically escapes parameters and handles edge cases
-- Unicode-aware: Uses `codePointAt` for proper Unicode handling, including graceful encoding of lone surrogates
-- Flexible: Multiple ways to build URLs for different use cases
+- **Type-safe**: Full TypeScript support with end-to-end type inference
+- **Schema validation**: Built-in support for Standard Schema (compatible with Zod, Valibot, ArkType, and more)
+- **Flexible**: Works with any schema library that implements Standard Schema
+- **Minimal**: Small bundle size with minimal dependencies
+- **URL building**: Integrated with fast-url for clean URL construction
 
 ## Installation
 
 ```bash
-# Using JSR (recommended for Deno)
-deno add jsr:@hckhanh/fast-url
+# Using npm
+npm install afetch
 
 # Using bun
-bun add fast-url
+bun add afetch
 
-# Using npm
-npm install fast-url
+# Using JSR (recommended for Deno)
+deno add jsr:@hckhanh/afetch
 ```
 
 ## Usage
 
-![Basic usage example](docs/urlcat-basic-usage.svg#gh-light-mode-only)
-![Basic usage example (dark mode)](docs/urlcat-basic-usage-dark.svg#gh-dark-mode-only)
+### Basic Example
 
-### Basic URL building
+```typescript
+import { createFetch } from 'afetch';
+import { z } from 'zod';
 
-```javascript
-import { createUrl } from "fast-url";
+// Define your API schema
+const api = {
+  '/users/:id': {
+    params: z.object({ id: z.number() }),
+    query: z.object({ fields: z.string().optional() }),
+    response: z.object({
+      id: z.number(),
+      name: z.string(),
+      email: z.string(),
+    }),
+  },
+  '/users': {
+    query: z.object({
+      limit: z.number().optional(),
+      offset: z.number().optional(),
+    }),
+    response: z.array(z.object({
+      id: z.number(),
+      name: z.string(),
+    })),
+  },
+} as const;
 
-// Path parameters
-createUrl("https://api.example.com", "/users/:id", { id: 123 });
-// → 'https://api.example.com/users/123'
+// Create a typed fetch function
+const apiFetch = createFetch(api, 'https://api.example.com');
 
-// Query parameters
-createUrl("https://api.example.com", "/users", { limit: 10, offset: 20 });
-// → 'https://api.example.com/users?limit=10&offset=20'
+// Make type-safe requests
+const user = await apiFetch('/users/:id', {
+  params: { id: 123 },
+  query: { fields: 'name,email' },
+});
+// user is typed as { id: number; name: string; email: string }
 
-// Combined path and query parameters
-createUrl("https://api.example.com", "/users/:id/posts", { id: 123, limit: 10 });
-// → 'https://api.example.com/users/123/posts?limit=10'
+const users = await apiFetch('/users', {
+  query: { limit: 10, offset: 0 },
+});
+// users is typed as Array<{ id: number; name: string }>
 ```
 
-### CommonJS
+### With POST requests
 
-```javascript
-const { createUrl } = require("fast-url");
+```typescript
+const api = {
+  '/users': {
+    body: z.object({
+      name: z.string(),
+      email: z.string().email(),
+    }),
+    response: z.object({
+      id: z.number(),
+      name: z.string(),
+      email: z.string(),
+    }),
+  },
+} as const;
+
+const apiFetch = createFetch(api, 'https://api.example.com');
+
+const newUser = await apiFetch('/users', {
+  body: {
+    name: 'John Doe',
+    email: 'john@example.com',
+  },
+});
 ```
 
-### Utility functions
+### With Custom Headers
 
-```javascript
-import { query, subst, join } from "fast-url";
+```typescript
+const apiFetch = createFetch(api, 'https://api.example.com');
 
-// Build query strings
-query({ name: "John", age: 30 });
-// → 'name=John&age=30'
-
-// Substitute path parameters
-subst("/users/:id/posts/:postId", { id: 123, postId: 456 });
-// → '/users/123/posts/456'
-
-// Join URL parts
-join("https://api.example.com/", "/", "/users");
-// → 'https://api.example.com/users'
+const user = await apiFetch(
+  '/users/:id',
+  {
+    params: { id: 123 },
+  },
+  {
+    headers: {
+      'Authorization': 'Bearer token',
+      'X-Custom-Header': 'value',
+    },
+  }
+);
 ```
 
 ## API
 
-### `createUrl(baseUrl, pathTemplate, params?)`
+### `createFetch(schema, baseUrl)`
 
-Build a complete URL by combining a base URL, path template, and parameters.
+Creates a type-safe fetch function for your API.
 
-### `createUrl(baseTemplate, params)`
+**Parameters:**
+- `schema`: An object mapping API paths to their schema definitions
+- `baseUrl`: The base URL for all API requests
 
-Use a single template containing path parameters; unused params become query parameters.
+**Returns:** A typed fetch function that accepts:
+- `path`: The API path (must be a key from your schema)
+- `options`: Request options (params, query, body) based on the path's schema
+- `baseInit`: Optional RequestInit to customize the fetch request
 
-### `query(params)`
+### Schema Definition
 
-Build a query string from an object of key-value pairs.
+Each path in your schema can have:
 
-### `subst(template, params)`
+- `params`: Schema for URL path parameters (e.g., `:id`)
+- `query`: Schema for query string parameters
+- `body`: Schema for request body (automatically sets method to POST)
+- `response`: Schema for response validation
 
-Substitute path parameters in a template string.
+All schemas must implement the Standard Schema specification.
 
-### `join(part1, separator, part2)`
+## Why afetch?
 
-Join two URL parts with exactly one separator.
+Building API clients manually is error-prone and lacks type safety:
 
-## Why fast-url?
-
-Building URLs manually is error-prone:
-
-```javascript
-// ❌ Error-prone manual approach
-const url = `${baseUrl}/users/${id}/posts?limit=${limit}&offset=${offset}`;
-// Issues: double slashes, unescaped parameters, complex concatenation
+```typescript
+// ❌ No type safety, manual validation
+const response = await fetch(`${baseUrl}/users/${id}?fields=${fields}`);
+const data = await response.json();
+// What type is data? Who knows!
 ```
 
-```javascript
-// ✅ Clean and safe with fast-url
-const url = createUrl(baseUrl, "/users/:id/posts", { id, limit, offset });
+```typescript
+// ✅ Type-safe with validation
+const user = await apiFetch('/users/:id', {
+  params: { id },
+  query: { fields },
+});
+// user is fully typed and validated!
 ```
 
-fast-url handles:
+afetch handles:
 
-- Automatic parameter escaping
-- Proper URL segment joining
-- Clean separation of path and query parameters
+- Type-safe URL construction with path and query parameters
+- Automatic request/response validation
+- Clean separation of concerns
+- Full TypeScript inference
+
+## Standard Schema Support
+
+afetch works with any schema library that implements [Standard Schema](https://standardschema.dev/):
+
+- [Zod](https://zod.dev/)
+- [Valibot](https://valibot.dev/)
+- [ArkType](https://arktype.io/)
+- [TypeSchema](https://typeschema.com/)
+- And more!
 
 ## Contributing
 

@@ -4,13 +4,12 @@
 
   Before submitting a pull request, please make sure the following is done:
 
-  1. Fork [the repository](https://github.com/facebook/react) and create your branch from `master`.
+  1. Fork [the repository](https://github.com/hckhanh/afetch) and create your branch from `main`.
   2. Run `npm install` in the repository root.
   3. If you've fixed a bug or added code that should be tested, add tests!
   4. Ensure the test suite passes (`npm test`).
-  5. Format your code using the settings in .editorconfig.
-
-  Learn more about contributing: https://reactjs.org/docs/how-to-contribute.html
+  5. Format your code with `npm run format`.
+  6. Build the package with `npm run build`.
 -->
 
 ## Summary

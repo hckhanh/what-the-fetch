@@ -5,6 +5,7 @@
     "": {
       "name": "fast-url",
       "dependencies": {
+        "@standard-schema/spec": "1.0.0",
         "fast-url": "6.0.1",
       },
       "devDependencies": {

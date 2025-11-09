@@ -1,5 +1,5 @@
 {
-  "name": "@hckhanh/fast-url",
+  "name": "@hckhanh/afetch",
   "version": "0.0.0-development",
   "license": "MIT",
   "exports": "./src/index.ts",
