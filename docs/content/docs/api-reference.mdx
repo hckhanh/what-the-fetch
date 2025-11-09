@@ -96,22 +96,12 @@ const api: ApiSchema = {
     response: z.object({ id: z.number(), name: z.string() })
   },
   '/users': {
+    // GET /users - List users with pagination
     query: z.object({
       limit: z.number().optional(),
       offset: z.number().optional()
     }),
     response: z.array(z.object({ id: z.number(), name: z.string() }))
-  },
-  '/users': {
-    body: z.object({
-      name: z.string(),
-      email: z.string().email()
-    }),
-    response: z.object({
-      id: z.number(),
-      name: z.string(),
-      email: z.string()
-    })
   }
 };
 ```
@@ -373,6 +363,7 @@ import { z } from 'zod';
 // Define comprehensive API schema
 const api = {
   '/users': {
+    // GET /users - List users with pagination
     query: z.object({
       page: z.number().optional(),
       limit: z.number().optional()
@@ -386,6 +377,7 @@ const api = {
     })
   },
   '/users/:id': {
+    // GET /users/:id - Get user by ID
     params: z.object({ id: z.number() }),
     response: z.object({
       id: z.number(),
@@ -394,7 +386,8 @@ const api = {
       createdAt: z.string()
     })
   },
-  '/users': {
+  '/users/create': {
+    // POST /users/create - Create new user
     body: z.object({
       name: z.string().min(3),
       email: z.string().email(),
@@ -406,7 +399,9 @@ const api = {
       email: z.string()
     })
   },
-  '/users/:id': {
+  '/users/:id/update': {
+    // PATCH /users/:id/update - Update user
+    params: z.object({ id: z.number() }),
     body: z.object({
       name: z.string().min(3).optional(),
       email: z.string().email().optional()
@@ -446,7 +441,7 @@ class APIClient {
 
   async createUser(data: { name: string; email: string; password: string }) {
     return this.fetch(
-      '/users',
+      '/users/create',
       { body: data },
       { headers: { 'Authorization': `Bearer ${this.apiKey}` } }
     );
@@ -454,8 +449,8 @@ class APIClient {
 
   async updateUser(id: number, data: { name?: string; email?: string }) {
     return this.fetch(
-      '/users/:id',
-      { body: data },
+      '/users/:id/update',
+      { params: { id }, body: data },
       { headers: { 'Authorization': `Bearer ${this.apiKey}` } }
     );
   }
@@ -607,8 +602,8 @@ await apiFetch('/invalid', {});
 
 afetch is designed to be performant:
 
-- **Small bundle size**: Minimal dependencies (only fast-url and Standard Schema spec)
-- **Efficient URL building**: Leverages fast-url's optimized implementation
+- **Small bundle size**: Minimal dependencies (only fast-url for URL building and Standard Schema spec)
+- **Efficient URL building**: Leverages fast-url library's optimized implementation
 - **Type-level computation**: Most type checking happens at compile time
 - **Runtime validation**: Only validates responses, not TypeScript types
 

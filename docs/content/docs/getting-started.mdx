@@ -167,6 +167,7 @@ Let's build a complete type-safe API client using afetch:
     
     const api = {
       '/posts': {
+        // GET /posts - List posts with filters
         query: z.object({
           page: z.number().optional(),
           limit: z.number().optional(),
@@ -179,6 +180,7 @@ Let's build a complete type-safe API client using afetch:
         }))
       },
       '/posts/:id': {
+        // GET /posts/:id - Get post by ID
         params: z.object({ id: z.number() }),
         response: z.object({
           id: z.number(),
@@ -187,7 +189,8 @@ Let's build a complete type-safe API client using afetch:
           author: z.string()
         })
       },
-      '/posts': {
+      '/posts/create': {
+        // POST /posts/create - Create new post
         body: z.object({
           title: z.string(),
           content: z.string()

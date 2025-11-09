@@ -7,21 +7,22 @@ import { inter, jetbrainsMono } from '@/lib/fonts'
 export const metadata: Metadata = {
   title: {
     default:
-      'fast-url - High-Performance URL Builder for JavaScript & TypeScript',
-    template: '%s | fast-url',
+      'afetch - Type-Safe API Client with Schema Validation',
+    template: '%s | afetch',
   },
   description:
-    'Build correct URLs easily with fast-url. A fast, type-safe, lightweight URL building library for JavaScript and TypeScript. Modern fork of urlcat with better performance.',
+    'Type-safe API client with schema validation using Standard Schema. Works with Zod, Valibot, ArkType, and more for building robust API clients.',
   keywords: [
-    'url builder',
-    'urlcat',
-    'url',
-    'query string',
+    'api client',
+    'fetch',
+    'type-safe',
+    'schema validation',
     'typescript',
     'javascript',
-    'fast-url',
-    'url encoding',
-    'path parameters',
+    'afetch',
+    'standard schema',
+    'zod',
+    'valibot',
   ],
   authors: [
     {
@@ -30,21 +31,21 @@ export const metadata: Metadata = {
     },
   ],
   creator: 'Khánh Hoàng',
-  metadataBase: new URL('https://fast-url.khanh.id'),
+  metadataBase: new URL('https://fetch.khanh.id'),
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://fast-url.khanh.id',
-    title: 'fast-url - High-Performance URL Builder',
+    url: 'https://fetch.khanh.id',
+    title: 'afetch - Type-Safe API Client with Schema Validation',
     description:
-      'Build correct URLs easily. Fast, type-safe, lightweight URL building library for JavaScript and TypeScript.',
-    siteName: 'fast-url',
+      'Type-safe API client with schema validation using Standard Schema. Build robust API clients with full TypeScript support.',
+    siteName: 'afetch',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'fast-url - High-Performance URL Builder',
+    title: 'afetch - Type-Safe API Client',
     description:
-      'Build correct URLs easily. Fast, type-safe, lightweight URL building library for JavaScript and TypeScript.',
+      'Type-safe API client with schema validation using Standard Schema. Build robust API clients with full TypeScript support.',
   },
   robots: {
     index: true,
