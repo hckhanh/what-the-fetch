@@ -18,7 +18,13 @@
  *   }
  * };
  *
- * const apiFetch = createFetch(api, 'https://api.example.com');
+ * // Create fetch with optional shared headers
+ * const apiFetch = createFetch(
+ *   api,
+ *   'https://api.example.com',
+ *   { headers: { 'Authorization': 'Bearer token' } }
+ * );
+ *
  * const user = await apiFetch('/users/:id', { params: { id: 123 } });
  * ```
  */
@@ -39,7 +45,8 @@ export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
  * @template Schema - The API schema definition mapping paths to their schemas
  * @param apis - An object mapping API paths to their schema definitions
  * @param baseUrl - The base URL for all API requests
- * @returns A typed fetch function that accepts path, options, and optional RequestInit
+ * @param sharedInit - Optional shared RequestInit options that will be merged with per-request options
+ * @returns A typed fetch function that accepts path, optional options, and optional per-request RequestInit
  *
  * @example
  * ```typescript
@@ -54,7 +61,14 @@ export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
  *   }
  * };
  *
- * const apiFetch = createFetch(api, 'https://api.example.com');
+ * // Create fetch with shared headers
+ * const apiFetch = createFetch(
+ *   api,
+ *   'https://api.example.com',
+ *   {
+ *     headers: { 'Authorization': 'Bearer token' }
+ *   }
+ * );
  *
  * // Type-safe request with validation
  * const user = await apiFetch('/users/:id', {
@@ -73,8 +87,6 @@ export function createFetch<Schema extends ApiSchema>(
   init?: RequestInit,
 ) => Promise<ApiResponse<Schema, Path>> {
   return async (path, options, init?: RequestInit) => {
-    console.log(options)
-
     const { params, query, body } = (options || {}) as Record<
       'params' | 'query' | 'body',
       Record<string, unknown>

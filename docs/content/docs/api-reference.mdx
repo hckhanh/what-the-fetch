@@ -12,11 +12,12 @@ Creates a type-safe fetch function for your API.
 ```typescript
 function createFetch<Schema extends ApiSchema>(
   apis: Schema,
-  baseUrl: string
+  baseUrl: string,
+  sharedInit?: RequestInit
 ): <Path extends ApiPath<Schema>>(
   path: Path,
-  options: FetchOptions<Schema, Path>,
-  baseInit?: RequestInit
+  options?: FetchOptions<Schema, Path>,
+  init?: RequestInit
 ) => Promise<ApiResponse<Schema, Path>>
 ```
 
@@ -24,11 +25,12 @@ function createFetch<Schema extends ApiSchema>(
 
 - `apis` - An object mapping API paths to their schema definitions
 - `baseUrl` - The base URL for all API requests
+- `sharedInit` (optional) - Shared RequestInit options that will be merged with per-request options
 
 **Returns:** A typed fetch function that accepts:
 - `path` - The API path (must be a key from your schema)
-- `options` - Request options (params, query, body) based on the path's schema
-- `baseInit` - Optional RequestInit to customize the fetch request
+- `options` (optional) - Request options (params, query, body) based on the path's schema
+- `init` (optional) - Per-request RequestInit to customize the fetch request (merged with sharedInit)
 
 **Example:**
 
@@ -312,6 +314,53 @@ const user = await apiFetch(
 
 ## Advanced Usage
 
+### Shared Request Configuration
+
+Use the third parameter of `createFetch()` to set shared options for all requests:
+
+```typescript
+import { createFetch } from 'what-the-fetch';
+import { z } from 'zod';
+
+const api = {
+  '/users/:id': {
+    params: z.object({ id: z.number() }),
+    response: z.object({ id: z.number(), name: z.string() })
+  },
+  '/posts': {
+    response: z.array(z.object({ id: z.number(), title: z.string() }))
+  }
+};
+
+// Create fetch with shared headers that apply to all requests
+const apiFetch = createFetch(
+  api,
+  'https://api.example.com',
+  {
+    headers: {
+      'Authorization': 'Bearer my-token',
+      'X-API-Version': '2.0'
+    },
+    cache: 'no-cache'
+  }
+);
+
+// All requests automatically include shared headers
+const user = await apiFetch('/users/:id', { params: { id: 123 } });
+const posts = await apiFetch('/posts');
+
+// Override or add additional headers per request
+const userWithCustomHeader = await apiFetch(
+  '/users/:id',
+  { params: { id: 456 } },
+  {
+    headers: {
+      'X-Custom-Header': 'value' // Merged with shared headers
+    }
+  }
+);
+```
+
 ### Multiple Endpoints with Shared Schemas
 
 ```typescript
@@ -414,45 +463,38 @@ const api = {
   }
 } as const;
 
-// Create client
+// Create client with shared configuration
 class APIClient {
   private fetch;
 
   constructor(baseUrl: string, apiKey: string) {
-    this.fetch = createFetch(api, baseUrl);
-    this.apiKey = apiKey;
+    // Use shared headers for authentication
+    this.fetch = createFetch(
+      api,
+      baseUrl,
+      {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`
+        }
+      }
+    );
   }
 
   async getUsers(page = 1, limit = 10) {
-    return this.fetch(
-      '/users',
-      { query: { page, limit } },
-      { headers: { 'Authorization': `Bearer ${this.apiKey}` } }
-    );
+    // No need to pass auth header - it's shared
+    return this.fetch('/users', { query: { page, limit } });
   }
 
   async getUser(id: number) {
-    return this.fetch(
-      '/users/:id',
-      { params: { id } },
-      { headers: { 'Authorization': `Bearer ${this.apiKey}` } }
-    );
+    return this.fetch('/users/:id', { params: { id } });
   }
 
   async createUser(data: { name: string; email: string; password: string }) {
-    return this.fetch(
-      '/users/create',
-      { body: data },
-      { headers: { 'Authorization': `Bearer ${this.apiKey}` } }
-    );
+    return this.fetch('/users/create', { body: data });
   }
 
   async updateUser(id: number, data: { name?: string; email?: string }) {
-    return this.fetch(
-      '/users/:id/update',
-      { params: { id }, body: data },
-      { headers: { 'Authorization': `Bearer ${this.apiKey}` } }
-    );
+    return this.fetch('/users/:id/update', { params: { id }, body: data });
   }
 }
 
