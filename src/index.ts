@@ -89,8 +89,8 @@ export function createFetch<Schema extends ApiSchema>(
       ...init,
       headers: {
         'Content-Type': 'application/json',
-        ...(sharedInit?.headers || {}),
-        ...(init?.headers || {}),
+        ...sharedInit?.headers,
+        ...init?.headers,
       },
     }
 
