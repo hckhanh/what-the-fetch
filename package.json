@@ -52,7 +52,7 @@
   },
   "workspaces": [
     ".",
-    "web"
+    "docs"
   ],
   "files": [
     "dist"

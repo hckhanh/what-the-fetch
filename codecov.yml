@@ -10,5 +10,5 @@ coverage:
         threshold: 1%
 
 ignore:
-  - "web"
+  - "docs"
   - "tools"

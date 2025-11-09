@@ -6,7 +6,7 @@
       "project": ["src/**", "test/**", "benchmark/**"],
       "ignoreDependencies": ["@changesets/config"]
     },
-    "web": {
+    "docs": {
       "project": ["src/**"]
     }
   }
