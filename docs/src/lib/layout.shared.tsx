@@ -6,7 +6,7 @@ export function baseOptions(): BaseLayoutProps {
     nav: {
       title: (
         <span>
-          🔗<span className='ml-2'>afetch</span>
+          🌐<span className='ml-2'>afetch</span>
         </span>
       ),
       url: '/docs',
