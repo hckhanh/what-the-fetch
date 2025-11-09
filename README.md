@@ -1,4 +1,4 @@
-# what-the-fetch!
+# what-the-fetch! ![NPM Downloads](https://img.shields.io/npm/dw/what-the-fetch) [![JSR](https://jsr.io/badges/@hckhanh/what-the-fetch/weekly-downloads)](https://jsr.io/@hckhanh/what-the-fetch)
 
 Type-safe API client with schema validation using Standard Schema.
 
