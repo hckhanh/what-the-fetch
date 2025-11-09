@@ -2,6 +2,8 @@ import { createUrl } from 'fast-url'
 import type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
 import { validateResponse } from './utils.ts'
 
+export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
+
 export function createFetch<Schema extends ApiSchema>(
   apis: Schema,
   baseUrl: string,

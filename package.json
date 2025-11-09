@@ -1,19 +1,19 @@
 {
-  "name": "fast-url",
-  "description": "A folk version of the `urlcat` library focus on performance and simplicity.",
+  "name": "afetch",
+  "description": "Type-safe API client with schema validation using Standard Schema",
   "version": "0.0.0",
   "author": {
     "name": "Khánh Hoàng",
     "email": "hi@khanh.id",
     "url": "https://www.khanh.id"
   },
-  "homepage": "https://fast-url.khanh.id",
+  "homepage": "https://github.com/hckhanh/afetch",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hckhanh/fast-url.git"
+    "url": "git+https://github.com/hckhanh/afetch.git"
   },
   "bugs": {
-    "url": "https://github.com/hckhanh/fast-url/issues",
+    "url": "https://github.com/hckhanh/afetch/issues",
     "email": "hi@khanh.id"
   },
   "private": false,
@@ -37,6 +37,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@standard-schema/spec": "^1.0.0",
     "fast-url": "6.0.1"
   },
   "devDependencies": {
@@ -61,12 +62,14 @@
     "dist"
   ],
   "keywords": [
-    "url",
-    "uri",
-    "build",
-    "builder",
-    "concat",
-    "concatenate"
+    "fetch",
+    "api",
+    "client",
+    "type-safe",
+    "schema",
+    "validation",
+    "standard-schema",
+    "typescript"
   ],
   "license": "MIT"
 }
