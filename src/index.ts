@@ -1,9 +1,68 @@
+/**
+ * @module
+ *
+ * Type-safe API client with schema validation using Standard Schema.
+ *
+ * This module provides a way to create type-safe fetch functions with automatic
+ * schema validation for API requests and responses.
+ *
+ * @example
+ * ```typescript
+ * import { createFetch } from '@hckhanh/afetch';
+ * import { z } from 'zod';
+ *
+ * const api = {
+ *   '/users/:id': {
+ *     params: z.object({ id: z.number() }),
+ *     response: z.object({ id: z.number(), name: z.string() })
+ *   }
+ * };
+ *
+ * const apiFetch = createFetch(api, 'https://api.example.com');
+ * const user = await apiFetch('/users/:id', { params: { id: 123 } });
+ * ```
+ */
+
 import { createUrl } from 'fast-url'
 import type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
 import { validateResponse } from './utils.ts'
 
 export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
 
+/**
+ * Creates a type-safe fetch function for your API.
+ *
+ * This function takes an API schema definition and a base URL, returning a
+ * typed fetch function that validates requests and responses according to
+ * the provided schemas.
+ *
+ * @template Schema - The API schema definition mapping paths to their schemas
+ * @param apis - An object mapping API paths to their schema definitions
+ * @param baseUrl - The base URL for all API requests
+ * @returns A typed fetch function that accepts path, options, and optional RequestInit
+ *
+ * @example
+ * ```typescript
+ * import { createFetch } from '@hckhanh/afetch';
+ * import { z } from 'zod';
+ *
+ * const api = {
+ *   '/users/:id': {
+ *     params: z.object({ id: z.number() }),
+ *     query: z.object({ fields: z.string().optional() }),
+ *     response: z.object({ id: z.number(), name: z.string() })
+ *   }
+ * };
+ *
+ * const apiFetch = createFetch(api, 'https://api.example.com');
+ *
+ * // Type-safe request with validation
+ * const user = await apiFetch('/users/:id', {
+ *   params: { id: 123 },
+ *   query: { fields: 'name,email' }
+ * });
+ * ```
+ */
 export function createFetch<Schema extends ApiSchema>(
   apis: Schema,
   baseUrl: string,

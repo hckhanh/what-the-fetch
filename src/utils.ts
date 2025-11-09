@@ -1,5 +1,26 @@
+/**
+ * Utility functions for afetch.
+ *
+ * @module
+ */
+
 import type { ApiPath, ApiResponse, ApiSchema } from './types.ts'
 
+/**
+ * Validates response data against a schema.
+ *
+ * If a response schema is defined, validates the data using Standard Schema.
+ * Throws an error if validation fails.
+ *
+ * @template T - The API schema type
+ * @template Path - The specific API path
+ * @param schema - The schema definition for the path
+ * @param data - The response data to validate
+ * @returns The validated response data
+ * @throws {Error} If validation fails
+ *
+ * @internal
+ */
 export async function validateResponse<
   T extends ApiSchema,
   Path extends ApiPath<T>,
