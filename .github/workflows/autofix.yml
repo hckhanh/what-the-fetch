@@ -26,7 +26,7 @@ jobs:
         with:
           mode: firewall
       - name: Install Dependencies
-        run: sfw bun ci
+        run: sfw bun install
       - name: Format code
         run: bun biome check --write
       - name: Fix package.json
