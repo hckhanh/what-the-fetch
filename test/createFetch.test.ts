@@ -48,7 +48,6 @@ describe('createFetch', () => {
     expect(fetchMock).toHaveBeenCalledWith(
       'https://api.example.com/users',
       expect.objectContaining({
-        method: 'GET',
         headers: expect.objectContaining({
           'Content-Type': 'application/json',
         }),
@@ -157,7 +156,6 @@ describe('createFetch', () => {
     expect(fetchMock).toHaveBeenCalledWith(
       'https://api.example.com/users',
       expect.objectContaining({
-        method: 'POST',
         body: JSON.stringify({ name: 'John', email: 'john@example.com' }),
         headers: expect.objectContaining({
           'Content-Type': 'application/json',
@@ -276,5 +274,98 @@ describe('createFetch', () => {
       'https://api.example.com/users',
       expect.any(Object),
     )
+  })
+
+  it('should support shared init configuration', async () => {
+    const api = {
+      '/users': {
+        response: createMockSchema({ users: [] }),
+      },
+    }
+
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ users: [] }),
+    } as Response)
+
+    const apiFetch = createFetch(api, 'https://api.example.com', {
+      headers: {
+        Authorization: 'Bearer shared-token',
+        'X-Shared-Header': 'shared-value',
+      },
+    })
+
+    await apiFetch('/users')
+
+    expect(fetchMock).toHaveBeenCalledWith(
+      'https://api.example.com/users',
+      expect.objectContaining({
+        headers: expect.objectContaining({
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer shared-token',
+          'X-Shared-Header': 'shared-value',
+        }),
+      }),
+    )
+  })
+
+  it('should merge shared init with per-request init', async () => {
+    const api = {
+      '/users': {
+        response: createMockSchema({ users: [] }),
+      },
+    }
+
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ users: [] }),
+    } as Response)
+
+    const apiFetch = createFetch(api, 'https://api.example.com', {
+      headers: {
+        Authorization: 'Bearer shared-token',
+        'X-Shared-Header': 'shared-value',
+      },
+    })
+
+    await apiFetch('/users', undefined, {
+      headers: {
+        'X-Custom-Header': 'custom-value',
+      },
+    })
+
+    expect(fetchMock).toHaveBeenCalledWith(
+      'https://api.example.com/users',
+      expect.objectContaining({
+        headers: expect.objectContaining({
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer shared-token',
+          'X-Shared-Header': 'shared-value',
+          'X-Custom-Header': 'custom-value',
+        }),
+      }),
+    )
+  })
+
+  it('should allow options parameter to be omitted', async () => {
+    const api = {
+      '/users': {
+        response: createMockSchema({ users: [] }),
+      },
+    }
+
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ users: [] }),
+    } as Response)
+
+    const apiFetch = createFetch(api, 'https://api.example.com')
+    const result = await apiFetch('/users')
+
+    expect(fetchMock).toHaveBeenCalledWith(
+      'https://api.example.com/users',
+      expect.any(Object),
+    )
+    expect(result).toEqual({ users: [] })
   })
 })

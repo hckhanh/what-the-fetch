@@ -225,6 +225,20 @@ Let's build a complete type-safe API client using what-the-fetch:
     
     const apiFetch = createFetch(api, 'https://api.blog.com');
     ```
+    
+    You can also provide shared options that apply to all requests:
+    
+    ```typescript
+    const apiFetch = createFetch(
+      api,
+      'https://api.blog.com',
+      {
+        headers: {
+          'Authorization': 'Bearer your-api-key'
+        }
+      }
+    );
+    ```
   </Step>
   
   <Step>
@@ -385,6 +399,39 @@ const user = await apiFetch('/users/:id', { params: { id: 123 } });
 import { apiFetch } from './api';
 
 const posts = await apiFetch('/posts', { query: { limit: 10 } });
+```
+
+### Shared Configuration
+
+Use shared configuration to set common options for all requests:
+
+```typescript
+// Create fetch with shared headers and options
+const apiFetch = createFetch(
+  api,
+  'https://api.example.com',
+  {
+    headers: {
+      'Authorization': 'Bearer my-token',
+      'X-API-Version': '2.0'
+    },
+    cache: 'no-cache'
+  }
+);
+
+// All requests will include the shared headers
+const user = await apiFetch('/users/:id', { params: { id: 123 } });
+
+// You can override or add headers per request
+const post = await apiFetch(
+  '/posts/:id',
+  { params: { id: 42 } },
+  {
+    headers: {
+      'X-Custom-Header': 'value' // Merged with shared headers
+    }
+  }
+);
 ```
 
 ## Schema Validation Benefits

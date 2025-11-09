@@ -9,7 +9,7 @@ global.fetch = vi.fn().mockResolvedValue({
 } as Response)
 
 // Helper to create a mock Standard Schema
-function createMockSchema<T>(_value: T): StandardSchemaV1<T, unknown> {
+function createMockSchema<T>(_value: T): StandardSchemaV1<T> {
   return {
     '~standard': {
       version: 1,
@@ -60,5 +60,36 @@ describe('createFetch benchmarks', () => {
     await apiFetchPost('/users', {
       body: { name: 'John', email: 'john@example.com' },
     })
+  })
+
+  const apiWithShared = {
+    '/users/:id': {
+      params: createMockSchema({ id: 123 }),
+      response: createMockSchema({ id: 123, name: 'John' }),
+    },
+  }
+
+  const apiFetchWithShared = createFetch(
+    apiWithShared,
+    'https://api.example.com',
+    {
+      headers: { Authorization: 'Bearer token' },
+    },
+  )
+
+  bench('GET request with shared init', async () => {
+    await apiFetchWithShared('/users/:id', {
+      params: { id: 123 },
+    })
+  })
+
+  bench('GET request without options', async () => {
+    const apiSimple = {
+      '/users': {
+        response: createMockSchema({ users: [] }),
+      },
+    }
+    const apiFetchSimple = createFetch(apiSimple, 'https://api.example.com')
+    await apiFetchSimple('/users')
   })
 })
