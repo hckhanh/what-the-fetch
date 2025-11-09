@@ -1,5 +1,11 @@
 # what-the-fetch
 
+## 1.0.2
+
+### Patch Changes
+
+- bbf7b55: Fix the linked dependencies in JSR package
+
 ## 1.0.1
 
 ### Patch Changes

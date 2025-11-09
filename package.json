@@ -1,7 +1,7 @@
 {
   "name": "what-the-fetch",
   "description": "Type-safe API client with schema validation using Standard Schema",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Khánh Hoàng",
     "email": "hi@khanh.id",
