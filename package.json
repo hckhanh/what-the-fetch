@@ -36,6 +36,9 @@
     "release": "bun run build && changeset publish",
     "test": "vitest"
   },
+  "dependencies": {
+    "fast-url": "6.0.1"
+  },
   "devDependencies": {
     "@biomejs/biome": "2.3.4",
     "@changesets/cli": "2.29.7",
@@ -65,8 +68,5 @@
     "concat",
     "concatenate"
   ],
-  "license": "MIT",
-  "dependencies": {
-    "fast-url": "6.0.1"
-  }
+  "license": "MIT"
 }
