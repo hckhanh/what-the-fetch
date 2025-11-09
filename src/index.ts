@@ -25,7 +25,7 @@
 
 import { createUrl } from 'fast-url'
 import type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
-import { validateResponse } from './utils.ts'
+import { validateData } from './utils.ts'
 
 export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
 
@@ -66,13 +66,16 @@ export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
 export function createFetch<Schema extends ApiSchema>(
   apis: Schema,
   baseUrl: string,
+  sharedInit?: RequestInit,
 ): <Path extends ApiPath<Schema>>(
   path: Path,
   options?: FetchOptions<Schema, Path>,
-  baseInit?: RequestInit,
+  init?: RequestInit,
 ) => Promise<ApiResponse<Schema, Path>> {
-  return async (path, options, baseInit?: RequestInit) => {
-    const { params, query, body } = options as Record<
+  return async (path, options, init?: RequestInit) => {
+    console.log(options)
+
+    const { params, query, body } = (options || {}) as Record<
       'params' | 'query' | 'body',
       Record<string, unknown>
     >
@@ -81,21 +84,22 @@ export function createFetch<Schema extends ApiSchema>(
     const url = createUrl(baseUrl, path, { ...params, ...query })
 
     // Prepare fetch options with default method and headers
-    const init: RequestInit = {
-      method: body ? 'POST' : 'GET',
-      ...baseInit,
+    const requestInit: RequestInit = {
+      ...sharedInit,
+      ...init,
       headers: {
         'Content-Type': 'application/json',
-        ...(baseInit?.headers || {}),
+        ...(sharedInit?.headers || {}),
+        ...(init?.headers || {}),
       },
     }
 
     if (body) {
-      init.body = JSON.stringify(body)
+      requestInit.body = JSON.stringify(body)
     }
 
     // Make request
-    const response = await fetch(url, init)
+    const response = await fetch(url, requestInit)
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
@@ -103,6 +107,11 @@ export function createFetch<Schema extends ApiSchema>(
 
     const data = await response.json()
 
-    return validateResponse(apis[path], data)
+    const responseSchema = apis[path].response
+    if (responseSchema) {
+      return validateData(responseSchema, data)
+    }
+
+    return data
   }
 }
