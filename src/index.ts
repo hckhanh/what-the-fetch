@@ -118,12 +118,6 @@ export function createFetch<Schema extends ApiSchema>(
     }
 
     const data = await response.json()
-
-    const responseSchema = apis[path].response
-    if (responseSchema) {
-      return validateData(responseSchema, data)
-    }
-
-    return data
+    return validateData(apis[path].response, data)
   }
 }

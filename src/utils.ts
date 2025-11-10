@@ -4,7 +4,7 @@
  * @module
  */
 
-import type { StandardSchemaV1 } from '@standard-schema/spec'
+import type { ApiPath, ApiResponse, ApiSchema } from './types.ts'
 
 /**
  * Validates response data against a schema.
@@ -21,15 +21,22 @@ import type { StandardSchemaV1 } from '@standard-schema/spec'
  *
  * @internal
  */
-export async function validateData(
-  schema: StandardSchemaV1<Record<string, unknown>>,
+export async function validateData<
+  T extends ApiSchema,
+  Path extends ApiPath<T>,
+>(
+  schema: T[Path]['response'] | undefined,
   data: unknown,
-): Promise<Record<string, unknown>> {
+): Promise<ApiResponse<T, Path>> {
+  if (!schema) {
+    return data as ApiResponse<T, Path>
+  }
+
   const result = await schema['~standard'].validate(data)
 
   if (result.issues) {
     throw new Error(`Validation failed: ${JSON.stringify(result.issues)}`)
   }
 
-  return result.value
+  return result.value as ApiResponse<T, Path>
 }
