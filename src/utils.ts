@@ -4,6 +4,7 @@
  * @module
  */
 
+import type { StandardSchemaV1 } from '@standard-schema/spec'
 import type { ApiPath, ApiResponse, ApiSchema } from './types.ts'
 
 /**
@@ -25,9 +26,14 @@ export async function validateData<
   T extends ApiSchema,
   Path extends ApiPath<T>,
 >(
-  schema: T[Path]['response'] | undefined,
+  apiSchema: T[Path],
+  key: keyof T[Path],
   data: unknown,
 ): Promise<ApiResponse<T, Path>> {
+  const schema = apiSchema[key] as
+    | StandardSchemaV1<Record<string, unknown>>
+    | undefined
+
   if (!schema) {
     return data as ApiResponse<T, Path>
   }

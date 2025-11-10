@@ -92,9 +92,6 @@ export function createFetch<Schema extends ApiSchema>(
       Record<string, unknown>
     >
 
-    // Build URL with params and query
-    const url = createUrl(baseUrl, path, { ...params, ...query })
-
     // Prepare fetch options with default method and headers
     const requestInit: RequestInit = {
       ...sharedInit,
@@ -110,14 +107,21 @@ export function createFetch<Schema extends ApiSchema>(
       requestInit.body = JSON.stringify(body)
     }
 
+    // Build URL with params and query
+    const url = createUrl(baseUrl, path, { ...params, ...query })
+
     // Make request
     const response = await fetch(url, requestInit)
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
+      throw new Error(`HTTP error! status: ${response.status}`, {
+        cause: response,
+      })
     }
 
+    // Get response data
     const data = await response.json()
-    return validateData(apis[path].response, data)
+
+    return validateData(apis[path], 'response', data)
   }
 }
