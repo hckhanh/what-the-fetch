@@ -1,21 +1,14 @@
 import { type } from 'arktype'
 import * as v from 'valibot'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { z } from 'zod'
 import { createFetch } from '../src'
 
-// Mock fetch globally
 let fetchMock: ReturnType<typeof vi.fn>
-const originalFetch = global.fetch
 
 beforeEach(() => {
   fetchMock = vi.fn()
-  // biome-ignore lint/suspicious/noExplicitAny: Need to mock global fetch
-  global.fetch = fetchMock as any
-})
-
-afterEach(() => {
-  global.fetch = originalFetch
+  vi.stubGlobal('fetch', fetchMock)
 })
 
 describe('Schema Libraries Integration', () => {

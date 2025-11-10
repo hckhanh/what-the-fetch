@@ -1,19 +1,12 @@
 import type { StandardSchemaV1 } from '@standard-schema/spec'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { createFetch } from '../src'
 
-// Mock fetch globally
 let fetchMock: ReturnType<typeof vi.fn>
-const originalFetch = global.fetch
 
 beforeEach(() => {
   fetchMock = vi.fn()
-  // biome-ignore lint/suspicious/noExplicitAny: Need to mock global fetch
-  global.fetch = fetchMock as any
-})
-
-afterEach(() => {
-  global.fetch = originalFetch
+  vi.stubGlobal('fetch', fetchMock)
 })
 
 // Helper to create a mock Standard Schema
