@@ -13,6 +13,7 @@ export default defineConfig({
       exclude: [...coverageConfigDefaults.exclude, 'tsdown.config.*'],
     },
 
+    clearMocks: true,
     unstubGlobals: true,
   },
 })
