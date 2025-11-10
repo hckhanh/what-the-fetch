@@ -1,18 +1,16 @@
 import type { StandardSchemaV1 } from '@standard-schema/spec'
-import { beforeEach, bench, describe, vi } from 'vitest'
+import { bench, describe, vi } from 'vitest'
 import { createFetch } from '../src'
 
-beforeEach(() => {
-  vi.hoisted(() =>
-    vi.stubGlobal(
-      'fetch',
-      vi.fn().mockResolvedValue({
-        ok: true,
-        json: async () => ({ id: 1, name: 'Test' }),
-      }),
-    ),
-  )
-})
+vi.hoisted(() =>
+  vi.stubGlobal(
+    'fetch',
+    vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ id: 1, name: 'Test' }),
+    }),
+  ),
+)
 
 // Helper to create a mock Standard Schema
 function createMockSchema<T>(_value: T): StandardSchemaV1<T> {
