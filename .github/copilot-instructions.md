@@ -1,8 +1,8 @@
-# Copilot Instructions for afetch
+# Copilot Instructions for what-the-fetch
 
 ## Project Overview
 
-This is **afetch**, a type-safe API client library with schema validation using Standard Schema. The project provides end-to-end type inference for API requests and responses, integrating with popular schema validation libraries like Zod, Valibot, and ArkType.
+This is **what-the-fetch**, a type-safe API client library with schema validation using Standard Schema. The project provides end-to-end type inference for API requests and responses, integrating with popular schema validation libraries like Zod, Valibot, and ArkType.
 
 ## Installation & Setup
 
