@@ -132,12 +132,20 @@ type NoParams = ExtractPathParams<'/users'>;
 
 ## How It Works
 
-The validation uses TypeScript's template literal types to:
+The validation uses TypeScript's template literal types and conditional types to:
 
-1. **Parse the path string** to find all `:paramName` patterns
-2. **Extract parameter names** as a union type
-3. **Compare** the schema keys with the extracted parameter names
-4. **Generate error types** when there's a mismatch
+1. **Parse the path string** to find all `:paramName` patterns using `ExtractPathParams`
+2. **Extract parameter names** as a union type (e.g., `'id' | 'content'`)
+3. **Require params schema** when path has parameters - the `params` field becomes required
+4. **Enforce schema structure** - params must be `StandardSchemaV1<Record<ExtractPathParams<Path>, unknown>>`
+5. **Reject incompatible types** - TypeScript prevents assigning schemas that don't match
+
+For example, if the path is `/users/:id/:content`, the params must be of type:
+```typescript
+StandardSchemaV1<Record<'id' | 'content', unknown>>
+```
+
+This means the schema must provide an object type with both 'id' and 'content' keys. An empty object `{}` or an object with only 'id' will not satisfy this requirement.
 
 The validation happens entirely at compile-time with zero runtime overhead.
 

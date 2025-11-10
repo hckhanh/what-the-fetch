@@ -33,56 +33,6 @@ export type ExtractPathParams<Path extends string> =
       : never
 
 /**
- * Validates that params schema keys match the path parameters.
- *
- * If the path has parameters (e.g., `/users/:id`), this type ensures that:
- * 1. The params schema is defined
- * 2. The params schema keys exactly match the path parameter names
- *
- * @template Path - The path template string
- * @template ParamsSchema - The params schema from the API definition
- *
- * @internal
- */
-type ValidatePathParams<
-  Path extends string,
-  ParamsSchema,
-> = ExtractPathParams<Path> extends never
-  ? // No path params, params schema can be undefined or any
-    ParamsSchema
-  : // Has path params, must have params schema with matching keys
-    ParamsSchema extends StandardSchemaV1<infer Params>
-    ? Params extends Record<string, unknown>
-      ? // Check if params is empty object when path has params
-        keyof Params extends never
-        ? {
-            error: 'Path has parameters but params schema is empty'
-            required: ExtractPathParams<Path>
-          }
-        : // Check if all path params exist in schema and all schema keys exist in path
-          [ExtractPathParams<Path>] extends [keyof Params]
-          ? [keyof Params] extends [ExtractPathParams<Path>]
-            ? ParamsSchema
-            : {
-                error: 'Params schema has extra keys not present in path'
-                expected: ExtractPathParams<Path>
-                actual: keyof Params
-              }
-          : {
-              error: 'Path parameters do not match params schema keys'
-              expected: ExtractPathParams<Path>
-              actual: keyof Params
-            }
-      : ParamsSchema
-    : ExtractPathParams<Path> extends never
-      ? // No params in path, undefined is OK
-        ParamsSchema
-      : {
-          error: 'Path has parameters but params schema is missing or invalid'
-          required: ExtractPathParams<Path>
-        }
-
-/**
  * Schema definition for an API endpoint.
  *
  * Maps API paths to their schema definitions, including optional schemas for
@@ -114,13 +64,21 @@ type ValidatePathParams<
  * ```
  */
 export type ApiSchema = {
-  [Path in string]: {
-    // biome-ignore lint/suspicious/noExplicitAny: Need to accept any StandardSchemaV1 type while validating params
-    params?: ValidatePathParams<Path, any>
-    query?: StandardSchemaV1<Record<string, unknown>>
-    body?: StandardSchemaV1<Record<string, unknown>>
-    response?: StandardSchemaV1<Record<string, unknown>>
-  }
+  [Path in string]: ExtractPathParams<Path> extends never
+    ? {
+        // No params in path - params is optional
+        params?: StandardSchemaV1<Record<string, unknown>>
+        query?: StandardSchemaV1<Record<string, unknown>>
+        body?: StandardSchemaV1<Record<string, unknown>>
+        response?: StandardSchemaV1<Record<string, unknown>>
+      }
+    : {
+        // Has params in path - params is REQUIRED and must be a StandardSchemaV1 matching the path params
+        params: StandardSchemaV1<Record<ExtractPathParams<Path>, unknown>>
+        query?: StandardSchemaV1<Record<string, unknown>>
+        body?: StandardSchemaV1<Record<string, unknown>>
+        response?: StandardSchemaV1<Record<string, unknown>>
+      }
 }
 
 /**

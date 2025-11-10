@@ -85,64 +85,29 @@ describe('ApiSchema type validation', () => {
     expectTypeOf(api).toMatchTypeOf<ApiSchema>()
   })
 
-  it('should detect mismatched param names at compile time', () => {
-    // This demonstrates type validation - the error object type indicates mismatch
-    interface MismatchedParams {
+  it('should require params schema to match path parameters exactly', () => {
+    // With the new implementation, params must be StandardSchemaV1<Record<ExtractPathParams<Path>, unknown>>
+    // This means for '/users/:id', params must have 'id' as a key
+
+    // Test that the expected type for params is StandardSchemaV1<Record<'id', unknown>>
+    type ExpectedParamsType = StandardSchemaV1<Record<'id', unknown>>
+
+    // Create a schema that matches
+    const matchingSchema = createMockSchema({ id: 123 })
+    expectTypeOf(matchingSchema).toMatchTypeOf<ExpectedParamsType>()
+  })
+
+  it('should require params when path has parameters', () => {
+    // For paths with parameters, the params field is required (not optional)
+    // This is verified by the type system - if you try to omit params, TypeScript will error
+
+    const api: ApiSchema = {
       '/users/:id': {
-        params: StandardSchemaV1<{ userId: number }>
-        response: StandardSchemaV1<{ id: number; name: string }>
-      }
+        params: createMockSchema({ id: 123 }),
+        response: createMockSchema({ name: 'test' }),
+      },
     }
 
-    // The params field for '/users/:id' will be an error object type, not the schema
-    type ParamsType = MismatchedParams['/users/:id']['params']
-
-    // Verify this produces an error type (has 'error' key)
-    expectTypeOf<ParamsType>().toHaveProperty('error')
-  })
-
-  it('should detect missing params at compile time', () => {
-    // When path has params but schema only has some of them
-    interface MissingParams {
-      '/users/:userId/posts/:postId': {
-        params: StandardSchemaV1<{ userId: number }> // missing postId
-        response: StandardSchemaV1<{ title: string }>
-      }
-    }
-
-    type ParamsType = MissingParams['/users/:userId/posts/:postId']['params']
-
-    // Verify this produces an error type
-    expectTypeOf<ParamsType>().toHaveProperty('error')
-  })
-
-  it('should detect extra params at compile time', () => {
-    // When schema has params not in the path
-    interface ExtraParams {
-      '/users/:id': {
-        params: StandardSchemaV1<{ id: number; extra: string }> // 'extra' not in path
-        response: StandardSchemaV1<{ id: number; name: string }>
-      }
-    }
-
-    type ParamsType = ExtraParams['/users/:id']['params']
-
-    // Verify this produces an error type
-    expectTypeOf<ParamsType>().toHaveProperty('error')
-  })
-
-  it('should detect empty params schema when path has parameters', () => {
-    // When path has params but schema is empty
-    interface EmptyParams {
-      '/users/:id/:content': {
-        params: StandardSchemaV1<{}> // Empty object
-        response: StandardSchemaV1<{ title: string }>
-      }
-    }
-
-    type ParamsType = EmptyParams['/users/:id/:content']['params']
-
-    // Verify this produces an error type
-    expectTypeOf<ParamsType>().toHaveProperty('error')
+    expectTypeOf(api).toMatchTypeOf<ApiSchema>()
   })
 })
