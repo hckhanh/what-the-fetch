@@ -7,17 +7,15 @@
 import type { StandardSchemaV1 } from '@standard-schema/spec'
 
 /**
- * Validates response data against a schema.
+ * Validates data against a Standard Schema.
  *
- * If a response schema is defined, validates the data using Standard Schema.
- * Throws an error if validation fails.
+ * Takes any data and validates it using the provided Standard Schema implementation.
+ * If validation fails, throws an error with the validation issues.
  *
- * @template T - The API schema type
- * @template Path - The specific API path
- * @param schema - The schema definition for the path
- * @param data - The response data to validate
- * @returns The validated response data
- * @throws {Error} If validation fails
+ * @param schema - A Standard Schema instance to validate against
+ * @param data - The data to validate (can be any value)
+ * @returns A promise that resolves to the validated data
+ * @throws {Error} If validation fails, with validation issues in the error message
  *
  * @internal
  */

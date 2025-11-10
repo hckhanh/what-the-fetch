@@ -51,8 +51,10 @@ Rework `createFetch()` to support shared `RequestInit` and improve validation lo
 
 5. **Validation logic refactored**
    - Replaced `validateResponse()` with `validateData()` utility
-   - Simplified validation logic to directly validate response data
-   - Better separation of concerns
+   - Simplified function signature by removing generic type parameters
+   - `validateData()` now accepts `StandardSchemaV1<Record<string, unknown>>` and `unknown` data
+   - Validation logic now directly validates response data against the schema
+   - Better separation of concerns and improved type clarity
 
 **Migration Guide:**
 
