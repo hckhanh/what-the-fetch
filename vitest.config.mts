@@ -12,5 +12,7 @@ export default defineConfig({
     coverage: {
       exclude: [...coverageConfigDefaults.exclude, 'tsdown.config.*'],
     },
+
+    unstubGlobals: true,
   },
 })

@@ -1,16 +1,18 @@
 import type { StandardSchemaV1 } from '@standard-schema/spec'
-import { afterAll, bench, describe, vi } from 'vitest'
+import { beforeEach, bench, describe, vi } from 'vitest'
 import { createFetch } from '../src'
 
-vi.hoisted(() =>
-  vi.stubGlobal(
-    'fetch',
-    vi.fn().mockResolvedValue({
-      ok: true,
-      json: async () => ({ id: 1, name: 'Test' }),
-    }),
-  ),
-)
+beforeEach(() => {
+  vi.hoisted(() =>
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({ id: 1, name: 'Test' }),
+      }),
+    ),
+  )
+})
 
 // Helper to create a mock Standard Schema
 function createMockSchema<T>(_value: T): StandardSchemaV1<T> {
@@ -95,9 +97,5 @@ describe('createFetch benchmarks', () => {
     }
     const apiFetchSimple = createFetch(apiSimple, 'https://api.example.com')
     await apiFetchSimple('/users')
-  })
-
-  afterAll(() => {
-    vi.unstubAllGlobals()
   })
 })
