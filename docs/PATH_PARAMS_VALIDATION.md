@@ -100,6 +100,14 @@ const badApi4 = {
     response: z.object({ id: z.number(), name: z.string() })
   }
 };
+
+// ❌ Empty params schema when path has parameters
+const badApi5 = {
+  '/users/:id/:content': {
+    params: z.object({}), // Type error: empty object when params required
+    response: z.object({ title: z.string() })
+  }
+};
 ```
 
 ## ExtractPathParams Utility Type

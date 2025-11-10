@@ -130,4 +130,19 @@ describe('ApiSchema type validation', () => {
     // Verify this produces an error type
     expectTypeOf<ParamsType>().toHaveProperty('error')
   })
+
+  it('should detect empty params schema when path has parameters', () => {
+    // When path has params but schema is empty
+    interface EmptyParams {
+      '/users/:id/:content': {
+        params: StandardSchemaV1<{}> // Empty object
+        response: StandardSchemaV1<{ title: string }>
+      }
+    }
+
+    type ParamsType = EmptyParams['/users/:id/:content']['params']
+
+    // Verify this produces an error type
+    expectTypeOf<ParamsType>().toHaveProperty('error')
+  })
 })

@@ -53,20 +53,26 @@ type ValidatePathParams<
   : // Has path params, must have params schema with matching keys
     ParamsSchema extends StandardSchemaV1<infer Params>
     ? Params extends Record<string, unknown>
-      ? // Check if all path params exist in schema and all schema keys exist in path
-        [ExtractPathParams<Path>] extends [keyof Params]
-        ? [keyof Params] extends [ExtractPathParams<Path>]
-          ? ParamsSchema
+      ? // Check if params is empty object when path has params
+        keyof Params extends never
+        ? {
+            error: 'Path has parameters but params schema is empty'
+            required: ExtractPathParams<Path>
+          }
+        : // Check if all path params exist in schema and all schema keys exist in path
+          [ExtractPathParams<Path>] extends [keyof Params]
+          ? [keyof Params] extends [ExtractPathParams<Path>]
+            ? ParamsSchema
+            : {
+                error: 'Params schema has extra keys not present in path'
+                expected: ExtractPathParams<Path>
+                actual: keyof Params
+              }
           : {
-              error: 'Params schema has extra keys not present in path'
+              error: 'Path parameters do not match params schema keys'
               expected: ExtractPathParams<Path>
               actual: keyof Params
             }
-        : {
-            error: 'Path parameters do not match params schema keys'
-            expected: ExtractPathParams<Path>
-            actual: keyof Params
-          }
       : ParamsSchema
     : ExtractPathParams<Path> extends never
       ? // No params in path, undefined is OK

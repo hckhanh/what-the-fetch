@@ -121,6 +121,14 @@ const validApi5: ApiSchema = {
 //   },
 // }
 
+// ❌ Empty params schema when path has parameters
+// const invalidApi6: ApiSchema = {
+//   '/users/:id/:content': {
+//     params: z.object({}), // Type error: empty object when params required
+//     response: z.object({ title: z.string() }),
+//   },
+// }
+
 // Suppress unused variable warnings
 export {
   validApi1,
