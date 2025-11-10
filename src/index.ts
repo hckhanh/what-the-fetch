@@ -33,7 +33,13 @@ import { createUrl } from 'fast-url'
 import type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
 import { validateData } from './utils.ts'
 
-export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
+export type {
+  ApiPath,
+  ApiResponse,
+  ApiSchema,
+  ExtractPathParams,
+  FetchOptions,
+} from './types.ts'
 
 /**
  * Creates a type-safe fetch function for your API.
