@@ -13,6 +13,7 @@ what-the-fetch is a type-safe API client library that integrates schema validati
 ## Features
 
 - **Type-safe**: Full TypeScript support with end-to-end type inference
+- **Path parameter validation**: Compile-time validation ensures params schema matches path parameters
 - **Schema validation**: Built-in support for Standard Schema (compatible with Zod, Valibot, ArkType, and more)
 - **Flexible**: Works with any schema library that implements Standard Schema
 - **Minimal**: Small bundle size with minimal dependencies
@@ -163,12 +164,36 @@ Creates a type-safe fetch function for your API.
 
 Each path in your schema can have:
 
-- `params`: Schema for URL path parameters (e.g., `:id`)
+- `params`: Schema for URL path parameters (e.g., `:id`). The schema keys must exactly match the parameter names in the path.
 - `query`: Schema for query string parameters
 - `body`: Schema for request body (automatically sets method to POST)
 - `response`: Schema for response validation
 
 All schemas must implement the Standard Schema specification.
+
+### Path Parameter Validation
+
+The library validates at compile-time that your `params` schema matches the path parameters:
+
+```typescript
+// ✅ Correct - params match path
+const api = {
+  '/users/:id': {
+    params: z.object({ id: z.number() }),
+    response: z.object({ name: z.string() })
+  }
+};
+
+// ❌ Type error - 'userId' doesn't match ':id'
+const badApi = {
+  '/users/:id': {
+    params: z.object({ userId: z.number() }), // Compile error!
+    response: z.object({ name: z.string() })
+  }
+};
+```
+
+For more details, see the [Path Parameters Validation Guide](./docs/PATH_PARAMS_VALIDATION.md).
 
 ## Why what-the-fetch?
 
