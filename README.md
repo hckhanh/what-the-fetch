@@ -152,12 +152,12 @@ Creates a type-safe fetch function for your API.
 **Parameters:**
 - `schema`: An object mapping API paths to their schema definitions
 - `baseUrl`: The base URL for all API requests
-- `sharedInit` (optional): Shared RequestInit options that will be merged with per-request options
+- `sharedInit` (optional): Shared [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/RequestInit) options that will be merged with per-request options
 
 **Returns:** A typed fetch function that accepts:
 - `path`: The API path (must be a key from your schema)
 - `options` (optional): Request options (params, query, body) based on the path's schema
-- `init` (optional): Per-request RequestInit to customize the fetch request (merged with sharedInit)
+- `init` (optional): Per-request [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/RequestInit) to customize the fetch request (merged with sharedInit)
 
 ### Schema Definition
 

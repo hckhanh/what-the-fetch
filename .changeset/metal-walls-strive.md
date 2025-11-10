@@ -51,9 +51,10 @@ Rework `createFetch()` to support shared `RequestInit` and improve validation lo
 
 5. **Validation logic refactored**
    - Replaced `validateResponse()` with `validateData()` utility
-   - Simplified function signature by removing generic type parameters
-   - `validateData()` now accepts `StandardSchemaV1<Record<string, unknown>>` and `unknown` data
-   - Validation logic now directly validates response data against the schema
+   - `validateData()` now accepts the full API path schema object and a key (e.g., 'response') to extract the specific schema
+   - Function signature: `validateData(apiSchema: T[Path], key: keyof T[Path], data: unknown)`
+   - Extracts the schema internally using the provided key, improving flexibility and type safety
+   - Validation logic directly validates data against the extracted schema
    - Better separation of concerns and improved type clarity
 
 **Migration Guide:**

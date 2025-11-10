@@ -45,8 +45,8 @@ export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
  * @template Schema - The API schema definition mapping paths to their schemas
  * @param apis - An object mapping API paths to their schema definitions
  * @param baseUrl - The base URL for all API requests
- * @param sharedInit - Optional shared RequestInit options that will be merged with per-request options
- * @returns A typed fetch function that accepts path, optional options, and optional per-request RequestInit
+ * @param sharedInit - Optional shared {@link RequestInit} options that will be merged with per-request options
+ * @returns A typed fetch function that accepts path, optional options, and optional per-request {@link RequestInit}
  *
  * @example
  * ```typescript
@@ -92,9 +92,6 @@ export function createFetch<Schema extends ApiSchema>(
       Record<string, unknown>
     >
 
-    // Build URL with params and query
-    const url = createUrl(baseUrl, path, { ...params, ...query })
-
     // Prepare fetch options with default method and headers
     const requestInit: RequestInit = {
       ...sharedInit,
@@ -110,20 +107,21 @@ export function createFetch<Schema extends ApiSchema>(
       requestInit.body = JSON.stringify(body)
     }
 
+    // Build URL with params and query
+    const url = createUrl(baseUrl, path, { ...params, ...query })
+
     // Make request
     const response = await fetch(url, requestInit)
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
+      throw new Error(`HTTP error! status: ${response.status}`, {
+        cause: response,
+      })
     }
 
+    // Get response data
     const data = await response.json()
 
-    const responseSchema = apis[path].response
-    if (responseSchema) {
-      return validateData(responseSchema, data)
-    }
-
-    return data
+    return validateData(apis[path], 'response', data)
   }
 }
