@@ -105,16 +105,35 @@ const newUser = await apiFetch('/users', {
 });
 ```
 
-### With Custom Headers
+### With Shared Headers
+
+You can provide shared headers when creating the fetch function:
+
+```typescript
+const apiFetch = createFetch(
+  api,
+  'https://api.example.com',
+  {
+    headers: {
+      'Authorization': 'Bearer token',
+    },
+  }
+);
+
+// All requests will include the Authorization header
+const user = await apiFetch('/users/:id', { params: { id: 123 } });
+```
+
+### With Per-Request Headers
+
+You can also provide per-request headers that will be merged with shared headers:
 
 ```typescript
 const apiFetch = createFetch(api, 'https://api.example.com');
 
 const user = await apiFetch(
   '/users/:id',
-  {
-    params: { id: 123 },
-  },
+  { params: { id: 123 } },
   {
     headers: {
       'Authorization': 'Bearer token',
@@ -126,18 +145,19 @@ const user = await apiFetch(
 
 ## API
 
-### `createFetch(schema, baseUrl)`
+### `createFetch(schema, baseUrl, sharedInit?)`
 
 Creates a type-safe fetch function for your API.
 
 **Parameters:**
 - `schema`: An object mapping API paths to their schema definitions
 - `baseUrl`: The base URL for all API requests
+- `sharedInit` (optional): Shared [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/RequestInit) options that will be merged with per-request options
 
 **Returns:** A typed fetch function that accepts:
 - `path`: The API path (must be a key from your schema)
-- `options`: Request options (params, query, body) based on the path's schema
-- `baseInit`: Optional RequestInit to customize the fetch request
+- `options` (optional): Request options (params, query, body) based on the path's schema
+- `init` (optional): Per-request [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/RequestInit) to customize the fetch request (merged with sharedInit)
 
 ### Schema Definition
 

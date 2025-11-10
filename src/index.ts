@@ -18,14 +18,20 @@
  *   }
  * };
  *
- * const apiFetch = createFetch(api, 'https://api.example.com');
+ * // Create fetch with optional shared headers
+ * const apiFetch = createFetch(
+ *   api,
+ *   'https://api.example.com',
+ *   { headers: { 'Authorization': 'Bearer token' } }
+ * );
+ *
  * const user = await apiFetch('/users/:id', { params: { id: 123 } });
  * ```
  */
 
 import { createUrl } from 'fast-url'
 import type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
-import { validateResponse } from './utils.ts'
+import { validateData } from './utils.ts'
 
 export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
 
@@ -39,7 +45,8 @@ export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
  * @template Schema - The API schema definition mapping paths to their schemas
  * @param apis - An object mapping API paths to their schema definitions
  * @param baseUrl - The base URL for all API requests
- * @returns A typed fetch function that accepts path, options, and optional RequestInit
+ * @param sharedInit - Optional shared {@link RequestInit} options that will be merged with per-request options
+ * @returns A typed fetch function that accepts path, optional options, and optional per-request {@link RequestInit}
  *
  * @example
  * ```typescript
@@ -54,7 +61,14 @@ export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
  *   }
  * };
  *
- * const apiFetch = createFetch(api, 'https://api.example.com');
+ * // Create fetch with shared headers
+ * const apiFetch = createFetch(
+ *   api,
+ *   'https://api.example.com',
+ *   {
+ *     headers: { 'Authorization': 'Bearer token' }
+ *   }
+ * );
  *
  * // Type-safe request with validation
  * const user = await apiFetch('/users/:id', {
@@ -66,43 +80,48 @@ export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
 export function createFetch<Schema extends ApiSchema>(
   apis: Schema,
   baseUrl: string,
+  sharedInit?: RequestInit,
 ): <Path extends ApiPath<Schema>>(
   path: Path,
-  options: FetchOptions<Schema, Path>,
-  baseInit?: RequestInit,
+  options?: FetchOptions<Schema, Path>,
+  init?: RequestInit,
 ) => Promise<ApiResponse<Schema, Path>> {
-  return async (path, options, baseInit?: RequestInit) => {
-    const { params, query, body } = options as Record<
+  return async (path, options, init?: RequestInit) => {
+    const { params, query, body } = (options ?? {}) as Record<
       'params' | 'query' | 'body',
       Record<string, unknown>
     >
 
-    // Build URL with params and query
-    const url = createUrl(baseUrl, path, { ...params, ...query })
-
     // Prepare fetch options with default method and headers
-    const init: RequestInit = {
-      method: body ? 'POST' : 'GET',
-      ...baseInit,
+    const requestInit: RequestInit = {
+      ...sharedInit,
+      ...init,
       headers: {
         'Content-Type': 'application/json',
-        ...(baseInit?.headers || {}),
+        ...sharedInit?.headers,
+        ...init?.headers,
       },
     }
 
     if (body) {
-      init.body = JSON.stringify(body)
+      requestInit.body = JSON.stringify(body)
     }
+
+    // Build URL with params and query
+    const url = createUrl(baseUrl, path, { ...params, ...query })
 
     // Make request
-    const response = await fetch(url, init)
+    const response = await fetch(url, requestInit)
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
+      throw new Error(`HTTP error! status: ${response.status}`, {
+        cause: response,
+      })
     }
 
+    // Get response data
     const data = await response.json()
 
-    return validateResponse(apis[path], data)
+    return validateData(apis[path], 'response', data)
   }
 }
