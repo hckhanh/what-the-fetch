@@ -38,7 +38,7 @@ export type ApiSchema = Record<
 /**
  * Extract valid API paths from an API schema.
  *
- * @template Schemas - The APIs schema type
+ * @template Schemas - The API schema type
  */
 export type ApiPath<Schemas extends ApiSchema> = keyof Schemas & string
 

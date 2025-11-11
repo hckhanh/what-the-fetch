@@ -33,7 +33,7 @@ import { createUrl } from 'fast-url'
 import type { ApiData, ApiPath, ApiSchema, FetchOptions } from './types.ts'
 import { validateData, validateRequestData } from './utils.ts'
 
-export type { ApiPath, ApiSchema, FetchOptions } from './types.ts'
+export type { ApiData, ApiPath, ApiSchema, FetchOptions } from './types.ts'
 
 /**
  * Creates a type-safe fetch function for your API.
@@ -87,7 +87,7 @@ export function createFetch<Schema extends ApiSchema>(
   init?: RequestInit,
 ) => Promise<ApiData<Schema, Path, 'response'>> {
   return async (path, options, init?: RequestInit) => {
-    const [params, query, body] = await validateRequestData(
+    const { params, query, body } = await validateRequestData(
       apis[path],
       path,
       options,

@@ -30,7 +30,7 @@ export async function validateData<
   Option extends keyof Schemas[Path],
 >(
   apiSchema: Schemas[Path],
-  option: keyof Schemas[Path],
+  option: Option,
   data: unknown,
 ): Promise<ApiData<Schemas, Path, Option>> {
   const schema = apiSchema[option] as
@@ -52,6 +52,22 @@ export async function validateData<
 
 const paramsRegex = /\/:\w+/
 
+/**
+ * Validates request data (params, query, body) for an API path.
+ *
+ * Checks that parameterized paths have a corresponding params schema defined,
+ * and validates all provided request data against the API schema.
+ *
+ * @template Schemas - The API schema type
+ * @template Path - The specific API path
+ * @param apiSchema - The schema definition for the API path
+ * @param path - The API path string (may contain parameters like /users/:id)
+ * @param options - Optional request data containing params, query, and/or body
+ * @returns A promise resolving to an object with validated params, query, and body
+ * @throws {Error} If the path contains parameters but no params schema is defined
+ *
+ * @internal
+ */
 export async function validateRequestData<
   Schemas extends ApiSchema,
   Path extends ApiPath<Schemas>,
@@ -66,9 +82,11 @@ export async function validateRequestData<
     )
   }
 
-  return Promise.all([
+  const [params, query, body] = await Promise.all([
     validateData<Schemas, Path, 'params'>(apiSchema, 'params', options?.params),
     validateData<Schemas, Path, 'query'>(apiSchema, 'query', options?.query),
     validateData<Schemas, Path, 'body'>(apiSchema, 'body', options?.body),
   ])
+
+  return { params, query, body }
 }
