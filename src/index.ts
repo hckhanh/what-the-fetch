@@ -101,7 +101,8 @@ export function createFetch<Schema extends ApiSchema>(
     const [method, cleanPath] = parseMethodFromPath(path)
 
     // Determine the method: use prefix if available, otherwise POST if body exists, otherwise GET
-    const httpMethod = method || (body !== undefined && body !== null ? 'POST' : 'GET')
+    const httpMethod =
+      method || (body !== undefined && body !== null ? 'POST' : 'GET')
 
     // Prepare fetch options with method and headers
     const requestInit: RequestInit = {
