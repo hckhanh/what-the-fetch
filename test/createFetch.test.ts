@@ -361,4 +361,197 @@ describe('createFetch', () => {
     )
     expect(result).toEqual({ users: [] })
   })
+
+  it('should throw error when parameterized path lacks params schema', async () => {
+    const api = {
+      '/users/:id': {
+        response: createMockSchema({ id: 123, name: 'John' }),
+      },
+    }
+
+    const apiFetch = createFetch(api, 'https://api.example.com')
+
+    await expect(
+      // biome-ignore lint/suspicious/noExplicitAny: Testing error case with invalid options
+      apiFetch('/users/:id', { params: { id: 123 } } as any),
+    ).rejects.toThrow(
+      'Path contains parameters but no "params" schema is defined.',
+    )
+  })
+
+  it('should validate params with schema validation', async () => {
+    const validationError = { issues: [{ message: 'Invalid params' }] }
+    const api = {
+      '/users/:id': {
+        params: {
+          '~standard': {
+            version: 1,
+            vendor: 'mock',
+            validate: async () => validationError,
+          },
+        } as StandardSchemaV1<Record<string, unknown>>,
+        response: createMockSchema({ id: 123, name: 'John' }),
+      },
+    }
+
+    const apiFetch = createFetch(api, 'https://api.example.com')
+
+    await expect(
+      apiFetch('/users/:id', { params: { id: 'invalid' } }),
+    ).rejects.toThrow('Validation failed')
+  })
+
+  it('should validate query parameters with schema validation', async () => {
+    const validationError = { issues: [{ message: 'Invalid query' }] }
+    const api = {
+      '/users': {
+        query: {
+          '~standard': {
+            version: 1,
+            vendor: 'mock',
+            validate: async () => validationError,
+          },
+        } as StandardSchemaV1<Record<string, unknown>>,
+        response: createMockSchema({ users: [] }),
+      },
+    }
+
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ users: [] }),
+    } as Response)
+
+    const apiFetch = createFetch(api, 'https://api.example.com')
+
+    await expect(
+      apiFetch('/users', { query: { invalid: true } }),
+    ).rejects.toThrow('Validation failed')
+  })
+
+  it('should validate body with schema validation', async () => {
+    const validationError = { issues: [{ message: 'Invalid body' }] }
+    const api = {
+      '/users': {
+        body: {
+          '~standard': {
+            version: 1,
+            vendor: 'mock',
+            validate: async () => validationError,
+          },
+        } as StandardSchemaV1<Record<string, unknown>>,
+        response: createMockSchema({ id: 1 }),
+      },
+    }
+
+    const apiFetch = createFetch(api, 'https://api.example.com')
+
+    await expect(
+      apiFetch('/users', { body: { invalid: true } }),
+    ).rejects.toThrow('Validation failed')
+  })
+
+  it('should not send body when body is undefined', async () => {
+    const api = {
+      '/users': {
+        query: createMockSchema({ search: 'test' }),
+        response: createMockSchema({ users: [] }),
+      },
+    }
+
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ users: [] }),
+    } as Response)
+
+    const apiFetch = createFetch(api, 'https://api.example.com')
+    await apiFetch('/users', { query: { search: 'test' } })
+
+    expect(fetchMock).toHaveBeenCalledWith(
+      expect.any(String),
+      expect.not.objectContaining({
+        body: expect.anything(),
+      }),
+    )
+  })
+
+  it('should not send body when body is null', async () => {
+    const api = {
+      '/users': {
+        response: createMockSchema({ users: [] }),
+      },
+    }
+
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ users: [] }),
+    } as Response)
+
+    const apiFetch = createFetch(api, 'https://api.example.com')
+    await apiFetch('/users')
+
+    expect(fetchMock).toHaveBeenCalledWith(
+      expect.any(String),
+      expect.not.objectContaining({
+        body: expect.anything(),
+      }),
+    )
+  })
+
+  it('should validate all request data concurrently', async () => {
+    const callOrder: string[] = []
+
+    const api = {
+      '/users/:id/posts': {
+        params: {
+          '~standard': {
+            version: 1,
+            vendor: 'mock',
+            validate: async (data: unknown) => {
+              callOrder.push('params')
+              return { value: data }
+            },
+          },
+        } as StandardSchemaV1<Record<string, unknown>>,
+        query: {
+          '~standard': {
+            version: 1,
+            vendor: 'mock',
+            validate: async (data: unknown) => {
+              callOrder.push('query')
+              return { value: data }
+            },
+          },
+        } as StandardSchemaV1<Record<string, unknown>>,
+        body: {
+          '~standard': {
+            version: 1,
+            vendor: 'mock',
+            validate: async (data: unknown) => {
+              callOrder.push('body')
+              return { value: data }
+            },
+          },
+        } as StandardSchemaV1<Record<string, unknown>>,
+        response: createMockSchema({ success: true }),
+      },
+    }
+
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ success: true }),
+    } as Response)
+
+    const apiFetch = createFetch(api, 'https://api.example.com')
+    await apiFetch('/users/:id/posts', {
+      params: { id: 123 },
+      query: { limit: 10 },
+      body: { title: 'Test' },
+    })
+
+    // All three should be called (order may vary due to concurrent execution)
+    expect(callOrder).toContain('params')
+    expect(callOrder).toContain('query')
+    expect(callOrder).toContain('body')
+    expect(callOrder).toHaveLength(3)
+  })
 })

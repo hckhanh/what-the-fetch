@@ -18,7 +18,7 @@ function createFetch<Schema extends ApiSchema>(
   path: Path,
   options?: FetchOptions<Schema, Path>,
   init?: RequestInit
-) => Promise<ApiResponse<Schema, Path>>
+) => Promise<ApiData<Schema, Path, 'response'>>
 ```
 
 **Parameters:**
@@ -85,6 +85,8 @@ Each path in your schema can have:
 - `query` - Schema for query string parameters
 - `body` - Schema for request body (automatically sets method to POST)
 - `response` - Schema for response validation
+
+**Important:** If your path contains parameters (e.g., `/users/:id`), you **must** define a `params` schema. Attempting to use a parameterized path without a params schema will throw an error at runtime.
 
 **Example:**
 
@@ -153,28 +155,116 @@ type Options = FetchOptions<typeof api, '/users/:id'>;
 // Options = { params: { id: number }, query?: { fields?: string } }
 ```
 
-### `ApiResponse<T, Path>`
+### `ApiData<Schemas, Path, Option>`
 
-Extract the response type for a specific API path.
+Extract the inferred data type for a specific schema option from an API path.
 
 ```typescript
-type ApiResponse<T extends ApiSchema, Path extends ApiPath<T>> =
-  // Infers response type from schema
+type ApiData<
+  Schemas extends ApiSchema,
+  Path extends ApiPath<Schemas>,
+  Option extends keyof Schemas[Path]
+>
 ```
 
-Infers the correct return type based on the response schema definition.
+This is a flexible type that extracts the inferred TypeScript type for any schema option (`'params'`, `'query'`, `'body'`, or `'response'`) from a specific API path. This replaces the older `ApiResponse` type and provides more flexibility for working with different parts of your API schema.
 
-**Example:**
+**Parameters:**
+- `Schemas` - The complete API schema type
+- `Path` - The specific API path to extract from
+- `Option` - The schema option to extract (`'params'`, `'query'`, `'body'`, or `'response'`)
+
+**Examples:**
 
 ```typescript
 const api = {
   '/users/:id': {
+    params: z.object({ id: z.number() }),
+    query: z.object({ fields: z.string().optional() }),
     response: z.object({ id: z.number(), name: z.string() })
   }
 };
 
-type Response = ApiResponse<typeof api, '/users/:id'>;
-// Response = { id: number; name: string }
+// Extract params type
+type UserParams = ApiData<typeof api, '/users/:id', 'params'>;
+// UserParams = { id: number }
+
+// Extract query type
+type UserQuery = ApiData<typeof api, '/users/:id', 'query'>;
+// UserQuery = { fields?: string }
+
+// Extract response type
+type UserResponse = ApiData<typeof api, '/users/:id', 'response'>;
+// UserResponse = { id: number; name: string }
+```
+
+**Note:** For backward compatibility, you can create a type alias:
+```typescript
+type ApiResponse<T extends ApiSchema, Path extends ApiPath<T>> = 
+  ApiData<T, Path, 'response'>;
+```
+
+---
+
+## Request Validation
+
+what-the-fetch automatically validates all request data (params, query, and body) as well as response data using the schemas you provide. The validation happens concurrently for optimal performance.
+
+### Validation Behavior
+
+- **Params validation**: If your path contains parameters (e.g., `/users/:id`), you must provide a `params` schema. The library will throw an error if a parameterized path is missing a params schema.
+- **Query validation**: Query parameters are validated if a `query` schema is provided.
+- **Body validation**: Request body is validated if a `body` schema is provided.
+- **Response validation**: Response data is validated if a `response` schema is provided.
+- **Concurrent validation**: All request validations (params, query, body) run concurrently using `Promise.all()` for better performance.
+
+### Validation Errors
+
+When validation fails, the library throws an error with details about the validation issues:
+
+```typescript
+const api = {
+  '/users/:id': {
+    params: z.object({ id: z.number() }),
+    response: z.object({ id: z.number(), name: z.string() })
+  }
+};
+
+const apiFetch = createFetch(api, 'https://api.example.com');
+
+// This will throw a validation error
+try {
+  await apiFetch('/users/:id', { params: { id: 'invalid' } });
+} catch (error) {
+  console.error(error.message); // "Validation failed: [...]"
+}
+```
+
+### Required Params Schema
+
+If your path contains URL parameters, you **must** define a params schema:
+
+```typescript
+// ❌ This will throw an error
+const badApi = {
+  '/users/:id': {
+    response: z.object({ id: z.number(), name: z.string() })
+    // Missing params schema!
+  }
+};
+
+// ✅ This is correct
+const goodApi = {
+  '/users/:id': {
+    params: z.object({ id: z.number() }),
+    response: z.object({ id: z.number(), name: z.string() })
+  }
+};
+```
+
+The library detects parameterized paths using the pattern `/:paramName` and will throw this error if no params schema is found:
+```
+Path contains parameters but no "params" schema is defined.
 ```
 
 ---

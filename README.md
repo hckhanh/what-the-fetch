@@ -163,12 +163,14 @@ Creates a type-safe fetch function for your API.
 
 Each path in your schema can have:
 
-- `params`: Schema for URL path parameters (e.g., `:id`)
+- `params`: Schema for URL path parameters (e.g., `:id`) - **Required** for parameterized paths
 - `query`: Schema for query string parameters
 - `body`: Schema for request body (automatically sets method to POST)
 - `response`: Schema for response validation
 
 All schemas must implement the Standard Schema specification.
+
+**Note:** If your path contains parameters (e.g., `/users/:id`), you must define a `params` schema. The library will throw an error at runtime if you attempt to use a parameterized path without a params schema.
 
 ## Why what-the-fetch?
 

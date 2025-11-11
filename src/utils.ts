@@ -50,7 +50,7 @@ export async function validateData<
   return result.value as ApiData<Schema, Path, Option>
 }
 
-const paramsRegex = /\/:\w+/g
+const paramsRegex = /\/:\w+/
 
 export async function validateRequestData<
   Schemas extends ApiSchema,

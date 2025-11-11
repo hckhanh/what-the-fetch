@@ -438,6 +438,10 @@ const post = await apiFetch(
 
 what-the-fetch validates both requests and responses automatically:
 
+<Callout title="Parameterized Paths Require Schema" type="warn">
+  If your path contains parameters (e.g., `/users/:id`), you **must** define a `params` schema. The library will throw an error at runtime if you attempt to use a parameterized path without a params schema.
+</Callout>
+
 ```typescript
 const api = {
   '/users': {
