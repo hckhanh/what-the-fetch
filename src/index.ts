@@ -100,11 +100,14 @@ export function createFetch<Schema extends ApiSchema>(
     // Parse method from path (e.g., '@get/users' -> 'GET', '/users')
     const [method, cleanPath] = parseMethodFromPath(path)
 
+    // Determine the method: use prefix if available, otherwise POST if body exists, otherwise GET
+    const httpMethod = method || (body !== undefined && body !== null ? 'POST' : 'GET')
+
     // Prepare fetch options with method and headers
     const requestInit: RequestInit = {
       ...sharedInit,
       ...init,
-      method,
+      method: httpMethod,
       headers: {
         'Content-Type': 'application/json',
         ...sharedInit?.headers,
