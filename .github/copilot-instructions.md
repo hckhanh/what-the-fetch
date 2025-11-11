@@ -76,6 +76,58 @@ test/
 3. Run `npm run format` to auto-format
 4. Run `npm test` to verify tests pass
 5. Run `npm run build` to ensure the build succeeds
+6. Add a changeset for release tracking (see below)
+
+## Changesets
+
+This project uses [Changesets](https://github.com/changesets/changesets) for version management and changelog generation.
+
+### When to Add a Changeset
+
+Add a changeset when you make changes that affect the public API or user-facing behavior:
+- Adding new features (minor version bump)
+- Fixing bugs (patch version bump)
+- Breaking changes (major version bump)
+- Performance improvements
+- Documentation changes that affect usage
+
+### How to Add a Changeset
+
+Run the following command and follow the interactive prompts:
+
+```bash
+npx changeset add
+```
+
+The CLI will ask you:
+1. **What type of change**: Select `patch`, `minor`, or `major`
+   - **patch**: Bug fixes, documentation updates, internal improvements
+   - **minor**: New features, backward-compatible changes
+   - **major**: Breaking changes that require user code changes
+2. **Summary**: Provide a clear, concise summary of the change
+
+### Changeset Best Practices
+
+- **Be descriptive**: Write summaries that explain what changed and why
+- **Include examples**: For new features, include code examples in the changeset
+- **One changeset per PR**: Generally, create one changeset per pull request
+- **Edit the changeset file**: After creation, you can manually edit `.changeset/*.md` to add more details, examples, or formatting
+
+### Changeset File Format
+
+Changesets are stored in `.changeset/*.md` files with the following format:
+
+```markdown
+---
+"what-the-fetch": minor
+---
+
+Brief summary of the change
+
+### Optional: Detailed Description
+
+More details, code examples, migration guides, etc.
+```
 
 ## API Design Principles
 
@@ -93,12 +145,14 @@ test/
 3. Add JSDoc comments with examples
 4. Write comprehensive tests
 5. Update README.md if adding public APIs
+6. Add a changeset with `npx changeset add` (select "minor")
 
 ### Fixing a Bug
 1. Write a failing test that reproduces the bug
 2. Fix the bug in the source code
 3. Verify the test passes
 4. Add regression tests if needed
+5. Add a changeset with `npx changeset add` (select "patch")
 
 ### Refactoring
 1. Ensure all tests pass before starting
