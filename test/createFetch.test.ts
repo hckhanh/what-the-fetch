@@ -554,4 +554,296 @@ describe('createFetch', () => {
     expect(callOrder).toContain('body')
     expect(callOrder).toHaveLength(3)
   })
+
+  describe('HTTP method prefix', () => {
+    it('should extract GET method from @get prefix', async () => {
+      const api = {
+        '@get/users': {
+          response: createMockSchema({ users: [] }),
+        },
+      }
+
+      fetchMock.mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ users: [] }),
+      } as Response)
+
+      const apiFetch = createFetch(api, 'https://api.example.com')
+      await apiFetch('@get/users')
+
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.example.com/users',
+        expect.objectContaining({
+          method: 'GET',
+        }),
+      )
+    })
+
+    it('should extract POST method from @post prefix', async () => {
+      const api = {
+        '@post/users': {
+          body: createMockSchema({ name: 'John' }),
+          response: createMockSchema({ id: 1, name: 'John' }),
+        },
+      }
+
+      fetchMock.mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ id: 1, name: 'John' }),
+      } as Response)
+
+      const apiFetch = createFetch(api, 'https://api.example.com')
+      await apiFetch('@post/users', { body: { name: 'John' } })
+
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.example.com/users',
+        expect.objectContaining({
+          method: 'POST',
+          body: JSON.stringify({ name: 'John' }),
+        }),
+      )
+    })
+
+    it('should extract PUT method from @put prefix', async () => {
+      const api = {
+        '@put/users/:id': {
+          params: createMockSchema({ id: 123 }),
+          body: createMockSchema({ name: 'Jane' }),
+          response: createMockSchema({ id: 123, name: 'Jane' }),
+        },
+      }
+
+      fetchMock.mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ id: 123, name: 'Jane' }),
+      } as Response)
+
+      const apiFetch = createFetch(api, 'https://api.example.com')
+      await apiFetch('@put/users/:id', {
+        params: { id: 123 },
+        body: { name: 'Jane' },
+      })
+
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.example.com/users/123',
+        expect.objectContaining({
+          method: 'PUT',
+        }),
+      )
+    })
+
+    it('should extract DELETE method from @delete prefix', async () => {
+      const api = {
+        '@delete/users/:id': {
+          params: createMockSchema({ id: 123 }),
+          response: createMockSchema({ success: true }),
+        },
+      }
+
+      fetchMock.mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ success: true }),
+      } as Response)
+
+      const apiFetch = createFetch(api, 'https://api.example.com')
+      await apiFetch('@delete/users/:id', { params: { id: 123 } })
+
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.example.com/users/123',
+        expect.objectContaining({
+          method: 'DELETE',
+        }),
+      )
+    })
+
+    it('should extract PATCH method from @patch prefix', async () => {
+      const api = {
+        '@patch/users/:id': {
+          params: createMockSchema({ id: 123 }),
+          body: createMockSchema({ name: 'Updated' }),
+          response: createMockSchema({ id: 123, name: 'Updated' }),
+        },
+      }
+
+      fetchMock.mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ id: 123, name: 'Updated' }),
+      } as Response)
+
+      const apiFetch = createFetch(api, 'https://api.example.com')
+      await apiFetch('@patch/users/:id', {
+        params: { id: 123 },
+        body: { name: 'Updated' },
+      })
+
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.example.com/users/123',
+        expect.objectContaining({
+          method: 'PATCH',
+        }),
+      )
+    })
+
+    it('should handle path without method prefix (no method set)', async () => {
+      const api = {
+        '/users': {
+          response: createMockSchema({ users: [] }),
+        },
+      }
+
+      fetchMock.mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ users: [] }),
+      } as Response)
+
+      const apiFetch = createFetch(api, 'https://api.example.com')
+      await apiFetch('/users')
+
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.example.com/users',
+        expect.objectContaining({
+          method: undefined,
+        }),
+      )
+    })
+
+    it('should handle @get prefix equivalent to no prefix', async () => {
+      const api1 = {
+        '@get/users': {
+          response: createMockSchema({ users: [] }),
+        },
+      }
+
+      const api2 = {
+        '/users': {
+          response: createMockSchema({ users: [] }),
+        },
+      }
+
+      fetchMock.mockResolvedValue({
+        ok: true,
+        json: async () => ({ users: [] }),
+      } as Response)
+
+      const apiFetch1 = createFetch(api1, 'https://api.example.com')
+      await apiFetch1('@get/users')
+
+      const apiFetch2 = createFetch(api2, 'https://api.example.com')
+      await apiFetch2('/users')
+
+      // Both should call the same URL
+      expect(fetchMock).toHaveBeenNthCalledWith(
+        1,
+        'https://api.example.com/users',
+        expect.anything(),
+      )
+      expect(fetchMock).toHaveBeenNthCalledWith(
+        2,
+        'https://api.example.com/users',
+        expect.anything(),
+      )
+    })
+
+    it('should work with method prefix and path parameters', async () => {
+      const api = {
+        '@post/users/:id/posts': {
+          params: createMockSchema({ id: 123 }),
+          body: createMockSchema({ title: 'New Post' }),
+          response: createMockSchema({ postId: 456, title: 'New Post' }),
+        },
+      }
+
+      fetchMock.mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ postId: 456, title: 'New Post' }),
+      } as Response)
+
+      const apiFetch = createFetch(api, 'https://api.example.com')
+      await apiFetch('@post/users/:id/posts', {
+        params: { id: 123 },
+        body: { title: 'New Post' },
+      })
+
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.example.com/users/123/posts',
+        expect.objectContaining({
+          method: 'POST',
+        }),
+      )
+    })
+
+    it('should work with method prefix, path parameters, and query parameters', async () => {
+      const api = {
+        '@get/users/:id/posts': {
+          params: createMockSchema({ id: 123 }),
+          query: createMockSchema({ limit: 10 }),
+          response: createMockSchema({ posts: [] }),
+        },
+      }
+
+      fetchMock.mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ posts: [] }),
+      } as Response)
+
+      const apiFetch = createFetch(api, 'https://api.example.com')
+      await apiFetch('@get/users/:id/posts', {
+        params: { id: 123 },
+        query: { limit: 10 },
+      })
+
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.example.com/users/123/posts?limit=10',
+        expect.objectContaining({
+          method: 'GET',
+        }),
+      )
+    })
+
+    it('should handle @method prefix with root path', async () => {
+      const api = {
+        '@get': {
+          response: createMockSchema({ status: 'ok' }),
+        },
+      }
+
+      fetchMock.mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ status: 'ok' }),
+      } as Response)
+
+      const apiFetch = createFetch(api, 'https://api.example.com')
+      await apiFetch('@get')
+
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.example.com',
+        expect.objectContaining({
+          method: 'GET',
+        }),
+      )
+    })
+
+    it('should convert method to uppercase', async () => {
+      const api = {
+        '@GeT/users': {
+          response: createMockSchema({ users: [] }),
+        },
+      }
+
+      fetchMock.mockResolvedValueOnce({
+        ok: true,
+        json: async () => ({ users: [] }),
+      } as Response)
+
+      const apiFetch = createFetch(api, 'https://api.example.com')
+      await apiFetch('@GeT/users')
+
+      expect(fetchMock).toHaveBeenCalledWith(
+        'https://api.example.com/users',
+        expect.objectContaining({
+          method: 'GET',
+        }),
+      )
+    })
+  })
 })

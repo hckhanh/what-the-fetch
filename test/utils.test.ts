@@ -1,6 +1,10 @@
 import type { StandardSchemaV1 } from '@standard-schema/spec'
 import { describe, expect, it } from 'vitest'
-import { validateData, validateRequestData } from '../src/utils'
+import {
+  parseMethodFromPath,
+  validateData,
+  validateRequestData,
+} from '../src/utils'
 
 // Helper to create a mock Standard Schema
 function createMockSchema<T>(_value: T): StandardSchemaV1<T> {
@@ -266,5 +270,115 @@ describe('validateRequestData', () => {
       const result = await validateRequestData(apiSchema, path, undefined)
       expect(result).toBeDefined()
     }
+  })
+
+  it('should handle method-prefixed paths correctly', async () => {
+    const apiSchema = {
+      params: createMockSchema({ id: 123 }),
+      response: createMockSchema({ id: 123, name: 'John' }),
+    }
+
+    const result = await validateRequestData(apiSchema, '@get/users/:id', {
+      params: { id: 123 },
+    })
+
+    expect(result[0]).toEqual({ id: 123 })
+  })
+
+  it('should detect params in method-prefixed paths', async () => {
+    const apiSchema = {
+      response: createMockSchema({ id: 123 }),
+    }
+
+    await expect(
+      validateRequestData(apiSchema, '@post/users/:id', {
+        params: { id: 123 },
+      }),
+    ).rejects.toThrow(
+      'Path contains parameters but no "params" schema is defined.',
+    )
+  })
+})
+
+describe('parseMethodFromPath', () => {
+  it('should parse GET method from @get prefix', () => {
+    const [method, path] = parseMethodFromPath('@get/users')
+    expect(method).toBe('GET')
+    expect(path).toBe('/users')
+  })
+
+  it('should parse POST method from @post prefix', () => {
+    const [method, path] = parseMethodFromPath('@post/users')
+    expect(method).toBe('POST')
+    expect(path).toBe('/users')
+  })
+
+  it('should parse PUT method from @put prefix', () => {
+    const [method, path] = parseMethodFromPath('@put/users/:id')
+    expect(method).toBe('PUT')
+    expect(path).toBe('/users/:id')
+  })
+
+  it('should parse DELETE method from @delete prefix', () => {
+    const [method, path] = parseMethodFromPath('@delete/users/:id')
+    expect(method).toBe('DELETE')
+    expect(path).toBe('/users/:id')
+  })
+
+  it('should parse PATCH method from @patch prefix', () => {
+    const [method, path] = parseMethodFromPath('@patch/users/:id')
+    expect(method).toBe('PATCH')
+    expect(path).toBe('/users/:id')
+  })
+
+  it('should return undefined method for paths without prefix', () => {
+    const [method, path] = parseMethodFromPath('/users')
+    expect(method).toBeUndefined()
+    expect(path).toBe('/users')
+  })
+
+  it('should handle @method prefix without path', () => {
+    const [method, path] = parseMethodFromPath('@get')
+    expect(method).toBe('GET')
+    expect(path).toBe('/')
+  })
+
+  it('should convert method to uppercase', () => {
+    const [method, path] = parseMethodFromPath('@GeT/users')
+    expect(method).toBe('GET')
+    expect(path).toBe('/users')
+  })
+
+  it('should handle complex paths with parameters', () => {
+    const [method, path] = parseMethodFromPath('@post/users/:id/posts/:postId')
+    expect(method).toBe('POST')
+    expect(path).toBe('/users/:id/posts/:postId')
+  })
+
+  it('should handle paths with query-like strings', () => {
+    const [method, path] = parseMethodFromPath('@get/search?q=test')
+    expect(method).toBe('GET')
+    expect(path).toBe('/search?q=test')
+  })
+
+  it('should handle various HTTP methods', () => {
+    const methods = ['get', 'post', 'put', 'delete', 'patch', 'options', 'head']
+    for (const m of methods) {
+      const [method, path] = parseMethodFromPath(`@${m}/api`)
+      expect(method).toBe(m.toUpperCase())
+      expect(path).toBe('/api')
+    }
+  })
+
+  it('should not parse invalid prefixes', () => {
+    const [method, path] = parseMethodFromPath('get/users')
+    expect(method).toBeUndefined()
+    expect(path).toBe('get/users')
+  })
+
+  it('should handle root path without method', () => {
+    const [method, path] = parseMethodFromPath('/')
+    expect(method).toBeUndefined()
+    expect(path).toBe('/')
   })
 })

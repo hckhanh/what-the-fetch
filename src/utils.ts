@@ -51,6 +51,37 @@ export async function validateData<
 }
 
 const paramsRegex = /\/:\w+/
+const methodPrefixRegex = /^@(\w+)(\/.*)?$/
+
+/**
+ * Parses the HTTP method and clean path from a path string.
+ *
+ * Supports method prefix notation like `@get/api` or `@post/api/:id`.
+ * If no method prefix is provided, returns undefined for method.
+ *
+ * @param path - The API path string, optionally with method prefix (e.g., '@get/users' or '/users')
+ * @returns A tuple of [method, cleanPath] where method is uppercase or undefined, and cleanPath is the path without prefix
+ *
+ * @example
+ * ```typescript
+ * parseMethodFromPath('@get/users') // ['GET', '/users']
+ * parseMethodFromPath('@post/users/:id') // ['POST', '/users/:id']
+ * parseMethodFromPath('/users') // [undefined, '/users']
+ * ```
+ *
+ * @internal
+ */
+export function parseMethodFromPath(
+  path: string,
+): [string | undefined, string] {
+  const match = methodPrefixRegex.exec(path)
+  if (match) {
+    const method = match[1].toUpperCase()
+    const cleanPath = match[2] || '/'
+    return [method, cleanPath]
+  }
+  return [undefined, path]
+}
 
 /**
  * Validates request data (params, query, body) for an API path.
@@ -76,7 +107,10 @@ export async function validateRequestData<
   path: Path,
   options: Partial<Record<keyof Schemas[Path], unknown>> | undefined,
 ) {
-  if (paramsRegex.test(path) && !apiSchema.params) {
+  // Extract clean path without method prefix for validation
+  const [, cleanPath] = parseMethodFromPath(path)
+
+  if (paramsRegex.test(cleanPath) && !apiSchema.params) {
     throw new Error(
       'Path contains parameters but no "params" schema is defined.',
     )

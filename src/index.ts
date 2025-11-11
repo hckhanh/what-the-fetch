@@ -12,7 +12,7 @@
  * import { z } from 'zod';
  *
  * const api = {
- *   '/users/:id': {
+ *   '@get/users/:id': {
  *     params: z.object({ id: z.number() }),
  *     response: z.object({ id: z.number(), name: z.string() })
  *   }
@@ -25,13 +25,17 @@
  *   { headers: { 'Authorization': 'Bearer token' } }
  * );
  *
- * const user = await apiFetch('/users/:id', { params: { id: 123 } });
+ * const user = await apiFetch('@get/users/:id', { params: { id: 123 } });
  * ```
  */
 
 import { createUrl } from 'fast-url'
 import type { ApiData, ApiPath, ApiSchema, FetchOptions } from './types.ts'
-import { validateData, validateRequestData } from './utils.ts'
+import {
+  parseMethodFromPath,
+  validateData,
+  validateRequestData,
+} from './utils.ts'
 
 export type { ApiData, ApiPath, ApiSchema, FetchOptions } from './types.ts'
 
@@ -54,7 +58,7 @@ export type { ApiData, ApiPath, ApiSchema, FetchOptions } from './types.ts'
  * import { z } from 'zod';
  *
  * const api = {
- *   '/users/:id': {
+ *   '@get/users/:id': {
  *     params: z.object({ id: z.number() }),
  *     query: z.object({ fields: z.string().optional() }),
  *     response: z.object({ id: z.number(), name: z.string() })
@@ -71,7 +75,7 @@ export type { ApiData, ApiPath, ApiSchema, FetchOptions } from './types.ts'
  * );
  *
  * // Type-safe request with validation
- * const user = await apiFetch('/users/:id', {
+ * const user = await apiFetch('@get/users/:id', {
  *   params: { id: 123 },
  *   query: { fields: 'name,email' }
  * });
@@ -80,23 +84,27 @@ export type { ApiData, ApiPath, ApiSchema, FetchOptions } from './types.ts'
 export function createFetch<Schema extends ApiSchema>(
   apis: Schema,
   baseUrl: string,
-  sharedInit?: RequestInit,
+  sharedInit?: Omit<RequestInit, 'method'>,
 ): <Path extends ApiPath<Schema>>(
   path: Path,
   options?: FetchOptions<Schema, Path>,
-  init?: RequestInit,
+  init?: Omit<RequestInit, 'method'>,
 ) => Promise<ApiData<Schema, Path, 'response'>> {
-  return async (path, options, init?: RequestInit) => {
+  return async (path, options, init?: Omit<RequestInit, 'method'>) => {
     const [params, query, body] = await validateRequestData(
       apis[path],
       path,
       options,
     )
 
-    // Prepare fetch options with default method and headers
+    // Parse method from path (e.g., '@get/users' -> 'GET', '/users')
+    const [method, cleanPath] = parseMethodFromPath(path)
+
+    // Prepare fetch options with method and headers
     const requestInit: RequestInit = {
       ...sharedInit,
       ...init,
+      method,
       headers: {
         'Content-Type': 'application/json',
         ...sharedInit?.headers,
@@ -108,8 +116,8 @@ export function createFetch<Schema extends ApiSchema>(
       requestInit.body = JSON.stringify(body)
     }
 
-    // Build URL with params and query
-    const url = createUrl(baseUrl, path, {
+    // Build URL with params and query using clean path
+    const url = createUrl(baseUrl, cleanPath, {
       ...(params as Record<string, unknown> | undefined),
       ...(query as Record<string, unknown> | undefined),
     })
