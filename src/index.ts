@@ -30,10 +30,10 @@
  */
 
 import { createUrl } from 'fast-url'
-import type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
-import { validateData } from './utils.ts'
+import type { ApiData, ApiPath, ApiSchema, FetchOptions } from './types.ts'
+import { validateData, validateRequestData } from './utils.ts'
 
-export type { ApiPath, ApiResponse, ApiSchema, FetchOptions } from './types.ts'
+export type { ApiPath, ApiSchema, FetchOptions } from './types.ts'
 
 /**
  * Creates a type-safe fetch function for your API.
@@ -85,12 +85,13 @@ export function createFetch<Schema extends ApiSchema>(
   path: Path,
   options?: FetchOptions<Schema, Path>,
   init?: RequestInit,
-) => Promise<ApiResponse<Schema, Path>> {
+) => Promise<ApiData<Schema, Path, 'response'>> {
   return async (path, options, init?: RequestInit) => {
-    const { params, query, body } = (options ?? {}) as Record<
-      'params' | 'query' | 'body',
-      Record<string, unknown>
-    >
+    const { params, query, body } = await validateRequestData(
+      apis[path],
+      path,
+      options,
+    )
 
     // Prepare fetch options with default method and headers
     const requestInit: RequestInit = {
@@ -103,7 +104,7 @@ export function createFetch<Schema extends ApiSchema>(
       },
     }
 
-    if (body) {
+    if (body !== undefined && body !== null) {
       requestInit.body = JSON.stringify(body)
     }
 

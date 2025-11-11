@@ -38,9 +38,9 @@ export type ApiSchema = Record<
 /**
  * Extract valid API paths from an API schema.
  *
- * @template T - The API schema type
+ * @template Schemas - The APIs schema type
  */
-export type ApiPath<T extends ApiSchema> = keyof T & string
+export type ApiPath<Schemas extends ApiSchema> = keyof Schemas & string
 
 /**
  * Extract the required fetch options for a specific API path.
@@ -67,20 +67,29 @@ export type FetchOptions<
   : never
 
 /**
- * Extract the response type for a specific API path.
+ * Extract the inferred data type for a specific option from an API schema path.
  *
- * Infers the correct return type based on the response schema definition.
- *
- * @template T - The API schema type
+ * @template Schemas - The API schema type
  * @template Path - The specific API path
+ * @template Option - The schema option to extract (dynamic based on what's in the schema)
+ *
+ * @example
+ * ```typescript
+ * type UserParams = ApiData<typeof api, '/users/:id', 'params'>;
+ * // { id: number }
+ *
+ * type UserResponse = ApiData<typeof api, '/users/:id', 'response'>;
+ * // { id: number, name: string }
+ * ```
  */
-export type ApiResponse<
-  T extends ApiSchema,
-  Path extends ApiPath<T>,
-> = T[Path] extends infer Schema
-  ? Schema extends { response: infer R }
-    ? R extends StandardSchemaV1<infer Response>
-      ? Response
+export type ApiData<
+  Schemas extends ApiSchema,
+  Path extends ApiPath<Schemas>,
+  Option extends keyof Schemas[Path],
+> = Schemas[Path] extends infer S
+  ? S extends Record<Option, infer Schema>
+    ? Schema extends StandardSchemaV1<infer Data>
+      ? Data
       : unknown
     : unknown
   : unknown
