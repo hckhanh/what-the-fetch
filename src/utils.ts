@@ -50,8 +50,8 @@ export async function validateData<
   return result.value as ApiData<Schemas, Path, Option>
 }
 
-const paramsRegex = /\/:\w+/
-const methodPrefixRegex = /^@(\w+)(\/.*)?$/
+const PARAMS_REGEX = /\/:\w+/
+const METHOD_PREFIX_REGEX = /^@(\w+)(\/.*)?$/
 
 /**
  * Parses the HTTP method and clean path from a path string.
@@ -74,7 +74,7 @@ const methodPrefixRegex = /^@(\w+)(\/.*)?$/
 export function parseMethodFromPath(
   path: string,
 ): [string | undefined, string] {
-  const match = methodPrefixRegex.exec(path)
+  const match = METHOD_PREFIX_REGEX.exec(path)
   return match ? [match[1].toUpperCase(), match[2] || '/'] : [undefined, path]
 }
 
@@ -105,7 +105,7 @@ export async function validateRequestData<
   // Extract clean path without method prefix for validation
   const [, cleanPath] = parseMethodFromPath(path)
 
-  if (paramsRegex.test(cleanPath) && !apiSchema.params) {
+  if (PARAMS_REGEX.test(cleanPath) && !apiSchema.params) {
     throw new Error(
       'Path contains parameters but no "params" schema is defined.',
     )
