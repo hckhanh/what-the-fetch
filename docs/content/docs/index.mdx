@@ -164,9 +164,9 @@ Here's a real-world example showing how what-the-fetch simplifies API client dev
     import { createFetch } from 'what-the-fetch';
     import { z } from 'zod';
     
-    // Define API schema once
+    // Define API schema once (methods inferred automatically)
     const api = {
-      '/users/:id': {
+      '/users/:id': {  // GET (no body)
         params: z.object({ id: z.number() }),
         query: z.object({ fields: z.string().optional() }),
         response: z.object({
@@ -174,17 +174,26 @@ Here's a real-world example showing how what-the-fetch simplifies API client dev
           name: z.string(),
           email: z.string()
         })
+      },
+      '/users': {  // POST (has body)
+        body: z.object({ name: z.string(), email: z.string() }),
+        response: z.object({ id: z.number(), name: z.string() })
       }
     };
     
     const apiFetch = createFetch(api, 'https://api.example.com');
     
-    // Type-safe request with validation
+    // Type-safe GET request with validation
     const user = await apiFetch('/users/:id', {
       params: { id: 123 },
       query: { fields: 'name,email' }
     });
     // user is typed as { id: number; name: string; email: string }
+    
+    // Type-safe POST request (method inferred from body)
+    const newUser = await apiFetch('/users', {
+      body: { name: 'John', email: 'john@example.com' }
+    });
     ```
   </Tab>
   <Tab value="Without what-the-fetch">

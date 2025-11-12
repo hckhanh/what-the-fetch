@@ -402,6 +402,236 @@ const user = await apiFetch(
 
 ---
 
+## HTTP Methods
+
+what-the-fetch automatically infers HTTP methods based on the presence of a request body. You can optionally use the `@method` prefix for explicit control or to specify methods other than GET and POST.
+
+### Automatic Method Inference
+
+By default, what-the-fetch infers the HTTP method:
+- Requests **with a body** → `POST`
+- Requests **without a body** → `GET`
+
+```typescript
+const api = {
+  '/users/:id': { /* Uses GET (no body) */ },
+  '/users': { body: z.object({...}), /* Uses POST (has body) */ }
+};
+```
+
+### Method Prefix Syntax (Optional)
+
+For explicit control or to use other HTTP methods, add the `@method` prefix:
+
+```typescript
+const api = {
+  '@get/resource': { /* Explicit GET - same as /resource */ },
+  '/resource': { /* Implicit GET */ },
+  '@post/resource': { /* Explicit POST */ },
+  '@put/resource/:id': { /* PUT - prefix required */ },
+  '@patch/resource/:id': { /* PATCH - prefix required */ },
+  '@delete/resource/:id': { /* DELETE - prefix required */ }
+};
+```
+
+**Note:** `/users/:id` and `@get/users/:id` are completely equivalent and both result in a GET request.
+
+### Supported HTTP Methods
+
+All standard HTTP methods are supported:
+
+- `@get` - GET requests (retrieve data)
+- `@post` - POST requests (create new resources)
+- `@put` - PUT requests (replace existing resources)
+- `@patch` - PATCH requests (partially update resources)
+- `@delete` - DELETE requests (remove resources)
+- `@head` - HEAD requests (retrieve headers only)
+- `@options` - OPTIONS requests (check available methods)
+
+### Complete Example
+
+```typescript
+import { createFetch } from 'what-the-fetch';
+import { z } from 'zod';
+
+const api = {
+  // GET - Retrieve a user
+  '@get/users/:id': {
+    params: z.object({ id: z.number() }),
+    response: z.object({
+      id: z.number(),
+      name: z.string(),
+      email: z.string()
+    })
+  },
+  
+  // POST - Create a new user
+  '@post/users': {
+    body: z.object({
+      name: z.string(),
+      email: z.string().email()
+    }),
+    response: z.object({
+      id: z.number(),
+      name: z.string(),
+      email: z.string()
+    })
+  },
+  
+  // PUT - Replace entire user
+  '@put/users/:id': {
+    params: z.object({ id: z.number() }),
+    body: z.object({
+      name: z.string(),
+      email: z.string().email()
+    }),
+    response: z.object({
+      id: z.number(),
+      name: z.string(),
+      email: z.string()
+    })
+  },
+  
+  // PATCH - Partially update user
+  '@patch/users/:id': {
+    params: z.object({ id: z.number() }),
+    body: z.object({
+      name: z.string().optional(),
+      email: z.string().email().optional()
+    }),
+    response: z.object({
+      id: z.number(),
+      name: z.string(),
+      email: z.string()
+    })
+  },
+  
+  // DELETE - Remove a user
+  '@delete/users/:id': {
+    params: z.object({ id: z.number() }),
+    response: z.object({ success: z.boolean() })
+  }
+} as const;
+
+const apiFetch = createFetch(api, 'https://api.example.com');
+
+// Make requests with explicit methods
+const user = await apiFetch('@get/users/:id', { params: { id: 123 } });
+// GET https://api.example.com/users/123
+
+const newUser = await apiFetch('@post/users', {
+  body: { name: 'John Doe', email: 'john@example.com' }
+});
+// POST https://api.example.com/users
+
+await apiFetch('@put/users/:id', {
+  params: { id: 123 },
+  body: { name: 'Jane Doe', email: 'jane@example.com' }
+});
+// PUT https://api.example.com/users/123
+
+await apiFetch('@patch/users/:id', {
+  params: { id: 123 },
+  body: { name: 'Jane Smith' }
+});
+// PATCH https://api.example.com/users/123
+
+await apiFetch('@delete/users/:id', { params: { id: 123 } });
+// DELETE https://api.example.com/users/123
+```
+
+### Equivalence Examples
+
+The following path definitions are equivalent:
+
+```typescript
+const api = {
+  // These two are identical - both use GET
+  '/users/:id': {
+    params: z.object({ id: z.number() }),
+    response: z.object({ id: z.number(), name: z.string() })
+  },
+  '@get/users/:id': {  // Same as above - @get is optional
+    params: z.object({ id: z.number() }),
+    response: z.object({ id: z.number(), name: z.string() })
+  },
+  
+  // POST is inferred from body
+  '/users': {
+    body: z.object({ name: z.string(), email: z.string() }),
+    response: z.object({ id: z.number(), name: z.string() })
+  }
+};
+
+const apiFetch = createFetch(api, 'https://api.example.com');
+
+// Both calls are equivalent - both use GET
+const user1 = await apiFetch('/users/:id', { params: { id: 123 } });
+const user2 = await apiFetch('@get/users/:id', { params: { id: 123 } });
+
+// POST (inferred from body)
+const newUser = await apiFetch('/users', {
+  body: { name: 'John', email: 'john@example.com' }
+});
+```
+
+**Method inference rules:**
+- Request has a `body` → `POST`
+- Request has no `body` → `GET`
+- Method prefix specified → Uses that method
+
+### Method Prefix with Path Parameters
+
+The method prefix works seamlessly with path parameters:
+
+```typescript
+const api = {
+  '@put/users/:userId/posts/:postId': {
+    params: z.object({
+      userId: z.number(),
+      postId: z.number()
+    }),
+    body: z.object({ title: z.string(), content: z.string() }),
+    response: z.object({ success: z.boolean() })
+  }
+};
+
+const apiFetch = createFetch(api, 'https://api.example.com');
+
+await apiFetch('@put/users/:userId/posts/:postId', {
+  params: { userId: 123, postId: 456 },
+  body: { title: 'Updated', content: 'New content' }
+});
+// PUT https://api.example.com/users/123/posts/456
+```
+
+### Case Insensitive
+
+Method prefixes are case-insensitive and converted to uppercase:
+
+```typescript
+const api = {
+  '@GET/users': { /* ... */ },
+  '@get/posts': { /* ... */ },
+  '@GeT/comments': { /* ... */ }
+};
+
+// All are treated as GET
+```
+
+### Best Practices
+
+1. **Be explicit with methods**: Use method prefixes for clarity, especially for PUT, PATCH, and DELETE operations
+2. **RESTful design**: Follow REST conventions:
+   - `@get` for retrieval
+   - `@post` for creation
+   - `@put` for full replacement
+   - `@patch` for partial updates
+   - `@delete` for removal
+3. **Consistency**: Choose either to always use method prefixes or rely on automatic detection - be consistent across your API schema
+
+---
+
 ## Advanced Usage
 
 ### Shared Request Configuration

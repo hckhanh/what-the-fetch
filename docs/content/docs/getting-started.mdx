@@ -162,6 +162,64 @@ const newUser = await apiFetch('/users', {
 // newUser is typed as { id: number; name: string; email: string }
 ```
 
+#### Using HTTP Methods
+
+what-the-fetch automatically infers HTTP methods, but you can also specify them explicitly using the `@method` prefix:
+
+```typescript
+const api = {
+  // Automatic inference - these are equivalent
+  '/users/:id': {  // Uses GET (no body)
+    params: z.object({ id: z.number() }),
+    response: z.object({ id: z.number(), name: z.string() })
+  },
+  '@get/users/:id': {  // Explicit GET - same as above
+    params: z.object({ id: z.number() }),
+    response: z.object({ id: z.number(), name: z.string() })
+  },
+  
+  // POST is inferred when body is present
+  '/users': {  // Uses POST (has body)
+    body: z.object({ name: z.string(), email: z.string().email() }),
+    response: z.object({ id: z.number(), name: z.string() })
+  },
+  
+  // Explicit methods for other HTTP verbs
+  '@put/users/:id': {
+    params: z.object({ id: z.number() }),
+    body: z.object({ name: z.string() }),
+    response: z.object({ id: z.number(), name: z.string() })
+  },
+  '@patch/users/:id': {
+    params: z.object({ id: z.number() }),
+    body: z.object({ name: z.string().optional() }),
+    response: z.object({ id: z.number(), name: z.string() })
+  },
+  '@delete/users/:id': {
+    params: z.object({ id: z.number() }),
+    response: z.object({ success: z.boolean() })
+  }
+};
+
+const apiFetch = createFetch(api, 'https://api.example.com');
+
+// These two are equivalent - both use GET
+const user1 = await apiFetch('/users/:id', { params: { id: 123 } });
+const user2 = await apiFetch('@get/users/:id', { params: { id: 123 } });
+
+// POST inferred from body
+const created = await apiFetch('/users', { body: { name: 'John', email: 'john@example.com' } });
+
+// Explicit methods
+await apiFetch('@put/users/:id', { params: { id: 123 }, body: { name: 'Jane' } });
+await apiFetch('@patch/users/:id', { params: { id: 123 }, body: { name: 'Jane Doe' } });
+await apiFetch('@delete/users/:id', { params: { id: 123 } });
+```
+
+<Callout title="Method Inference" type="info">
+  The `@method` prefix is **optional**. Without it, what-the-fetch automatically uses `POST` for requests with a body and `GET` for requests without a body. Both `/users/:id` and `@get/users/:id` are equivalent and result in the same GET request.
+</Callout>
+
 ## Step-by-Step Tutorial
 
 Let's build a complete type-safe API client using what-the-fetch:

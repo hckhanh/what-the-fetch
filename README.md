@@ -105,6 +105,58 @@ const newUser = await apiFetch('/users', {
 });
 ```
 
+### With HTTP Methods
+
+what-the-fetch automatically infers HTTP methods: requests with a `body` use `POST`, and requests without a `body` use `GET`. You can also explicitly specify methods using the `@method` prefix for clarity or when you need other HTTP methods:
+
+```typescript
+const api = {
+  // Automatic method inference (these are equivalent)
+  '/users/:id': {  // Uses GET (no body)
+    params: z.object({ id: z.number() }),
+    response: z.object({ id: z.number(), name: z.string() }),
+  },
+  '@get/users/:id': {  // Explicitly GET - same as above
+    params: z.object({ id: z.number() }),
+    response: z.object({ id: z.number(), name: z.string() }),
+  },
+  
+  // POST is inferred when body is present
+  '/users': {  // Uses POST (has body)
+    body: z.object({ name: z.string(), email: z.string().email() }),
+    response: z.object({ id: z.number(), name: z.string() }),
+  },
+  
+  // Explicit methods for PUT, PATCH, DELETE
+  '@put/users/:id': {
+    params: z.object({ id: z.number() }),
+    body: z.object({ name: z.string(), email: z.string().email() }),
+    response: z.object({ id: z.number(), name: z.string() }),
+  },
+  '@delete/users/:id': {
+    params: z.object({ id: z.number() }),
+    response: z.object({ success: z.boolean() }),
+  },
+} as const;
+
+const apiFetch = createFetch(api, 'https://api.example.com');
+
+// These are equivalent - both use GET
+const user1 = await apiFetch('/users/:id', { params: { id: 123 } });
+const user2 = await apiFetch('@get/users/:id', { params: { id: 123 } });
+
+// POST (inferred from body)
+const newUser = await apiFetch('/users', {
+  body: { name: 'John Doe', email: 'john@example.com' },
+});
+
+// Explicit methods for clarity
+await apiFetch('@put/users/:id', {
+  params: { id: 123 },
+  body: { name: 'Jane Doe', email: 'jane@example.com' },
+});
+await apiFetch('@delete/users/:id', { params: { id: 123 } });
+
 ### With Shared Headers
 
 You can provide shared headers when creating the fetch function:
