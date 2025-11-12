@@ -1,5 +1,13 @@
 # what-the-fetch
 
+## 2.2.1
+
+### Patch Changes
+
+- 4c749a5: Link "Standard Schema" references to https://standardschema.dev in documentation
+
+  Updated all unlinked "Standard Schema" text throughout documentation files (README.md, docs/content/docs/index.mdx, docs/content/docs/getting-started.mdx, and docs/content/docs/api-reference.mdx) to include hyperlinks to https://standardschema.dev, providing readers direct access to the specification.
+
 ## 2.2.0
 
 ### Minor Changes
