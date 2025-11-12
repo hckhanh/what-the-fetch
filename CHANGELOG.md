@@ -1,5 +1,60 @@
 # what-the-fetch
 
+## 2.2.0
+
+### Minor Changes
+
+- b5be69a: Add HTTP method prefix notation (@method/path) for declaring methods in API schema paths
+
+  ### New Feature: HTTP Method Prefix Notation
+
+  You can now declare HTTP methods directly in API schema paths using the `@method/path` syntax:
+
+  ```typescript
+  const api = {
+    "@get/users": {
+      response: z.array(z.object({ id: z.number(), name: z.string() })),
+    },
+    "@post/users": {
+      body: z.object({ name: z.string(), email: z.string() }),
+      response: z.object({
+        id: z.number(),
+        name: z.string(),
+        email: z.string(),
+      }),
+    },
+    "@put/users/:id": {
+      params: z.object({ id: z.number() }),
+      body: z.object({ name: z.string() }),
+      response: z.object({ id: z.number(), name: z.string() }),
+    },
+  } as const;
+  ```
+
+  **Key Features:**
+
+  - Supports all HTTP methods: `@get`, `@post`, `@put`, `@delete`, `@patch`, etc.
+  - Method names are case-insensitive (normalized to uppercase)
+  - `@get/api` is equivalent to `/api` in URL, only the HTTP method differs
+  - Backward compatible: paths without prefix continue to work as before
+  - Type-safe: `RequestInit` parameters are now `Omit<RequestInit, 'method'>` to prevent method override
+
+  **Implementation:**
+
+  - Added `parseMethodFromPath()` utility function to extract method prefix
+  - Updated `createFetch()` to use the extracted method from path prefix
+  - Restricted `RequestInit` types to prevent method override
+
+### Patch Changes
+
+- 52df593: Update `fast-url` dependency to version 6.0.2 for significant performance optimizations. This release includes:
+
+  - **Pre-compiled regex**: Path parameter regex is now extracted to module scope to avoid recompilation on every `path()` call, improving efficiency for path template processing
+  - **Optimized string joining**: URL joining now uses direct string indexing instead of `endsWith`/`startsWith` methods, with fast paths for empty strings and common scenarios, reducing unnecessary string slicing
+  - **Optimized parameter filtering**: The `removeNullOrUndef()` function now checks for null/undefined values before allocating new objects and uses direct property iteration instead of `Object.entries`/`Object.fromEntries`, resulting in faster execution and less memory usage
+
+  For full details, see the [fast-url 6.0.2 release notes](https://github.com/hckhanh/fast-url/releases/tag/fast-url%406.0.2).
+
 ## 2.1.0
 
 ### Minor Changes
