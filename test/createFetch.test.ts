@@ -816,7 +816,7 @@ describe('createFetch', () => {
       await apiFetch('@get')
 
       expect(fetchMock).toHaveBeenCalledWith(
-        'https://api.example.com',
+        'https://api.example.com/',
         expect.objectContaining({
           method: 'GET',
         }),

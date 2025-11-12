@@ -7,7 +7,7 @@
     "include": ["LICENSE", "README.md", "src/**/*.ts"]
   },
   "imports": {
-    "fast-url": "jsr:@hckhanh/fast-url@^6.0.1",
+    "fast-url": "jsr:@hckhanh/fast-url@^6.0.2",
     "@standard-schema/spec": "jsr:@standard-schema/spec@^1.0.0"
   }
 }
