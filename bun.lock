@@ -18,7 +18,7 @@
         "@vitest/coverage-v8": "3.2.4",
         "arktype": "2.1.26",
         "knip": "5.69.1",
-        "syncpack": "14.0.0-alpha.26",
+        "syncpack": "14.0.0-alpha.27",
         "tsdown": "0.16.3",
         "typescript": "5.9.3",
         "valibot": "1.1.0",
@@ -1257,19 +1257,19 @@
 
     "supports-color": ["supports-color@7.2.0", "", { "dependencies": { "has-flag": "^4.0.0" } }, "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw=="],
 
-    "syncpack": ["syncpack@14.0.0-alpha.26", "", { "dependencies": { "tsx": "^4.20.6" }, "optionalDependencies": { "syncpack-darwin-arm64": "14.0.0-alpha.26", "syncpack-darwin-x64": "14.0.0-alpha.26", "syncpack-linux-arm64": "14.0.0-alpha.26", "syncpack-linux-x64": "14.0.0-alpha.26", "syncpack-windows-arm64": "14.0.0-alpha.26", "syncpack-windows-x64": "14.0.0-alpha.26" }, "bin": { "syncpack": "index.cjs" } }, "sha512-DqVp9lDs1Jl44g7m7YdcgZdPVsZuJvfQi4U4CpQrVSv/9FLDlOZbjxrIKkRNo35U6HDZiBWwR3hzMM0Svj7iMA=="],
+    "syncpack": ["syncpack@14.0.0-alpha.27", "", { "dependencies": { "tsx": "^4.20.6" }, "optionalDependencies": { "syncpack-darwin-arm64": "14.0.0-alpha.27", "syncpack-darwin-x64": "14.0.0-alpha.27", "syncpack-linux-arm64": "14.0.0-alpha.27", "syncpack-linux-x64": "14.0.0-alpha.27", "syncpack-windows-arm64": "14.0.0-alpha.27", "syncpack-windows-x64": "14.0.0-alpha.27" }, "bin": { "syncpack": "index.cjs" } }, "sha512-7TBNAucTn7+mCb4cM8Sb6ibsFJarDVKZuaz1OemkctVCypnPaDTikrFpIGbG2A83/vIgGodrbRATwT//Zxuxbw=="],
 
-    "syncpack-darwin-arm64": ["syncpack-darwin-arm64@14.0.0-alpha.26", "", { "os": "darwin", "cpu": "arm64" }, "sha512-HRsct1Uqmi+aq4v5061OAPY+zm5Hu5gcKFrppolHffgnDJdrLsHAyxKiC/KOppORgV1v57yBDhMh5pjM0XzWTQ=="],
+    "syncpack-darwin-arm64": ["syncpack-darwin-arm64@14.0.0-alpha.27", "", { "os": "darwin", "cpu": "arm64" }, "sha512-AumlUyjGENADbZ9R6vTMrTljIxhF5iVwhJdsId5g0CrgCkb93noSs8ktqmgxVYLFFPLz4Vzb/muOgHP6VRRnGA=="],
 
-    "syncpack-darwin-x64": ["syncpack-darwin-x64@14.0.0-alpha.26", "", { "os": "darwin", "cpu": "x64" }, "sha512-IBjupX94//RkMItow1cBg+qSC/vJ+drPJob3i7RddyPgQtNsPrLbEjHXFTZGJ/X6Ku6677G4vB3iAKAgiHwrPA=="],
+    "syncpack-darwin-x64": ["syncpack-darwin-x64@14.0.0-alpha.27", "", { "os": "darwin", "cpu": "x64" }, "sha512-c7e4L4lHSusfnE9MQ9LgFYuNDqifr82PnV9+Bw12TBqIa0UY4hs8YAUQnJDieN4wMIXI60hDtS8q3GiEyNvYEQ=="],
 
-    "syncpack-linux-arm64": ["syncpack-linux-arm64@14.0.0-alpha.26", "", { "os": "linux", "cpu": "arm64" }, "sha512-dTBNmRXKr0sA0HsFKW12gyUTM41llnov3f59BzQCuV8i4UlrK7pe1oWdgiI/WxDC6HBjhgwhKev73ZY964Cnig=="],
+    "syncpack-linux-arm64": ["syncpack-linux-arm64@14.0.0-alpha.27", "", { "os": "linux", "cpu": "arm64" }, "sha512-5Tc3Vwbwf0l7piCUJzAJiSYi7iA8Z2W6SzB5ztLnOzCiJARgXtj3NA7kzBiuKhKmkJ1bBA0G526LaN5U6JDNZw=="],
 
-    "syncpack-linux-x64": ["syncpack-linux-x64@14.0.0-alpha.26", "", { "os": "linux", "cpu": "x64" }, "sha512-98tXt2bLQfnzqhsLwhC/ok3Vv9zNg2oiCJ0XAnPTUgHhLJzASUeEL9f6RzZ2zipZvpkdMNS/PMhTmtlP5QSoOg=="],
+    "syncpack-linux-x64": ["syncpack-linux-x64@14.0.0-alpha.27", "", { "os": "linux", "cpu": "x64" }, "sha512-EwM4hz3sfaM/CB/6pDOdHt/KEqYy0PaMei9tw/8q1XHSYMI06dC7z+dDAP2cVdmYqYLUkxAymQU7WSNEjkZE1g=="],
 
-    "syncpack-windows-arm64": ["syncpack-windows-arm64@14.0.0-alpha.26", "", { "os": "win32", "cpu": "arm64" }, "sha512-el13JJ3VovZ3XICP3KhULyB+nR96hwyGH+H94Uoy8yJoGjoopEopcsdVHEPyoPGuvP4XX2Jpg+GPhc7L4vzRWQ=="],
+    "syncpack-windows-arm64": ["syncpack-windows-arm64@14.0.0-alpha.27", "", { "os": "win32", "cpu": "arm64" }, "sha512-97cmgl4pzsmQdeYQJAqo0eMnsMp2KoAJw30vSF6mirZImu0zQoko4msJfgSz2djZvX4JDlxml25gaOQYop0cMA=="],
 
-    "syncpack-windows-x64": ["syncpack-windows-x64@14.0.0-alpha.26", "", { "os": "win32", "cpu": "x64" }, "sha512-Ip/OZJxPzQsHDfd3w4TreOvqE5Mf3RquLz5L54yMHfUyxlIqyOQhukaar2UmwJQc9gVDsMxq/91EvaO3nad2bg=="],
+    "syncpack-windows-x64": ["syncpack-windows-x64@14.0.0-alpha.27", "", { "os": "win32", "cpu": "x64" }, "sha512-QoxA7ZPzAxbaQYm/+utblVhvJOYUfyqD1WAfBowFwECeKVPkkAG8xabRwchkPh995r6GLrLi4aJ/RMW4EjUMOg=="],
 
     "tailwind-merge": ["tailwind-merge@3.3.1", "", {}, "sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g=="],
 
