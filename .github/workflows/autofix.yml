@@ -25,8 +25,8 @@ jobs:
         uses: SocketDev/action@4337a545deecc20f19a909e52db7a2f6ba292f42 # v1.2.0
         with:
           mode: firewall
-      - name: Install Dependencies
-        run: sfw bun install
+      - name: Optimize dependencies with @socketregistry overrides
+        run: socket optimize
       - name: Format code
         run: bun biome check --write
       - name: Fix package.json
@@ -34,7 +34,7 @@ jobs:
       - name: Format package.json
         run: bun syncpack format
       - name: Update package lock file
-        run: sfw bun install --lockfile-only
+        run: sfw bun install
       - name: Submit autofix
         uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27 # v1.3.2
         with:
