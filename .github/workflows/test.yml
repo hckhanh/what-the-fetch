@@ -85,7 +85,7 @@ jobs:
       - name: Install Dependencies
         run: sfw bun ci
       - name: Run Benchmarks
-        uses: CodSpeedHQ/action@e736f0d2aeb36da38e9f08eca4dff7967408d154 # v4.8.2
+        uses: CodSpeedHQ/action@df47568b033d58cefcc54680a649123fc87b7573 # v4.10.1
         with:
           run: bun bench
           mode: 'simulation'
