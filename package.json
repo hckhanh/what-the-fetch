@@ -51,7 +51,7 @@
     "arktype": "2.1.29",
     "knip": "5.83.0",
     "syncpack": "14.0.0-alpha.40",
-    "tsdown": "0.20.2",
+    "tsdown": "0.20.3",
     "typescript": "5.9.3",
     "valibot": "1.2.0",
     "vitest": "4.0.18",
