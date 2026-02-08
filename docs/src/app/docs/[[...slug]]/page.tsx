@@ -7,6 +7,7 @@ import {
 import { createRelativeLink } from 'fumadocs-ui/mdx'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { LLMCopyButton, ViewOptions } from '@/components/ai/page-actions'
 import { getPageImage, source } from '@/lib/source'
 import { getMDXComponents } from '@/mdx-components'
 
@@ -16,11 +17,26 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   if (!page) notFound()
 
   const MDX = page.data.body
+  const gitConfig = {
+    user: 'hckhanh',
+    repo: 'what-the-fetch',
+    branch: 'main',
+  }
 
   return (
     <DocsPage full={page.data.full} toc={page.data.toc}>
       <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
+      <DocsDescription className='mb-0'>
+        {page.data.description}
+      </DocsDescription>
+      <div className='flex flex-row items-center gap-2 border-b pb-6'>
+        <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
+        <ViewOptions
+          githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/docs/content/docs/${page.path}`}
+          // update it to match your repo
+          markdownUrl={`${page.url}.mdx`}
+        />
+      </div>
       <DocsBody>
         <MDX
           components={getMDXComponents({
