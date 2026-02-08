@@ -19,12 +19,10 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Setup toolchains
         uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
-      - name: Setup Socket Firewall
-        uses: SocketDev/action@4337a545deecc20f19a909e52db7a2f6ba292f42 # v1.2.0
-        with:
-          mode: firewall
+      - name: Setup Aikido Safe Chain
+        run: curl -fsSL https://github.com/AikidoSec/safe-chain/releases/latest/download/install-safe-chain.sh | sh -s -- --ci
       - name: Install Dependencies
-        run: sfw bun ci
+        run: bun ci
       - name: Run Knip
         run: bun knip-bun
   deno:
@@ -50,12 +48,10 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Setup toolchains
         uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
-      - name: Setup Socket Firewall
-        uses: SocketDev/action@4337a545deecc20f19a909e52db7a2f6ba292f42 # v1.2.0
-        with:
-          mode: firewall
+      - name: Setup Aikido Safe Chain
+        run: curl -fsSL https://github.com/AikidoSec/safe-chain/releases/latest/download/install-safe-chain.sh | sh -s -- --ci
       - name: Install Dependencies
-        run: sfw bun ci
+        run: bun ci
       - name: Run Tests
         run: bun run test --coverage --reporter=junit --outputFile=test-report.junit.xml
       - name: Upload coverage reports to Codecov
@@ -78,12 +74,10 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Setup toolchains
         uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3.6.1
-      - name: Setup Socket Firewall
-        uses: SocketDev/action@4337a545deecc20f19a909e52db7a2f6ba292f42 # v1.2.0
-        with:
-          mode: firewall
+      - name: Setup Aikido Safe Chain
+        run: curl -fsSL https://github.com/AikidoSec/safe-chain/releases/latest/download/install-safe-chain.sh | sh -s -- --ci
       - name: Install Dependencies
-        run: sfw bun ci
+        run: bun ci
       - name: Run Benchmarks
         uses: CodSpeedHQ/action@9a74b6ba663684052277e8f342b5eb99c7442a03 # v4.10.5
         with:
