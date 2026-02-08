@@ -33,6 +33,7 @@
     "bench": "vitest bench",
     "build": "tsdown",
     "format": "biome check --write",
+    "knip": "knip",
     "release": "bun run build && changeset publish",
     "test": "vitest"
   },
