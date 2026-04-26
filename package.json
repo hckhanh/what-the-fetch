@@ -41,7 +41,7 @@
     "fast-url": "^6.0.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.12",
+    "@biomejs/biome": "2.4.13",
     "@changesets/cli": "2.31.0",
     "@changesets/config": "3.1.4",
     "@codspeed/vitest-plugin": "5.3.0",
