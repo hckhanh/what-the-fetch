@@ -18,7 +18,7 @@
     "npm:arktype@2.2.0": "2.2.0",
     "npm:babel-plugin-react-compiler@1.0.0": "1.0.0",
     "npm:fast-url@^6.0.2": "6.0.2",
-    "npm:fumadocs-core@16.8.4": "16.8.4_@mdx-js+mdx@3.1.1_@types+react@19.2.14_lucide-react@0.577.0__react@19.2.5_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.3.6_babel-plugin-react-compiler@1.0.0",
+    "npm:fumadocs-core@16.8.4": "16.8.4_@types+react@19.2.14_lucide-react@0.577.0__react@19.2.5_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.3.6",
     "npm:fumadocs-mdx@14.3.1": "14.3.1_@types+mdx@2.0.13_@types+react@19.2.14_fumadocs-core@16.8.4__@mdx-js+mdx@3.1.1__@types+react@19.2.14__lucide-react@0.577.0___react@19.2.5__next@16.2.4___babel-plugin-react-compiler@1.0.0___react@19.2.5___react-dom@19.2.5____react@19.2.5__react@19.2.5__react-dom@19.2.5___react@19.2.5__zod@4.3.6__babel-plugin-react-compiler@1.0.0_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_vite@7.3.2__@types+node@25.6.0_@types+node@25.6.0_babel-plugin-react-compiler@1.0.0_lucide-react@0.577.0__react@19.2.5_react-dom@19.2.5__react@19.2.5",
     "npm:fumadocs-ui@16.8.4": "16.8.4_@types+mdx@2.0.13_@types+react@19.2.14_fumadocs-core@16.8.4__@types+react@19.2.14__lucide-react@1.14.0___react@19.2.5__next@16.2.4___babel-plugin-react-compiler@1.0.0___react@19.2.5___react-dom@19.2.5____react@19.2.5__react@19.2.5__react-dom@19.2.5___react@19.2.5__zod@4.3.6__babel-plugin-react-compiler@1.0.0_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_@types+react-dom@19.2.3__@types+react@19.2.14_babel-plugin-react-compiler@1.0.0_tailwindcss@4.2.4_zod@4.3.6",
     "npm:knip@5.88.1": "5.88.1_@types+node@25.6.0_typescript@5.9.3_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0",
@@ -27,7 +27,7 @@
     "npm:postcss@8.5.12": "8.5.12",
     "npm:react-dom@19.2.5": "19.2.5_react@19.2.5",
     "npm:react@19.2.5": "19.2.5",
-    "npm:syncpack@14.3.0": "14.3.0",
+    "npm:syncpack@14.3.1": "14.3.1",
     "npm:tailwind-merge@3.5.0": "3.5.0",
     "npm:tailwindcss@4.2.4": "4.2.4",
     "npm:tsdown@0.21.10": "0.21.10_typescript@5.9.3",
@@ -2700,6 +2700,42 @@
         "hast-util-to-estree",
         "hast-util-to-jsx-runtime",
         "js-yaml@4.1.1",
+        "mdast-util-mdx",
+        "mdast-util-to-markdown",
+        "next",
+        "react",
+        "react-dom",
+        "remark",
+        "remark-gfm",
+        "remark-rehype",
+        "scroll-into-view-if-needed",
+        "shiki",
+        "tinyglobby",
+        "unified",
+        "unist-util-visit",
+        "vfile",
+        "zod"
+      ],
+      "optionalPeers": [
+        "@mdx-js/mdx",
+        "@types/react",
+        "next",
+        "react",
+        "react-dom",
+        "zod"
+      ]
+    },
+    "fumadocs-core@16.8.4_@types+react@19.2.14_lucide-react@0.577.0__react@19.2.5_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.3.6": {
+      "integrity": "sha512-o8N7YocCSdoehR7cTSYv9usvE3F5q0rrnoro3hGRnSI1SdolmeuxTbdfQgebaP61E7wAI4hIWgo7CzImGRT2Tw==",
+      "dependencies": [
+        "@mdx-js/mdx",
+        "@orama/orama",
+        "@types/react",
+        "estree-util-value-to-estree",
+        "github-slugger",
+        "hast-util-to-estree",
+        "hast-util-to-jsx-runtime",
+        "js-yaml@4.1.1",
         "lucide-react@0.577.0_react@19.2.5",
         "mdast-util-mdx",
         "mdast-util-to-markdown",
@@ -4504,48 +4540,48 @@
         "has-flag"
       ]
     },
-    "syncpack-darwin-arm64@14.3.0": {
-      "integrity": "sha512-gpbkBzO7yqa3BONc4EU3jY07yiPSZdoAxcpnz8REV9Bc6FkmKfOejCpYIh8RaogGPS4gOLJ/RUJEECqAaHTcjA==",
+    "syncpack-darwin-arm64@14.3.1": {
+      "integrity": "sha512-WtHbqXCEDSRzdqTIroYqYSMW/0yQ8dYvpucQ6SKsbVE86K5wjFd37TOIDFM5NLudCYASJpy4FXv7G/HxHAyRLw==",
       "os": ["darwin"],
       "cpu": ["arm64"]
     },
-    "syncpack-darwin-x64@14.3.0": {
-      "integrity": "sha512-wTpl6Qj5qGIHrYhpCrlNnosmhQqvUoidqqmxtdM3f+j+b+OkTtpkUl2tdE28h3aeEEUPf9ClQnHuwRJMYNlrJw==",
+    "syncpack-darwin-x64@14.3.1": {
+      "integrity": "sha512-K+Zx1TN67vllDLrouc6YISOhhWm7RxrRE7087ea36T85WNq4JvI+M3UBJoxRjaJ+0v3wBA2YmBzEHzJg8skAww==",
       "os": ["darwin"],
       "cpu": ["x64"]
     },
-    "syncpack-linux-arm64-musl@14.3.0": {
-      "integrity": "sha512-AezJ5dv0s+l/p1l4/wBatYhM6SZEKLcyNKggSOX5uISzqbSKwj/Aak13pBXWarzS+N6LnOl4PMcwRMJPOUfN/g==",
+    "syncpack-linux-arm64-musl@14.3.1": {
+      "integrity": "sha512-gZTLgIS0irmZx2HjZqco9YsbYe6sz/5Lce/yKmTBdCaHCpurb+TZA97nu5FxXSAA0HKs3Nzi8CDjNzv+yAQUXw==",
       "os": ["linux"],
       "cpu": ["arm64"]
     },
-    "syncpack-linux-arm64@14.3.0": {
-      "integrity": "sha512-Vcf9zWkJGRqb5mGPKi9E+s/mB/Tw08LmKGRaiyKJjK8bhd1Ds65O8A2lOidy3jg0NOOojqREmDsli74Xd0z6KA==",
+    "syncpack-linux-arm64@14.3.1": {
+      "integrity": "sha512-+5fXNoKz2ZqQszplZGp6J9ZKL6JW1hr3BMjEkklYz+jufX9rH/MWY0hcRCfHJSuvcTUrsYo/koqU/UnBiANjGg==",
       "os": ["linux"],
       "cpu": ["arm64"]
     },
-    "syncpack-linux-x64-musl@14.3.0": {
-      "integrity": "sha512-tIRF0lvBJcoIwcO05/Q6j30CAg0jzn+A5eQL+06Ncq8CE5i8fBWrVwN1U/QQ4fzT+tondNWH/2BR5zlaB1VUpQ==",
+    "syncpack-linux-x64-musl@14.3.1": {
+      "integrity": "sha512-NK+1Qm762bbXDYqAz2+++NlJ9jONX+3Hrulp4XpytFEIGABiy8wIzouBpxZkppf30+1mxt4o8LMtZ8P54/ObNA==",
       "os": ["linux"],
       "cpu": ["x64"]
     },
-    "syncpack-linux-x64@14.3.0": {
-      "integrity": "sha512-n/4iBJnoOCe5An+WYlaqfSxOKQ7Id3TZTpxOpI60Cucq3yqwq0JHQUielj6JBtVaxvo2rAsTwbCLyp2aB0SD2g==",
+    "syncpack-linux-x64@14.3.1": {
+      "integrity": "sha512-v1Y4D0oB2uIx+Npy1eD384adOSKvrjtu3VodjcQ/2aK4rTjVZl3k4eOA5py4I4Qdt6+zC6n+t5KrGuiaiBlbWQ==",
       "os": ["linux"],
       "cpu": ["x64"]
     },
-    "syncpack-windows-arm64@14.3.0": {
-      "integrity": "sha512-ZTX0rSUTJZjIde3qPKLEqU7IEt4KxFsmq6gKLfESx5rB1rxk/B1Ljv6nTYph5QVItEzHQHUXDWnqa9yCb15myw==",
+    "syncpack-windows-arm64@14.3.1": {
+      "integrity": "sha512-xf+i8B5dDc3AIG8ZFF215gLQF0PKXQC6I8skmEfGy36oFh3VTAJKBjgEg6P8R3FC9/kRzkWFcDZmNLkbKN6YmA==",
       "os": ["win32"],
       "cpu": ["arm64"]
     },
-    "syncpack-windows-x64@14.3.0": {
-      "integrity": "sha512-zvbphZw40wFZYeEW2oJYqA9Uw6IOwNIpgFmVNdWdGmShPF/Zu1cavHEcGwtQmvVzwuTEyiu67uxQ3hDC2q6vtg==",
+    "syncpack-windows-x64@14.3.1": {
+      "integrity": "sha512-gjbWwc05RcekcrLHOi5gq0JKvhoIMNqbUnAvPZLu46/+HrYuuJiUqruoj6y/GbCuvoQ880E820GF1pQFW9xNXA==",
       "os": ["win32"],
       "cpu": ["x64"]
     },
-    "syncpack@14.3.0": {
-      "integrity": "sha512-8/WtPPxxGFqE21JPFz6Bpw0m9BT3lzMYDcewJFj++EBPmCaDWowTnx0R4V7ofH/1z3HAIaAps6g2GHL76l1Y2g==",
+    "syncpack@14.3.1": {
+      "integrity": "sha512-TCqOY6Z7TH5yHV3saI6sHb5XRsZ8m2DaI4FQMonKT7UoCKL2WBiI54PLEFDSv1F2sL1BZA5e1opprf190ohirg==",
       "optionalDependencies": [
         "syncpack-darwin-arm64",
         "syncpack-darwin-x64",
@@ -4873,7 +4909,7 @@
         "npm:arktype@2.2.0",
         "npm:fast-url@^6.0.2",
         "npm:knip@5.88.1",
-        "npm:syncpack@14.3.0",
+        "npm:syncpack@14.3.1",
         "npm:tsdown@0.21.10",
         "npm:typescript@5.9.3",
         "npm:valibot@1.3.1",
