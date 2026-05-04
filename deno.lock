@@ -24,7 +24,7 @@
     "npm:knip@5.88.1": "5.88.1_@types+node@25.6.0_typescript@5.9.3_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0",
     "npm:lucide-react@0.577.0": "0.577.0_react@19.2.5",
     "npm:next@16.2.4": "16.2.4_babel-plugin-react-compiler@1.0.0_react@19.2.5_react-dom@19.2.5__react@19.2.5",
-    "npm:postcss@8.5.12": "8.5.12",
+    "npm:postcss@8.5.13": "8.5.13",
     "npm:react-dom@19.2.5": "19.2.5_react@19.2.5",
     "npm:react@19.2.5": "19.2.5",
     "npm:syncpack@14.3.1": "14.3.1",
@@ -1967,7 +1967,7 @@
         "@alloc/quick-lru",
         "@tailwindcss/node",
         "@tailwindcss/oxide",
-        "postcss@8.5.12",
+        "postcss@8.5.13",
         "tailwindcss"
       ]
     },
@@ -4079,8 +4079,8 @@
         "source-map-js"
       ]
     },
-    "postcss@8.5.12": {
-      "integrity": "sha512-W62t/Se6rA0Az3DfCL0AqJwXuKwBeYg6nOaIgzP+xZ7N5BFCI7DYi1qs6ygUYT6rvfi6t9k65UMLJC+PHZpDAA==",
+    "postcss@8.5.13": {
+      "integrity": "sha512-qif0+jGGZoLWdHey3UFHHWP0H7Gbmsk8T5VEqyYFbWqPr1XqvLGBbk/sl8V5exGmcYJklJOhOQq1pV9IcsiFag==",
       "dependencies": [
         "nanoid",
         "picocolors",
@@ -4810,7 +4810,6 @@
         "esbuild@0.27.7",
         "fdir",
         "picomatch@4.0.4",
-        "postcss@8.5.12",
         "rollup",
         "tinyglobby"
       ],
@@ -4931,7 +4930,7 @@
             "npm:fumadocs-ui@16.8.5",
             "npm:lucide-react@0.577.0",
             "npm:next@16.2.4",
-            "npm:postcss@8.5.12",
+            "npm:postcss@8.5.13",
             "npm:react-dom@19.2.5",
             "npm:react@19.2.5",
             "npm:tailwind-merge@3.5.0",
