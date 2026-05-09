@@ -18,9 +18,9 @@
     "npm:arktype@2.2.0": "2.2.0",
     "npm:babel-plugin-react-compiler@1.0.0": "1.0.0",
     "npm:fast-url@^6.0.2": "6.0.2",
-    "npm:fumadocs-core@16.8.7": "16.8.7_@types+react@19.2.14_lucide-react@0.577.0__react@19.2.5_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.4.2",
+    "npm:fumadocs-core@16.8.7": "16.8.7_@types+react@19.2.14_lucide-react@0.577.0__react@19.2.5_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.4.3",
     "npm:fumadocs-mdx@14.3.2": "14.3.2_@types+mdx@2.0.13_@types+react@19.2.14_fumadocs-core@16.8.7__@mdx-js+mdx@3.1.1__@types+react@19.2.14__lucide-react@0.577.0___react@19.2.5__next@16.2.4___babel-plugin-react-compiler@1.0.0___react@19.2.5___react-dom@19.2.5____react@19.2.5__react@19.2.5__react-dom@19.2.5___react@19.2.5__zod@4.4.2_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_lucide-react@0.577.0__react@19.2.5_react-dom@19.2.5__react@19.2.5",
-    "npm:fumadocs-ui@16.8.7": "16.8.7_@types+mdx@2.0.13_@types+react@19.2.14_fumadocs-core@16.8.7__@types+react@19.2.14__lucide-react@1.14.0___react@19.2.5__next@16.2.4___babel-plugin-react-compiler@1.0.0___react@19.2.5___react-dom@19.2.5____react@19.2.5__react@19.2.5__react-dom@19.2.5___react@19.2.5__zod@4.4.2_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_@types+react-dom@19.2.3__@types+react@19.2.14_tailwindcss@4.2.4_zod@4.4.2",
+    "npm:fumadocs-ui@16.8.7": "16.8.7_@types+mdx@2.0.13_@types+react@19.2.14_fumadocs-core@16.8.7__@types+react@19.2.14__lucide-react@1.14.0___react@19.2.5__next@16.2.4___babel-plugin-react-compiler@1.0.0___react@19.2.5___react-dom@19.2.5____react@19.2.5__react@19.2.5__react-dom@19.2.5___react@19.2.5__zod@4.4.3_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.4.3",
     "npm:knip@5.88.1": "5.88.1_@types+node@25.6.0_typescript@5.9.3_@emnapi+core@1.10.0_@emnapi+runtime@1.10.0",
     "npm:lucide-react@0.577.0": "0.577.0_react@19.2.5",
     "npm:next@16.2.4": "16.2.4_babel-plugin-react-compiler@1.0.0_react@19.2.5_react-dom@19.2.5__react@19.2.5",
@@ -34,7 +34,7 @@
     "npm:typescript@5.9.3": "5.9.3",
     "npm:valibot@1.3.1": "1.3.1_typescript@5.9.3",
     "npm:vitest@4.1.5": "4.1.5_@types+node@25.6.0_@vitest+coverage-v8@4.1.5_vite@7.3.2__@types+node@25.6.0",
-    "npm:zod@4.4.2": "4.4.2"
+    "npm:zod@4.4.3": "4.4.3"
   },
   "jsr": {
     "@hckhanh/fast-url@6.0.2": {
@@ -2714,19 +2714,17 @@
         "tinyglobby",
         "unified",
         "unist-util-visit",
-        "vfile",
-        "zod"
+        "vfile"
       ],
       "optionalPeers": [
         "@mdx-js/mdx",
         "@types/react",
         "next",
         "react",
-        "react-dom",
-        "zod"
+        "react-dom"
       ]
     },
-    "fumadocs-core@16.8.7_@types+react@19.2.14_lucide-react@0.577.0__react@19.2.5_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.4.2": {
+    "fumadocs-core@16.8.7_@types+react@19.2.14_lucide-react@0.577.0__react@19.2.5_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.4.3": {
       "integrity": "sha512-y7awKyp4PwA2fGCsa/9z7a6/SlhAIABV9B/kmUAy9NlM+eo1Lm3P0A+Bcs7R36YsVsJd9tqiVuExbpLQ7n01Jw==",
       "dependencies": [
         "@mdx-js/mdx",
@@ -2764,7 +2762,7 @@
         "zod"
       ]
     },
-    "fumadocs-core@16.8.7_@types+react@19.2.14_lucide-react@1.14.0__react@19.2.5_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.4.2": {
+    "fumadocs-core@16.8.7_@types+react@19.2.14_lucide-react@1.14.0__react@19.2.5_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.4.3": {
       "integrity": "sha512-y7awKyp4PwA2fGCsa/9z7a6/SlhAIABV9B/kmUAy9NlM+eo1Lm3P0A+Bcs7R36YsVsJd9tqiVuExbpLQ7n01Jw==",
       "dependencies": [
         "@orama/orama",
@@ -2836,7 +2834,7 @@
       ],
       "bin": true
     },
-    "fumadocs-ui@16.8.7_@types+mdx@2.0.13_@types+react@19.2.14_fumadocs-core@16.8.7__@types+react@19.2.14__lucide-react@1.14.0___react@19.2.5__next@16.2.4___babel-plugin-react-compiler@1.0.0___react@19.2.5___react-dom@19.2.5____react@19.2.5__react@19.2.5__react-dom@19.2.5___react@19.2.5__zod@4.4.2_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_@types+react-dom@19.2.3__@types+react@19.2.14_tailwindcss@4.2.4_zod@4.4.2": {
+    "fumadocs-ui@16.8.7_@types+mdx@2.0.13_@types+react@19.2.14_fumadocs-core@16.8.7__@types+react@19.2.14__lucide-react@1.14.0___react@19.2.5__next@16.2.4___babel-plugin-react-compiler@1.0.0___react@19.2.5___react-dom@19.2.5____react@19.2.5__react@19.2.5__react-dom@19.2.5___react@19.2.5__zod@4.4.3_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.4.3": {
       "integrity": "sha512-ICTA2y+R++f8UKF3RL6mT3jCk6l7F5wpfuPV5dc7VRWNGxeFeiEwHdqo6Zb51HTjt1jDc7PQ1/T8I+gwPniU8g==",
       "dependencies": [
         "@fumadocs/tailwind",
@@ -2853,7 +2851,7 @@
         "@types/mdx",
         "@types/react",
         "class-variance-authority",
-        "fumadocs-core@16.8.7_@types+react@19.2.14_lucide-react@1.14.0__react@19.2.5_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.4.2",
+        "fumadocs-core@16.8.7_@types+react@19.2.14_lucide-react@1.14.0__react@19.2.5_next@16.2.4__babel-plugin-react-compiler@1.0.0__react@19.2.5__react-dom@19.2.5___react@19.2.5_react@19.2.5_react-dom@19.2.5__react@19.2.5_zod@4.4.3",
         "lucide-react@1.14.0_react@19.2.5",
         "motion",
         "next",
@@ -4884,8 +4882,8 @@
     "yocto-queue@1.2.2": {
       "integrity": "sha512-4LCcse/U2MHZ63HAJVE+v71o7yOdIe4cZ70Wpf8D/IyjDKYQLV5GD46B+hSTjJsvV5PztjvHoU580EftxjDZFQ=="
     },
-    "zod@4.4.2": {
-      "integrity": "sha512-IynmDyxsEsb9RKzO3J9+4SxXnl2FTFSzNBaKKaMV6tsSk0rw9gYw9gs+JFCq/qk2LCZ78KDwyj+Z289TijSkUw=="
+    "zod@4.4.3": {
+      "integrity": "sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ=="
     },
     "zwitch@2.0.4": {
       "integrity": "sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A=="
@@ -4914,7 +4912,7 @@
         "npm:typescript@5.9.3",
         "npm:valibot@1.3.1",
         "npm:vitest@4.1.5",
-        "npm:zod@4.4.2"
+        "npm:zod@4.4.3"
       ]
     },
     "members": {
