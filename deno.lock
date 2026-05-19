@@ -14,14 +14,14 @@
     "npm:@types/node@25.6.2": "25.6.2",
     "npm:@types/react-dom@19.2.3": "19.2.3_@types+react@19.2.14",
     "npm:@types/react@19.2.14": "19.2.14",
-    "npm:@vitest/coverage-v8@4.1.5": "4.1.5_vitest@4.1.5_@types+node@25.6.2_vite@7.3.2__@types+node@25.6.1",
+    "npm:@vitest/coverage-v8@4.1.5": "4.1.5_vitest@4.1.5_@types+node@25.6.2_vite@7.3.2__@types+node@25.6.2",
     "npm:arktype@2.2.0": "2.2.0",
     "npm:babel-plugin-react-compiler@1.0.0": "1.0.0",
     "npm:fast-url@^6.0.2": "6.0.2",
     "npm:fumadocs-core@16.8.8": "16.8.8_@types+react@19.2.14_lucide-react@0.577.0__react@19.2.6_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
     "npm:fumadocs-mdx@14.3.2": "14.3.2_@types+mdx@2.0.13_@types+react@19.2.14_fumadocs-core@16.8.8__@mdx-js+mdx@3.1.1__@types+react@19.2.14__lucide-react@0.577.0___react@19.2.6__next@16.2.6___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_lucide-react@0.577.0__react@19.2.6_react-dom@19.2.6__react@19.2.6",
     "npm:fumadocs-ui@16.8.8": "16.8.8_@types+mdx@2.0.13_@types+react@19.2.14_fumadocs-core@16.8.8__@types+react@19.2.14__lucide-react@1.14.0___react@19.2.6__next@16.2.6___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_tailwindcss@4.3.0",
-    "npm:knip@5.88.1": "5.88.1_@types+node@25.6.2_typescript@5.9.3",
+    "npm:knip@5.88.1": "5.88.1_@types+node@25.6.2_typescript@6.0.3",
     "npm:lucide-react@0.577.0": "0.577.0_react@19.2.6",
     "npm:next@16.2.6": "16.2.6_babel-plugin-react-compiler@1.0.0_react@19.2.6_react-dom@19.2.6__react@19.2.6",
     "npm:postcss@8.5.14": "8.5.14",
@@ -30,9 +30,9 @@
     "npm:syncpack@14.3.1": "14.3.1",
     "npm:tailwind-merge@3.5.0": "3.5.0",
     "npm:tailwindcss@4.3.0": "4.3.0",
-    "npm:tsdown@0.22.0": "0.22.0_typescript@5.9.3",
-    "npm:typescript@5.9.3": "5.9.3",
-    "npm:valibot@1.4.0": "1.4.0_typescript@5.9.3",
+    "npm:tsdown@0.22.0": "0.22.0_typescript@6.0.3",
+    "npm:typescript@6.0.3": "6.0.3",
+    "npm:valibot@1.4.0": "1.4.0_typescript@6.0.3",
     "npm:vitest@4.1.5": "4.1.5_@types+node@25.6.2_@vitest+coverage-v8@4.1.5_vite@7.3.2__@types+node@25.6.2",
     "npm:zod@4.4.3": "4.4.3"
   },
@@ -2060,7 +2060,7 @@
       "integrity": "sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==",
       "deprecated": true
     },
-    "@vitest/coverage-v8@4.1.5_vitest@4.1.5_@types+node@25.6.2_vite@7.3.2__@types+node@25.6.1": {
+    "@vitest/coverage-v8@4.1.5_vitest@4.1.5_@types+node@25.6.2_vite@7.3.2__@types+node@25.6.2": {
       "integrity": "sha512-38C0/Ddb7HcRG0Z4/DUem8x57d2p9jYgp18mkaYswEOQBGsI1CG4f/hjm0ZCeaJfWhSZ4k7jgs29V1Zom7Ki9A==",
       "dependencies": [
         "@bcoe/v8-coverage",
@@ -3194,7 +3194,7 @@
         "graceful-fs"
       ]
     },
-    "knip@5.88.1_@types+node@25.6.2_typescript@5.9.3": {
+    "knip@5.88.1_@types+node@25.6.2_typescript@6.0.3": {
       "integrity": "sha512-tpy5o7zu1MjawVkLPuahymVJekYY3kYjvzcoInhIchgePxTlo+api90tBv2KfhAIe5uXh+mez1tAfmbv8/TiZg==",
       "dependencies": [
         "@nodelib/fs.walk",
@@ -4301,7 +4301,7 @@
     "reusify@1.1.0": {
       "integrity": "sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw=="
     },
-    "rolldown-plugin-dts@0.25.0_rolldown@1.0.0_typescript@5.9.3": {
+    "rolldown-plugin-dts@0.25.0_rolldown@1.0.0_typescript@6.0.3": {
       "integrity": "sha512-GE3uDZgUuA9l6g+1u928TRmadd5IVhaWiwpWast2kCyLv9tYJJCC6E5HHkV0HGmwC5ZL73xh12/PRZI+KZ2vdQ==",
       "dependencies": [
         "@babel/generator",
@@ -4637,7 +4637,7 @@
     "trough@2.2.0": {
       "integrity": "sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw=="
     },
-    "tsdown@0.22.0_typescript@5.9.3": {
+    "tsdown@0.22.0_typescript@6.0.3": {
       "integrity": "sha512-FgW0hHb27nGQA/+F3d5+U9wKXkfilk9DVkc5+7x/ZqF03g+Hoz/eeApT32jqxATt9eRoR+1jxk7MUMON+O4CXw==",
       "dependencies": [
         "ansis",
@@ -4665,8 +4665,8 @@
     "tslib@2.8.1": {
       "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="
     },
-    "typescript@5.9.3": {
-      "integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==",
+    "typescript@6.0.3": {
+      "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
       "bin": true
     },
     "unbash@2.2.0": {
@@ -4766,7 +4766,7 @@
         "@types/react"
       ]
     },
-    "valibot@1.4.0_typescript@5.9.3": {
+    "valibot@1.4.0_typescript@6.0.3": {
       "integrity": "sha512-iC/x7fVcSyOwlm/VSt7RlHnzNGLGvR9GnxdifUeWoCJo0q4ZZvrVkIHC6faTlkxG47I2Y4UrFquPuVHCrOnrLg==",
       "dependencies": [
         "typescript"
@@ -4901,7 +4901,7 @@
         "npm:knip@5.88.1",
         "npm:syncpack@14.3.1",
         "npm:tsdown@0.22.0",
-        "npm:typescript@5.9.3",
+        "npm:typescript@6.0.3",
         "npm:valibot@1.4.0",
         "npm:vitest@4.1.5",
         "npm:zod@4.4.3"
@@ -4928,7 +4928,7 @@
             "npm:react@19.2.6",
             "npm:tailwind-merge@3.5.0",
             "npm:tailwindcss@4.3.0",
-            "npm:typescript@5.9.3"
+            "npm:typescript@6.0.3"
           ]
         }
       }
