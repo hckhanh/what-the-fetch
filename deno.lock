@@ -28,7 +28,7 @@
     "npm:react-dom@19.2.6": "19.2.6_react@19.2.6",
     "npm:react@19.2.6": "19.2.6",
     "npm:syncpack@14.3.1": "14.3.1",
-    "npm:tailwind-merge@3.5.0": "3.5.0",
+    "npm:tailwind-merge@3.6.0": "3.6.0",
     "npm:tailwindcss@4.3.0": "4.3.0",
     "npm:tsdown@0.22.0": "0.22.0_typescript@5.9.3",
     "npm:typescript@5.9.3": "5.9.3",
@@ -4557,8 +4557,8 @@
       ],
       "bin": true
     },
-    "tailwind-merge@3.5.0": {
-      "integrity": "sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A=="
+    "tailwind-merge@3.6.0": {
+      "integrity": "sha512-uxL7qAVQriqRQPAyK3pj66VqskWqoZ37PW94jwOTwNfq/z9oyu1V+eqrZqtR2+fCiXdYOZe/Modt8GtvqNzu+w=="
     },
     "tailwindcss@4.3.0": {
       "integrity": "sha512-y6nxMGB1nMW9R6k96e5gdIFzcfL/gTJRNaqGes1YvkLnPVXzWgbqFF2yLC0T8G774n24cx3Pe8XrKoniCOAH+Q=="
@@ -4890,7 +4890,7 @@
             "npm:postcss@8.5.15",
             "npm:react-dom@19.2.6",
             "npm:react@19.2.6",
-            "npm:tailwind-merge@3.5.0",
+            "npm:tailwind-merge@3.6.0",
             "npm:tailwindcss@4.3.0",
             "npm:typescript@5.9.3"
           ]
