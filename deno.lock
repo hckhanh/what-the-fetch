@@ -18,7 +18,7 @@
     "npm:arktype@2.2.0": "2.2.0",
     "npm:babel-plugin-react-compiler@1.0.0": "1.0.0",
     "npm:fast-url@^6.0.2": "6.0.2",
-    "npm:fumadocs-core@16.9.1": "16.9.1_@mdx-js+mdx@3.1.1_@types+react@19.2.15_lucide-react@0.577.0__react@19.2.6_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
+    "npm:fumadocs-core@16.9.1": "16.9.1_@types+react@19.2.15_lucide-react@0.577.0__react@19.2.6_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
     "npm:fumadocs-mdx@14.3.2": "14.3.2_@types+mdx@2.0.13_@types+react@19.2.15_fumadocs-core@16.9.1__@mdx-js+mdx@3.1.1__@types+react@19.2.15__lucide-react@0.577.0___react@19.2.6__next@16.2.6___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_lucide-react@0.577.0__react@19.2.6_react-dom@19.2.6__react@19.2.6",
     "npm:fumadocs-ui@16.9.1": "16.9.1_@types+mdx@2.0.13_@types+react@19.2.15_fumadocs-core@16.9.1__@types+react@19.2.15__lucide-react@1.16.0___react@19.2.6__next@16.2.6___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_@types+react-dom@19.2.3__@types+react@19.2.15_tailwindcss@4.3.0_zod@4.4.3",
     "npm:knip@5.88.1": "5.88.1_@types+node@25.9.1_typescript@5.9.3",
@@ -32,7 +32,7 @@
     "npm:tailwindcss@4.3.0": "4.3.0",
     "npm:tsdown@0.22.0": "0.22.0_typescript@5.9.3",
     "npm:typescript@5.9.3": "5.9.3",
-    "npm:valibot@1.4.0": "1.4.0_typescript@5.9.3",
+    "npm:valibot@1.4.1": "1.4.1_typescript@5.9.3",
     "npm:vitest@4.1.7": "4.1.7_@types+node@25.9.1_@vitest+coverage-v8@4.1.7_vite@7.3.2__@types+node@25.9.1",
     "npm:zod@4.4.3": "4.4.3"
   },
@@ -2701,6 +2701,42 @@
         "hast-util-to-estree",
         "hast-util-to-jsx-runtime",
         "js-yaml@4.1.1",
+        "mdast-util-mdx",
+        "mdast-util-to-markdown",
+        "next",
+        "react",
+        "react-dom",
+        "remark",
+        "remark-gfm",
+        "remark-rehype",
+        "scroll-into-view-if-needed",
+        "shiki",
+        "tinyglobby",
+        "unified",
+        "unist-util-visit",
+        "vfile",
+        "zod"
+      ],
+      "optionalPeers": [
+        "@mdx-js/mdx",
+        "@types/react",
+        "next",
+        "react",
+        "react-dom",
+        "zod"
+      ]
+    },
+    "fumadocs-core@16.9.1_@types+react@19.2.15_lucide-react@0.577.0__react@19.2.6_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3": {
+      "integrity": "sha512-8VW4aD1iG5SrCChRq84QpNyjKY69i5WfUFFgtx/LSUuX1RewWb0qps7DhKLSjOWraemhZatzsZ7iceivJmYRTg==",
+      "dependencies": [
+        "@mdx-js/mdx",
+        "@orama/orama",
+        "@types/react",
+        "estree-util-value-to-estree",
+        "github-slugger",
+        "hast-util-to-estree",
+        "hast-util-to-jsx-runtime",
+        "js-yaml@4.1.1",
         "lucide-react@0.577.0_react@19.2.6",
         "mdast-util-mdx",
         "mdast-util-to-markdown",
@@ -4730,8 +4766,8 @@
         "@types/react"
       ]
     },
-    "valibot@1.4.0_typescript@5.9.3": {
-      "integrity": "sha512-iC/x7fVcSyOwlm/VSt7RlHnzNGLGvR9GnxdifUeWoCJo0q4ZZvrVkIHC6faTlkxG47I2Y4UrFquPuVHCrOnrLg==",
+    "valibot@1.4.1_typescript@5.9.3": {
+      "integrity": "sha512-klCmFTz2jeDluy9RwX+F884TCiogtdBJ/YaxSx1EOBYXa3NXNWj8kR1jjN8rzluwojJVWWaHJ4r1U5LfICnM3g==",
       "dependencies": [
         "typescript"
       ],
@@ -4866,7 +4902,7 @@
         "npm:syncpack@14.3.1",
         "npm:tsdown@0.22.0",
         "npm:typescript@5.9.3",
-        "npm:valibot@1.4.0",
+        "npm:valibot@1.4.1",
         "npm:vitest@4.1.7",
         "npm:zod@4.4.3"
       ]
