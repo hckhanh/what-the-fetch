@@ -18,12 +18,12 @@
     "npm:arktype@2.2.0": "2.2.0",
     "npm:babel-plugin-react-compiler@1.0.0": "1.0.0",
     "npm:fast-url@^6.0.2": "6.0.2",
-    "npm:fumadocs-core@16.9.2": "16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
-    "npm:fumadocs-mdx@14.3.2": "14.3.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@0.577.0___react@19.2.6__next@16.2.6___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_lucide-react@0.577.0__react@19.2.6",
-    "npm:fumadocs-ui@16.9.2": "16.9.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@1.17.0___react@19.2.6__next@16.2.6___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6",
+    "npm:fumadocs-core@16.9.2": "16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3_babel-plugin-react-compiler@1.0.0",
+    "npm:fumadocs-mdx@14.3.2": "14.3.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@0.577.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3__babel-plugin-react-compiler@1.0.0_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_babel-plugin-react-compiler@1.0.0_lucide-react@0.577.0__react@19.2.6_react-dom@19.2.6__react@19.2.6",
+    "npm:fumadocs-ui@16.9.2": "16.9.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@1.17.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3__babel-plugin-react-compiler@1.0.0_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_babel-plugin-react-compiler@1.0.0",
     "npm:knip@5.88.1": "5.88.1_@types+node@25.9.2_typescript@5.9.3",
     "npm:lucide-react@0.577.0": "0.577.0_react@19.2.6",
-    "npm:next@16.2.6": "16.2.6_babel-plugin-react-compiler@1.0.0_react@19.2.6_react-dom@19.2.6__react@19.2.6",
+    "npm:next@16.2.11": "16.2.11_babel-plugin-react-compiler@1.0.0_react@19.2.6_react-dom@19.2.6__react@19.2.6",
     "npm:postcss@8.5.15": "8.5.15",
     "npm:react-dom@19.2.6": "19.2.6_react@19.2.6",
     "npm:react@19.2.6": "19.2.6",
@@ -924,46 +924,46 @@
         "@tybys/wasm-util"
       ]
     },
-    "@next/env@16.2.6": {
-      "integrity": "sha512-gd8HoHN4ufj73WmR3JmVolrpJR47ILK6LouP5xElPglaVxir6e1a7VzvTvDWkOoPXT9rkkTzyCxBu4yeZfZwcw=="
+    "@next/env@16.2.11": {
+      "integrity": "sha512-0do5A3BJ2gxWr0ZCMcD6BhW+e595jyxdTl3rXTS6lOtD8ektMiW6CO+EPwt1Eca1DBnm90r/7GdiKWBKxH++DA=="
     },
-    "@next/swc-darwin-arm64@16.2.6": {
-      "integrity": "sha512-ZJGkkcNfYgrrMkqOdZ7zoLa1TOy0qpcMfk/z4Mh/FKUz40gVO+HNQWqmLxf67Z5WB64DRp0dhEbyHfel+6sJUg==",
+    "@next/swc-darwin-arm64@16.2.11": {
+      "integrity": "sha512-wryL4pjKmDwGv2ox6+GZDFxvmtSRLqApBR8kL1j4+vhB7Z5vJC/zAnXpiR9Xkfzl0AS8WLMnsuGV/UKI67/rrw==",
       "os": ["darwin"],
       "cpu": ["arm64"]
     },
-    "@next/swc-darwin-x64@16.2.6": {
-      "integrity": "sha512-v/YLBHIY132Ced3puBJ7YJKw1lqsCrgcNo2aRJlCEyQrrCeRJlvGlnmxhPxNQI3KE3N1DN5r9TPNPvka3nq5RQ==",
+    "@next/swc-darwin-x64@16.2.11": {
+      "integrity": "sha512-aZl2j4f/fLyjQvOhv0Oe9UaMAQHolYpKhctsoYzplSumKJKPUmgjcf6545aBtysLTcu994TREd0+pSgNE4ohmg==",
       "os": ["darwin"],
       "cpu": ["x64"]
     },
-    "@next/swc-linux-arm64-gnu@16.2.6": {
-      "integrity": "sha512-RPOvqlYBbcQjkz9VQQDZ2T2bARIjXZV1KFlt+V2Mr6SW/e4I9fcKsaA0hdyf2FHoTlsV2xnBd5Y912rP/1Ce6w==",
+    "@next/swc-linux-arm64-gnu@16.2.11": {
+      "integrity": "sha512-5jEriyEnH/LWFy27L2ZG0XaLlyEJIjhsImEsiS9P563PKEVp2BVups/xfOucIrsvVntp11oNcZwjHvaDPYVB5g==",
       "os": ["linux"],
       "cpu": ["arm64"]
     },
-    "@next/swc-linux-arm64-musl@16.2.6": {
-      "integrity": "sha512-URUTu1+dMkxJsPFgm+OeEvq9wf5sujw0EvgYy80TDGHTSLTnIHeqb0Eu8A3sC95IRgjejQL+kC4mw+4yPxiAXA==",
+    "@next/swc-linux-arm64-musl@16.2.11": {
+      "integrity": "sha512-eIjcpx2fnnFSSkZDbTxy74KnokUXDjfoLClpWelfgHLf621aTqswhwXQ7GkD5K5rplrS6LZ/Bj+mVuvzluBOEg==",
       "os": ["linux"],
       "cpu": ["arm64"]
     },
-    "@next/swc-linux-x64-gnu@16.2.6": {
-      "integrity": "sha512-DOj182mPV8G3UkrayLoREM5YEYI+Dk5wv7Ox9xl1fFibAELEsFD0lDPfHIeILlutMMfdyhlzYPELG3peuKaurw==",
+    "@next/swc-linux-x64-gnu@16.2.11": {
+      "integrity": "sha512-8WgzpaWMs46qJT9kiV47cje86L0x/Mu9t8/Gwj+pnbgW3rETVfCnaScPjlYUwNScpOozdcIMHWmAvuZJUonR2w==",
       "os": ["linux"],
       "cpu": ["x64"]
     },
-    "@next/swc-linux-x64-musl@16.2.6": {
-      "integrity": "sha512-HKQ5SP/V/ub73UvF7n/zeJlxk2kLmtL7Wzrg4WfmkjmNos5onJ2tKu7yZOPdL18A6Svfn3max29ym+ry7NkK4g==",
+    "@next/swc-linux-x64-musl@16.2.11": {
+      "integrity": "sha512-I3UgPds7G4ZYnTb/H+5GBGuUT2DhAk6j0mL6A4s63RjFs74wB2hOWP0vaxsK+3NJraExt3eYEPQ/UtT0x/64Nw==",
       "os": ["linux"],
       "cpu": ["x64"]
     },
-    "@next/swc-win32-arm64-msvc@16.2.6": {
-      "integrity": "sha512-LZXpTlPyS5v7HhSmnvsLGP3iIYgYOBnc8r8ArlT55sGHV89bR2HlDdBjWQ+PY6SJMmk8TuVGFuxalnP3k/0Dwg==",
+    "@next/swc-win32-arm64-msvc@16.2.11": {
+      "integrity": "sha512-n89CjtcThnjrwgJMAiI5xbqwLY51zvwC9tSlArmVndAJLYVl9T9UAdlkXTmZvE++idoXe8KdglQlhNRdUp1c6g==",
       "os": ["win32"],
       "cpu": ["arm64"]
     },
-    "@next/swc-win32-x64-msvc@16.2.6": {
-      "integrity": "sha512-F0+4i0h9J6C4eE3EAPWsoCk7UW/dbzOjyzxY0qnDUOYFu6FFmdZ6l97/XdV3/Nz3VYyO7UWjyEJUXkGqcoXfMA==",
+    "@next/swc-win32-x64-msvc@16.2.11": {
+      "integrity": "sha512-md8CLNggS1Dx9pUgApzps5uAf+N8GN9xywzmNx9vHAWo94HtBwCCqkSnhIrdfQe83Dhz8Lfo/20Nb1Zxal092w==",
       "os": ["win32"],
       "cpu": ["x64"]
     },
@@ -2690,7 +2690,7 @@
       "os": ["darwin"],
       "scripts": true
     },
-    "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3": {
+    "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3_babel-plugin-react-compiler@1.0.0": {
       "integrity": "sha512-jyzdPmi5WbW9LucJoZEEM7TvnOnUlkm00Rab8UZyooZ+y5Ez75fqkziqmtZ4NED5eOStFBRjyIE3NUdZQRSTwQ==",
       "dependencies": [
         "@mdx-js/mdx",
@@ -2728,7 +2728,7 @@
         "zod"
       ]
     },
-    "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@1.17.0__react@19.2.6_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3": {
+    "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@1.17.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3_babel-plugin-react-compiler@1.0.0": {
       "integrity": "sha512-jyzdPmi5WbW9LucJoZEEM7TvnOnUlkm00Rab8UZyooZ+y5Ez75fqkziqmtZ4NED5eOStFBRjyIE3NUdZQRSTwQ==",
       "dependencies": [
         "@orama/orama",
@@ -2763,7 +2763,7 @@
         "zod"
       ]
     },
-    "fumadocs-mdx@14.3.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@0.577.0___react@19.2.6__next@16.2.6___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_lucide-react@0.577.0__react@19.2.6": {
+    "fumadocs-mdx@14.3.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@0.577.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3__babel-plugin-react-compiler@1.0.0_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_babel-plugin-react-compiler@1.0.0_lucide-react@0.577.0__react@19.2.6_react-dom@19.2.6__react@19.2.6": {
       "integrity": "sha512-73SoZkbUuqnD91G/0zBcaQdM1TMnYw5JJzKgkGvQTiZbtLQFuWTt8/uRqnzFMuNIUu/WY9Lo9d1iZ8G+jOVieA==",
       "dependencies": [
         "@mdx-js/mdx",
@@ -2773,7 +2773,7 @@
         "chokidar",
         "esbuild@0.28.0",
         "estree-util-value-to-estree",
-        "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
+        "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3_babel-plugin-react-compiler@1.0.0",
         "js-yaml@4.1.1",
         "mdast-util-mdx",
         "mdast-util-to-markdown",
@@ -2799,7 +2799,7 @@
       ],
       "bin": true
     },
-    "fumadocs-ui@16.9.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@1.17.0___react@19.2.6__next@16.2.6___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6": {
+    "fumadocs-ui@16.9.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@1.17.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3__babel-plugin-react-compiler@1.0.0_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_babel-plugin-react-compiler@1.0.0": {
       "integrity": "sha512-0lfm+KOXmmj88RWeuFXbTCbJPzqkYkN/V34j0Z9cW02mzChtrruYz0c8F5i9AA0A2jWZ79Rvn/PV+9hV07/FZA==",
       "dependencies": [
         "@fumadocs/tailwind",
@@ -2816,7 +2816,7 @@
         "@types/mdx",
         "@types/react",
         "class-variance-authority",
-        "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@1.17.0__react@19.2.6_next@16.2.6__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
+        "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@1.17.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3_babel-plugin-react-compiler@1.0.0",
         "lucide-react@1.17.0_react@19.2.6",
         "motion",
         "next",
@@ -3875,8 +3875,8 @@
         "react-dom"
       ]
     },
-    "next@16.2.6_babel-plugin-react-compiler@1.0.0_react@19.2.6_react-dom@19.2.6__react@19.2.6": {
-      "integrity": "sha512-qOVgKJg1+At15NpeUP+eJgCHvTCgXsogweq87Ri/Ix7PkqQHg4sdaXmSFqKlgaIXE4kW0g25LE68W87UANlHtw==",
+    "next@16.2.11_babel-plugin-react-compiler@1.0.0_react@19.2.6_react-dom@19.2.6__react@19.2.6": {
+      "integrity": "sha512-B339zaqbyK8cmxhoAvLrcwoabwCP1wz21zSzfqxqXAemTu2BXnH7tQnfcglKv1vnMUIDBc+Hth7XODQriTZiRQ==",
       "dependencies": [
         "@next/env",
         "@swc/helpers",
@@ -4884,7 +4884,7 @@
             "npm:fumadocs-mdx@14.3.2",
             "npm:fumadocs-ui@16.9.2",
             "npm:lucide-react@0.577.0",
-            "npm:next@16.2.6",
+            "npm:next@16.2.11",
             "npm:postcss@8.5.15",
             "npm:react-dom@19.2.6",
             "npm:react@19.2.6",
