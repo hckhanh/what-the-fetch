@@ -18,13 +18,13 @@
     "npm:arktype@2.2.0": "2.2.0",
     "npm:babel-plugin-react-compiler@1.0.0": "1.0.0",
     "npm:fast-url@^6.0.2": "6.0.2",
-    "npm:fumadocs-core@16.9.2": "16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3_babel-plugin-react-compiler@1.0.0",
+    "npm:fumadocs-core@16.9.2": "16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
     "npm:fumadocs-mdx@14.3.2": "14.3.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@0.577.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3__babel-plugin-react-compiler@1.0.0_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_babel-plugin-react-compiler@1.0.0_lucide-react@0.577.0__react@19.2.6_react-dom@19.2.6__react@19.2.6",
     "npm:fumadocs-ui@16.9.2": "16.9.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@1.17.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3__babel-plugin-react-compiler@1.0.0_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_babel-plugin-react-compiler@1.0.0",
     "npm:knip@5.88.1": "5.88.1_@types+node@25.9.2_typescript@5.9.3",
     "npm:lucide-react@0.577.0": "0.577.0_react@19.2.6",
     "npm:next@16.2.11": "16.2.11_babel-plugin-react-compiler@1.0.0_react@19.2.6_react-dom@19.2.6__react@19.2.6",
-    "npm:postcss@8.5.15": "8.5.15",
+    "npm:postcss@8.5.18": "8.5.18",
     "npm:react-dom@19.2.6": "19.2.6_react@19.2.6",
     "npm:react@19.2.6": "19.2.6",
     "npm:syncpack@14.3.1": "14.3.1",
@@ -1967,7 +1967,7 @@
         "@alloc/quick-lru",
         "@tailwindcss/node",
         "@tailwindcss/oxide",
-        "postcss@8.5.15",
+        "postcss@8.5.18",
         "tailwindcss"
       ]
     },
@@ -2690,7 +2690,7 @@
       "os": ["darwin"],
       "scripts": true
     },
-    "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3_babel-plugin-react-compiler@1.0.0": {
+    "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3": {
       "integrity": "sha512-jyzdPmi5WbW9LucJoZEEM7TvnOnUlkm00Rab8UZyooZ+y5Ez75fqkziqmtZ4NED5eOStFBRjyIE3NUdZQRSTwQ==",
       "dependencies": [
         "@mdx-js/mdx",
@@ -2722,6 +2722,42 @@
         "@mdx-js/mdx",
         "@types/react",
         "lucide-react@0.577.0_react@19.2.6",
+        "next",
+        "react",
+        "react-dom",
+        "zod"
+      ]
+    },
+    "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3_babel-plugin-react-compiler@1.0.0": {
+      "integrity": "sha512-jyzdPmi5WbW9LucJoZEEM7TvnOnUlkm00Rab8UZyooZ+y5Ez75fqkziqmtZ4NED5eOStFBRjyIE3NUdZQRSTwQ==",
+      "dependencies": [
+        "@mdx-js/mdx",
+        "@orama/orama",
+        "@types/react",
+        "estree-util-value-to-estree",
+        "github-slugger",
+        "hast-util-to-estree",
+        "hast-util-to-jsx-runtime",
+        "js-yaml@4.1.1",
+        "mdast-util-mdx",
+        "mdast-util-to-markdown",
+        "next",
+        "react",
+        "react-dom",
+        "remark",
+        "remark-gfm",
+        "remark-rehype",
+        "scroll-into-view-if-needed",
+        "shiki",
+        "tinyglobby",
+        "unified",
+        "unist-util-visit",
+        "vfile",
+        "zod"
+      ],
+      "optionalPeers": [
+        "@mdx-js/mdx",
+        "@types/react",
         "next",
         "react",
         "react-dom",
@@ -4045,8 +4081,8 @@
         "source-map-js"
       ]
     },
-    "postcss@8.5.15": {
-      "integrity": "sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==",
+    "postcss@8.5.18": {
+      "integrity": "sha512-xdB1oSLHbz1vRWgCDalrCqEFTWzFlhqFC5tIHLMOSUIjhm3XXQ1qrFy8S/ESr1JYRRXqM3c1QFiMZUJdUTqyMQ==",
       "dependencies": [
         "nanoid",
         "picocolors",
@@ -4885,7 +4921,7 @@
             "npm:fumadocs-ui@16.9.2",
             "npm:lucide-react@0.577.0",
             "npm:next@16.2.11",
-            "npm:postcss@8.5.15",
+            "npm:postcss@8.5.18",
             "npm:react-dom@19.2.6",
             "npm:react@19.2.6",
             "npm:tailwind-merge@3.6.0",
