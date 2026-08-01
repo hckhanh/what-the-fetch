@@ -52,7 +52,7 @@
     "knip": "5.88.1",
     "syncpack": "14.3.1",
     "tsdown": "0.22.2",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "valibot": "1.4.1",
     "vitest": "4.1.7",
     "zod": "4.4.3"

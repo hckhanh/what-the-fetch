@@ -21,7 +21,7 @@
     "npm:fumadocs-core@16.9.2": "16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
     "npm:fumadocs-mdx@14.3.2": "14.3.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@0.577.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_@types+node@25.9.5_lucide-react@0.577.0__react@19.2.6",
     "npm:fumadocs-ui@16.9.2": "16.9.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@1.17.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3__babel-plugin-react-compiler@1.0.0_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_babel-plugin-react-compiler@1.0.0",
-    "npm:knip@5.88.1": "5.88.1_@types+node@25.9.5_typescript@5.9.3",
+    "npm:knip@5.88.1": "5.88.1_@types+node@25.9.5_typescript@6.0.3",
     "npm:lucide-react@0.577.0": "0.577.0_react@19.2.6",
     "npm:next@16.2.11": "16.2.11_babel-plugin-react-compiler@1.0.0_react@19.2.6_react-dom@19.2.6__react@19.2.6",
     "npm:postcss@8.5.18": "8.5.18",
@@ -30,9 +30,9 @@
     "npm:syncpack@14.3.1": "14.3.1",
     "npm:tailwind-merge@3.6.0": "3.6.0",
     "npm:tailwindcss@4.3.0": "4.3.0",
-    "npm:tsdown@0.22.2": "0.22.2_typescript@5.9.3",
-    "npm:typescript@5.9.3": "5.9.3",
-    "npm:valibot@1.4.1": "1.4.1_typescript@5.9.3",
+    "npm:tsdown@0.22.2": "0.22.2_typescript@6.0.3",
+    "npm:typescript@6.0.3": "6.0.3",
+    "npm:valibot@1.4.1": "1.4.1_typescript@6.0.3",
     "npm:vitest@4.1.7": "4.1.7_@types+node@25.9.5_@vitest+coverage-v8@4.1.7_vite@7.3.2__@types+node@25.9.5",
     "npm:zod@4.4.3": "4.4.3"
   },
@@ -3157,7 +3157,7 @@
         "graceful-fs"
       ]
     },
-    "knip@5.88.1_@types+node@25.9.5_typescript@5.9.3": {
+    "knip@5.88.1_@types+node@25.9.5_typescript@6.0.3": {
       "integrity": "sha512-tpy5o7zu1MjawVkLPuahymVJekYY3kYjvzcoInhIchgePxTlo+api90tBv2KfhAIe5uXh+mez1tAfmbv8/TiZg==",
       "dependencies": [
         "@nodelib/fs.walk",
@@ -4264,7 +4264,7 @@
     "reusify@1.1.0": {
       "integrity": "sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw=="
     },
-    "rolldown-plugin-dts@0.25.2_rolldown@1.1.0_typescript@5.9.3": {
+    "rolldown-plugin-dts@0.25.2_rolldown@1.1.0_typescript@6.0.3": {
       "integrity": "sha512-nMhN/R+vmR8GM45ZW1FWMSjRTSDDn/6w4GTf8RNrEFCBdl8B1kySWrU1ixPtbwzXoRlcO+R/S88VgXuJQwfdDg==",
       "dependencies": [
         "@babel/generator",
@@ -4600,7 +4600,7 @@
     "trough@2.2.0": {
       "integrity": "sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw=="
     },
-    "tsdown@0.22.2_typescript@5.9.3": {
+    "tsdown@0.22.2_typescript@6.0.3": {
       "integrity": "sha512-VX9gsyKXsTnBZjnIM4jsHl9aRv+GfgkE/k1hQslilaBfZMlaw3JuGR+6yhiU0QxWBtOCDnTjwOSoXzgB7Rr50g==",
       "dependencies": [
         "ansis",
@@ -4628,8 +4628,8 @@
     "tslib@2.8.1": {
       "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="
     },
-    "typescript@5.9.3": {
-      "integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==",
+    "typescript@6.0.3": {
+      "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
       "bin": true
     },
     "unbash@2.2.0": {
@@ -4729,7 +4729,7 @@
         "@types/react"
       ]
     },
-    "valibot@1.4.1_typescript@5.9.3": {
+    "valibot@1.4.1_typescript@6.0.3": {
       "integrity": "sha512-klCmFTz2jeDluy9RwX+F884TCiogtdBJ/YaxSx1EOBYXa3NXNWj8kR1jjN8rzluwojJVWWaHJ4r1U5LfICnM3g==",
       "dependencies": [
         "typescript"
@@ -4863,7 +4863,7 @@
         "npm:knip@5.88.1",
         "npm:syncpack@14.3.1",
         "npm:tsdown@0.22.2",
-        "npm:typescript@5.9.3",
+        "npm:typescript@6.0.3",
         "npm:valibot@1.4.1",
         "npm:vitest@4.1.7",
         "npm:zod@4.4.3"
@@ -4890,7 +4890,7 @@
             "npm:react@19.2.6",
             "npm:tailwind-merge@3.6.0",
             "npm:tailwindcss@4.3.0",
-            "npm:typescript@5.9.3"
+            "npm:typescript@6.0.3"
           ]
         }
       }
