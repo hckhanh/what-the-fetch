@@ -4,24 +4,24 @@
     "jsr:@hckhanh/fast-url@^6.0.2": "6.0.2",
     "jsr:@standard-schema/spec@1": "1.0.0",
     "npm:@biomejs/biome@2.4.16": "2.4.16",
-    "npm:@changesets/cli@2.31.1": "2.31.1_@types+node@25.9.2",
+    "npm:@changesets/cli@2.31.1": "2.31.1_@types+node@25.9.5",
     "npm:@changesets/config@3.1.4": "3.1.4",
-    "npm:@codspeed/vitest-plugin@5.4.0": "5.4.0_vitest@4.1.7__@types+node@25.9.2__@vitest+coverage-v8@4.1.7__vite@7.3.2___@types+node@25.9.2_@types+node@25.9.2",
+    "npm:@codspeed/vitest-plugin@5.4.0": "5.4.0_vitest@4.1.7__@types+node@25.9.5__@vitest+coverage-v8@4.1.7__vite@7.3.2___@types+node@25.9.5_@types+node@25.9.5",
     "npm:@standard-schema/spec@1": "1.1.0",
     "npm:@tailwindcss/postcss@4.3.0": "4.3.0",
     "npm:@types/bun@1.3.14": "1.3.14",
     "npm:@types/mdx@2.0.14": "2.0.14",
-    "npm:@types/node@25.9.2": "25.9.2",
+    "npm:@types/node@25.9.5": "25.9.5",
     "npm:@types/react-dom@19.2.3": "19.2.3_@types+react@19.2.17",
     "npm:@types/react@19.2.17": "19.2.17",
-    "npm:@vitest/coverage-v8@4.1.7": "4.1.7_vitest@4.1.7_@types+node@25.9.2_vite@7.3.2__@types+node@25.9.2",
+    "npm:@vitest/coverage-v8@4.1.7": "4.1.7_vitest@4.1.7_@types+node@25.9.5_vite@7.3.2__@types+node@25.9.2",
     "npm:arktype@2.2.0": "2.2.0",
     "npm:babel-plugin-react-compiler@1.0.0": "1.0.0",
     "npm:fast-url@^6.0.2": "6.0.2",
     "npm:fumadocs-core@16.9.2": "16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
-    "npm:fumadocs-mdx@14.3.2": "14.3.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@0.577.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3__babel-plugin-react-compiler@1.0.0_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_babel-plugin-react-compiler@1.0.0_lucide-react@0.577.0__react@19.2.6_react-dom@19.2.6__react@19.2.6",
+    "npm:fumadocs-mdx@14.3.2": "14.3.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@0.577.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_@types+node@25.9.5_lucide-react@0.577.0__react@19.2.6",
     "npm:fumadocs-ui@16.9.2": "16.9.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@1.17.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3__babel-plugin-react-compiler@1.0.0_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_babel-plugin-react-compiler@1.0.0",
-    "npm:knip@5.88.1": "5.88.1_@types+node@25.9.2_typescript@5.9.3",
+    "npm:knip@5.88.1": "5.88.1_@types+node@25.9.5_typescript@5.9.3",
     "npm:lucide-react@0.577.0": "0.577.0_react@19.2.6",
     "npm:next@16.2.11": "16.2.11_babel-plugin-react-compiler@1.0.0_react@19.2.6_react-dom@19.2.6__react@19.2.6",
     "npm:postcss@8.5.18": "8.5.18",
@@ -33,7 +33,7 @@
     "npm:tsdown@0.22.2": "0.22.2_typescript@5.9.3",
     "npm:typescript@5.9.3": "5.9.3",
     "npm:valibot@1.4.1": "1.4.1_typescript@5.9.3",
-    "npm:vitest@4.1.7": "4.1.7_@types+node@25.9.2_@vitest+coverage-v8@4.1.7_vite@7.3.2__@types+node@25.9.2",
+    "npm:vitest@4.1.7": "4.1.7_@types+node@25.9.5_@vitest+coverage-v8@4.1.7_vite@7.3.2__@types+node@25.9.5",
     "npm:zod@4.4.3": "4.4.3"
   },
   "jsr": {
@@ -203,7 +203,7 @@
         "@changesets/types@6.1.0"
       ]
     },
-    "@changesets/cli@2.31.1_@types+node@25.9.2": {
+    "@changesets/cli@2.31.1_@types+node@25.9.5": {
       "integrity": "sha512-uO05WTcRBwuVOJVSW8Cmpqw6q0WDL53ajGCMyszutvOe5toOnunbpM4jZzf+qxBOz7i0AzopZ8diBuewjmF40w==",
       "dependencies": [
         "@changesets/apply-release-plan",
@@ -352,7 +352,7 @@
         "node-gyp-build"
       ]
     },
-    "@codspeed/vitest-plugin@5.4.0_vitest@4.1.7__@types+node@25.9.2__@vitest+coverage-v8@4.1.7__vite@7.3.2___@types+node@25.9.2_@types+node@25.9.2": {
+    "@codspeed/vitest-plugin@5.4.0_vitest@4.1.7__@types+node@25.9.5__@vitest+coverage-v8@4.1.7__vite@7.3.2___@types+node@25.9.5_@types+node@25.9.5": {
       "integrity": "sha512-Xa9HaZHUjYXn1T39bTipV5hmguk1vIuDZs3Gc5OYA8X4ohftYbKfyoFtBqVFfB/ii/p1ihuwt+tltraKMcRDsA==",
       "dependencies": [
         "@codspeed/core",
@@ -828,15 +828,15 @@
       "os": ["win32"],
       "cpu": ["x64"]
     },
-    "@inquirer/external-editor@1.0.3_@types+node@25.9.2": {
+    "@inquirer/external-editor@1.0.3_@types+node@25.9.5": {
       "integrity": "sha512-RWbSrDiYmO4LbejWY7ttpxczuwQyZLBUyygsA9Nsv95hpzUWwnNTVQmAq3xuh7vNwCp07UTmE5i11XAEExx4RA==",
       "dependencies": [
-        "@types/node@25.9.2",
+        "@types/node@25.9.5",
         "chardet",
         "iconv-lite"
       ],
       "optionalPeers": [
-        "@types/node@25.9.2"
+        "@types/node@25.9.5"
       ]
     },
     "@jridgewell/gen-mapping@0.3.13": {
@@ -2032,8 +2032,8 @@
     "@types/node@12.20.55": {
       "integrity": "sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ=="
     },
-    "@types/node@25.9.2": {
-      "integrity": "sha512-G05zqtJhcDLb8uslf5EjCxXg9G1KQxiV8OS0R26IC//Eoyitzqe8z37I7cqvnZlrlSfgocQRfSn/AHBZJJFyGw==",
+    "@types/node@25.9.5": {
+      "integrity": "sha512-OScDchr2fwuUmWdf4kZ9h7PcJiYDVInhJizG/biAq3cAvqwYktuy/TYGGdZNMtNTFUP7rnb0NU4TUdm82kt4Rg==",
       "dependencies": [
         "undici-types"
       ]
@@ -2060,7 +2060,7 @@
       "integrity": "sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==",
       "deprecated": true
     },
-    "@vitest/coverage-v8@4.1.7_vitest@4.1.7_@types+node@25.9.2_vite@7.3.2__@types+node@25.9.2": {
+    "@vitest/coverage-v8@4.1.7_vitest@4.1.7_@types+node@25.9.5_vite@7.3.2__@types+node@25.9.2": {
       "integrity": "sha512-qsYPeXc5Q9dFLd1i8Ap+Bx8sQgcp+rFVQo4R0dDsWNBzl26ldVF1qOO+RL24K7FDrR6pA+50XedRLSoSG24bVQ==",
       "dependencies": [
         "@bcoe/v8-coverage",
@@ -2087,7 +2087,7 @@
         "tinyrainbow"
       ]
     },
-    "@vitest/mocker@4.1.7_vite@7.3.2__@types+node@25.9.2_@types+node@25.9.2": {
+    "@vitest/mocker@4.1.7_vite@7.3.2__@types+node@25.9.5_@types+node@25.9.5": {
       "integrity": "sha512-vY7nuamKgfvpA1Koa3oYIw/k7D6kZnpGyNMZW8loow2bsBYla1TFdqTaXncWdRn4pgwNs+90RhnXhJScDwQeJA==",
       "dependencies": [
         "@vitest/spy",
@@ -2248,7 +2248,7 @@
     "bun-types@1.3.14": {
       "integrity": "sha512-4N0ig0fEomHt5R0KCFWjovxow98rIoRwKolrYdCcknNwMekCXRnWEUvgu5soYV8QXtVsrUD8B95MBOZGPvr6KQ==",
       "dependencies": [
-        "@types/node@25.9.2"
+        "@types/node@25.9.5"
       ]
     },
     "cac@7.0.0": {
@@ -2728,42 +2728,6 @@
         "zod"
       ]
     },
-    "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3_babel-plugin-react-compiler@1.0.0": {
-      "integrity": "sha512-jyzdPmi5WbW9LucJoZEEM7TvnOnUlkm00Rab8UZyooZ+y5Ez75fqkziqmtZ4NED5eOStFBRjyIE3NUdZQRSTwQ==",
-      "dependencies": [
-        "@mdx-js/mdx",
-        "@orama/orama",
-        "@types/react",
-        "estree-util-value-to-estree",
-        "github-slugger",
-        "hast-util-to-estree",
-        "hast-util-to-jsx-runtime",
-        "js-yaml@4.1.1",
-        "mdast-util-mdx",
-        "mdast-util-to-markdown",
-        "next",
-        "react",
-        "react-dom",
-        "remark",
-        "remark-gfm",
-        "remark-rehype",
-        "scroll-into-view-if-needed",
-        "shiki",
-        "tinyglobby",
-        "unified",
-        "unist-util-visit",
-        "vfile",
-        "zod"
-      ],
-      "optionalPeers": [
-        "@mdx-js/mdx",
-        "@types/react",
-        "next",
-        "react",
-        "react-dom",
-        "zod"
-      ]
-    },
     "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@1.17.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3_babel-plugin-react-compiler@1.0.0": {
       "integrity": "sha512-jyzdPmi5WbW9LucJoZEEM7TvnOnUlkm00Rab8UZyooZ+y5Ez75fqkziqmtZ4NED5eOStFBRjyIE3NUdZQRSTwQ==",
       "dependencies": [
@@ -2799,7 +2763,7 @@
         "zod"
       ]
     },
-    "fumadocs-mdx@14.3.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@0.577.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3__babel-plugin-react-compiler@1.0.0_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_babel-plugin-react-compiler@1.0.0_lucide-react@0.577.0__react@19.2.6_react-dom@19.2.6__react@19.2.6": {
+    "fumadocs-mdx@14.3.2_@types+mdx@2.0.14_@types+react@19.2.17_fumadocs-core@16.9.2__@types+react@19.2.17__lucide-react@0.577.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_@types+node@25.9.5_lucide-react@0.577.0__react@19.2.6": {
       "integrity": "sha512-73SoZkbUuqnD91G/0zBcaQdM1TMnYw5JJzKgkGvQTiZbtLQFuWTt8/uRqnzFMuNIUu/WY9Lo9d1iZ8G+jOVieA==",
       "dependencies": [
         "@mdx-js/mdx",
@@ -2809,7 +2773,7 @@
         "chokidar",
         "esbuild@0.28.0",
         "estree-util-value-to-estree",
-        "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3_babel-plugin-react-compiler@1.0.0",
+        "fumadocs-core@16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
         "js-yaml@4.1.1",
         "mdast-util-mdx",
         "mdast-util-to-markdown",
@@ -3193,11 +3157,11 @@
         "graceful-fs"
       ]
     },
-    "knip@5.88.1_@types+node@25.9.2_typescript@5.9.3": {
+    "knip@5.88.1_@types+node@25.9.5_typescript@5.9.3": {
       "integrity": "sha512-tpy5o7zu1MjawVkLPuahymVJekYY3kYjvzcoInhIchgePxTlo+api90tBv2KfhAIe5uXh+mez1tAfmbv8/TiZg==",
       "dependencies": [
         "@nodelib/fs.walk",
-        "@types/node@25.9.2",
+        "@types/node@25.9.5",
         "fast-glob",
         "formatly",
         "jiti",
@@ -4795,10 +4759,10 @@
         "vfile-message"
       ]
     },
-    "vite@7.3.2_@types+node@25.9.2": {
+    "vite@7.3.2_@types+node@25.9.5": {
       "integrity": "sha512-Bby3NOsna2jsjfLVOHKes8sGwgl4TT0E6vvpYgnAYDIF/tie7MRaFthmKuHx1NSXjiTueXH3do80FMQgvEktRg==",
       "dependencies": [
-        "@types/node@25.9.2",
+        "@types/node@25.9.5",
         "esbuild@0.27.7",
         "fdir",
         "picomatch@4.0.4",
@@ -4808,14 +4772,14 @@
         "fsevents"
       ],
       "optionalPeers": [
-        "@types/node@25.9.2"
+        "@types/node@25.9.5"
       ],
       "bin": true
     },
-    "vitest@4.1.7_@types+node@25.9.2_@vitest+coverage-v8@4.1.7_vite@7.3.2__@types+node@25.9.2": {
+    "vitest@4.1.7_@types+node@25.9.5_@vitest+coverage-v8@4.1.7_vite@7.3.2__@types+node@25.9.5": {
       "integrity": "sha512-flYyaFd2CgoCoU+0UKt3pxksgC+S02iTDN0n3LtqaMeXsI9SBcdNujc2k0DeFLzUn/0k538yNjOSdwgCqcrwJA==",
       "dependencies": [
-        "@types/node@25.9.2",
+        "@types/node@25.9.5",
         "@vitest/coverage-v8",
         "@vitest/expect",
         "@vitest/mocker",
@@ -4839,7 +4803,7 @@
         "why-is-node-running"
       ],
       "optionalPeers": [
-        "@types/node@25.9.2",
+        "@types/node@25.9.5",
         "@vitest/coverage-v8"
       ],
       "bin": true
@@ -4892,7 +4856,7 @@
         "npm:@codspeed/vitest-plugin@5.4.0",
         "npm:@standard-schema/spec@1",
         "npm:@types/bun@1.3.14",
-        "npm:@types/node@25.9.2",
+        "npm:@types/node@25.9.5",
         "npm:@vitest/coverage-v8@4.1.7",
         "npm:arktype@2.2.0",
         "npm:fast-url@^6.0.2",
@@ -4912,7 +4876,7 @@
             "npm:@biomejs/biome@2.4.16",
             "npm:@tailwindcss/postcss@4.3.0",
             "npm:@types/mdx@2.0.14",
-            "npm:@types/node@25.9.2",
+            "npm:@types/node@25.9.5",
             "npm:@types/react-dom@19.2.3",
             "npm:@types/react@19.2.17",
             "npm:babel-plugin-react-compiler@1.0.0",
