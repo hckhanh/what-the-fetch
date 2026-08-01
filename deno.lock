@@ -15,7 +15,7 @@
     "npm:@types/react-dom@19.2.3": "19.2.3_@types+react@19.2.17",
     "npm:@types/react@19.2.17": "19.2.17",
     "npm:@vitest/coverage-v8@4.1.7": "4.1.7_vitest@4.1.7_@types+node@25.9.5_vite@7.3.2__@types+node@25.9.2",
-    "npm:arktype@2.2.0": "2.2.0",
+    "npm:arktype@2.2.3": "2.2.3",
     "npm:babel-plugin-react-compiler@1.0.0": "1.0.0",
     "npm:fast-url@^6.0.2": "6.0.2",
     "npm:fumadocs-core@16.9.2": "16.9.2_@types+react@19.2.17_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
@@ -48,14 +48,14 @@
     "@alloc/quick-lru@5.2.0": {
       "integrity": "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="
     },
-    "@ark/schema@0.56.0": {
-      "integrity": "sha512-ECg3hox/6Z/nLajxXqNhgPtNdHWC9zNsDyskwO28WinoFEnWow4IsERNz9AnXRhTZJnYIlAJ4uGn3nlLk65vZA==",
+    "@ark/schema@0.56.2": {
+      "integrity": "sha512-Qx4D2JFbBWpntiHZaTv7bGG4H/M2rigiknezKg/WVyDSaLdE4YCcWAOoFB7pjjDqHbbV2OqRfntm1nnXvwMexg==",
       "dependencies": [
         "@ark/util"
       ]
     },
-    "@ark/util@0.56.0": {
-      "integrity": "sha512-BghfRC8b9pNs3vBoDJhcta0/c1J1rsoS1+HgVUreMFPdhz/CRAKReAu57YEllNaSy98rWAdY1gE+gFup7OXpgA=="
+    "@ark/util@0.56.2": {
+      "integrity": "sha512-9kU2sUE38FZEGG7l3hamYMBieLYEJh2L1mrYD2eXpT+78EnQSV1bhjxJhnxGBMSTbtwpBSDNSK+K60WvaI/DTQ=="
     },
     "@babel/generator@8.0.0-rc.6": {
       "integrity": "sha512-6mIzgVK8DgEzvIapoQwhXTMnnkuE4STQmVv9H03i/tZ2ml8oev3TRvZJgTenK2Bsq0YWNtzOrFdTyNzCMFtjJQ==",
@@ -2166,14 +2166,14 @@
         "tslib"
       ]
     },
-    "arkregex@0.0.5": {
-      "integrity": "sha512-ncYjBdLlh5/QnVsAA8De16Tc9EqmYM7y/WU9j+236KcyYNUXogpz3sC4ATIZYzzLxwI+0sEOaQLEmLmRleaEXw==",
+    "arkregex@0.0.8": {
+      "integrity": "sha512-PJcx6G1kQTgLKPUbeYlYecDRaKq15AMSGVajlKFYWlPeJRQL+j3dKE6tyMs40HZ99djS1l9Vhl3ezAHy9JBIqQ==",
       "dependencies": [
         "@ark/util"
       ]
     },
-    "arktype@2.2.0": {
-      "integrity": "sha512-t54MZ7ti5BhOEvzEkgKnWvqj+UbDfWig+DHr5I34xatymPusKLS0lQpNJd8M6DzmIto2QGszHfNKoFIT8tMCZQ==",
+    "arktype@2.2.3": {
+      "integrity": "sha512-7W+0RLTUNJiBFIIZXwOQxSR8Z273IAd6IvqBeG9+gHnQKFsIx2C0iOtGTmMrPnlX4qLXyc5+ll7A0BIj9WrbTg==",
       "dependencies": [
         "@ark/schema",
         "@ark/util",
@@ -4858,7 +4858,7 @@
         "npm:@types/bun@1.3.14",
         "npm:@types/node@25.9.5",
         "npm:@vitest/coverage-v8@4.1.7",
-        "npm:arktype@2.2.0",
+        "npm:arktype@2.2.3",
         "npm:fast-url@^6.0.2",
         "npm:knip@5.88.1",
         "npm:syncpack@14.3.1",
