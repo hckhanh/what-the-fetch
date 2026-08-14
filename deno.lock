@@ -32,7 +32,7 @@
     "npm:tailwindcss@4.3.0": "4.3.0",
     "npm:tsdown@0.22.14": "0.22.14_typescript@5.9.3",
     "npm:typescript@5.9.3": "5.9.3",
-    "npm:valibot@1.4.1": "1.4.1_typescript@5.9.3",
+    "npm:valibot@1.4.2": "1.4.2_typescript@5.9.3",
     "npm:vitest@4.1.7": "4.1.7_@types+node@25.9.5_@vitest+coverage-v8@4.1.7_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5",
     "npm:zod@4.4.3": "4.4.3"
   },
@@ -4791,8 +4791,8 @@
         "@types/react"
       ]
     },
-    "valibot@1.4.1_typescript@5.9.3": {
-      "integrity": "sha512-klCmFTz2jeDluy9RwX+F884TCiogtdBJ/YaxSx1EOBYXa3NXNWj8kR1jjN8rzluwojJVWWaHJ4r1U5LfICnM3g==",
+    "valibot@1.4.2_typescript@5.9.3": {
+      "integrity": "sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==",
       "dependencies": [
         "typescript"
       ],
@@ -4975,7 +4975,7 @@
         "npm:syncpack@14.3.1",
         "npm:tsdown@0.22.14",
         "npm:typescript@5.9.3",
-        "npm:valibot@1.4.1",
+        "npm:valibot@1.4.2",
         "npm:vitest@4.1.7",
         "npm:zod@4.4.3"
       ]
