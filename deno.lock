@@ -6,7 +6,7 @@
     "npm:@biomejs/biome@2.4.16": "2.4.16",
     "npm:@changesets/cli@2.31.1": "2.31.1_@types+node@25.9.5",
     "npm:@changesets/config@3.1.4": "3.1.4",
-    "npm:@codspeed/vitest-plugin@5.4.0": "5.4.0_vitest@4.1.7__@types+node@25.9.5__@vitest+coverage-v8@4.1.7__vite@7.3.2___@types+node@25.9.5___picomatch@4.0.5_@types+node@25.9.5",
+    "npm:@codspeed/vitest-plugin@5.4.0": "5.4.0_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5_vitest@4.1.10__@types+node@25.9.5__@vitest+coverage-v8@4.1.10__vite@7.3.2___@types+node@25.9.5___picomatch@4.0.5_@types+node@25.9.5_@vitest+coverage-v8@4.1.10__vitest@4.1.10__@types+node@25.9.5__vite@7.3.2___@types+node@25.9.5___picomatch@4.0.5",
     "npm:@standard-schema/spec@1": "1.1.0",
     "npm:@tailwindcss/postcss@4.3.3": "4.3.3",
     "npm:@types/bun@1.3.14": "1.3.14",
@@ -14,15 +14,15 @@
     "npm:@types/node@25.9.5": "25.9.5",
     "npm:@types/react-dom@19.2.4": "19.2.4_@types+react@19.2.18",
     "npm:@types/react@19.2.18": "19.2.18",
-    "npm:@vitest/coverage-v8@4.1.7": "4.1.7_vitest@4.1.7_@types+node@25.9.5_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5",
+    "npm:@vitest/coverage-v8@4.1.10": "4.1.10_vitest@4.1.10_@types+node@25.9.5_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5",
     "npm:arktype@2.2.3": "2.2.3",
     "npm:babel-plugin-react-compiler@1.0.0": "1.0.0",
     "npm:fast-url@^6.0.2": "6.0.2",
-    "npm:fumadocs-core@16.9.2": "16.9.2_@types+react@19.2.18_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
-    "npm:fumadocs-mdx@14.3.2": "14.3.2_@types+mdx@2.0.14_@types+react@19.2.18_fumadocs-core@16.9.2__@types+react@19.2.18__lucide-react@0.577.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_lucide-react@0.577.0__react@19.2.6",
+    "npm:fumadocs-core@16.9.2": "16.9.2_@types+react@19.2.18_lucide-react@1.31.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
+    "npm:fumadocs-mdx@14.3.2": "14.3.2_@types+mdx@2.0.14_@types+react@19.2.18_fumadocs-core@16.9.2__@types+react@19.2.18__lucide-react@1.31.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5_lucide-react@1.31.0__react@19.2.6",
     "npm:fumadocs-ui@16.9.2": "16.9.2_@types+mdx@2.0.14_@types+react@19.2.18_fumadocs-core@16.9.2__@types+react@19.2.18__lucide-react@1.17.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_tailwindcss@4.3.3",
     "npm:knip@5.88.1": "5.88.1_@types+node@25.9.5_typescript@5.9.3",
-    "npm:lucide-react@0.577.0": "0.577.0_react@19.2.6",
+    "npm:lucide-react@1.31.0": "1.31.0_react@19.2.6",
     "npm:next@16.2.11": "16.2.11_babel-plugin-react-compiler@1.0.0_react@19.2.6_react-dom@19.2.6__react@19.2.6",
     "npm:postcss@8.5.26": "8.5.26",
     "npm:react-dom@19.2.6": "19.2.6_react@19.2.6",
@@ -33,7 +33,7 @@
     "npm:tsdown@0.22.14": "0.22.14_typescript@5.9.3",
     "npm:typescript@5.9.3": "5.9.3",
     "npm:valibot@1.4.2": "1.4.2_typescript@5.9.3",
-    "npm:vitest@4.1.7": "4.1.7_@types+node@25.9.5_@vitest+coverage-v8@4.1.7_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5",
+    "npm:vitest@4.1.10": "4.1.10_@types+node@25.9.5_@vitest+coverage-v8@4.1.10_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5",
     "npm:zod@4.4.3": "4.4.3"
   },
   "jsr": {
@@ -321,7 +321,7 @@
         "node-gyp-build"
       ]
     },
-    "@codspeed/vitest-plugin@5.4.0_vitest@4.1.7__@types+node@25.9.5__@vitest+coverage-v8@4.1.7__vite@7.3.2___@types+node@25.9.5___picomatch@4.0.5_@types+node@25.9.5": {
+    "@codspeed/vitest-plugin@5.4.0_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5_vitest@4.1.10__@types+node@25.9.5__@vitest+coverage-v8@4.1.10__vite@7.3.2___@types+node@25.9.5___picomatch@4.0.5_@types+node@25.9.5_@vitest+coverage-v8@4.1.10__vitest@4.1.10__@types+node@25.9.5__vite@7.3.2___@types+node@25.9.5___picomatch@4.0.5": {
       "integrity": "sha512-Xa9HaZHUjYXn1T39bTipV5hmguk1vIuDZs3Gc5OYA8X4ohftYbKfyoFtBqVFfB/ii/p1ihuwt+tltraKMcRDsA==",
       "dependencies": [
         "@codspeed/core",
@@ -2017,8 +2017,8 @@
       "integrity": "sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==",
       "deprecated": true
     },
-    "@vitest/coverage-v8@4.1.7_vitest@4.1.7_@types+node@25.9.5_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5": {
-      "integrity": "sha512-qsYPeXc5Q9dFLd1i8Ap+Bx8sQgcp+rFVQo4R0dDsWNBzl26ldVF1qOO+RL24K7FDrR6pA+50XedRLSoSG24bVQ==",
+    "@vitest/coverage-v8@4.1.10_vitest@4.1.10_@types+node@25.9.5_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5": {
+      "integrity": "sha512-IM49HmthevbgAO4anp1hwtoT9wYe59w0LR00gr+eagHE+ZJ5lK4sLPeO0ubgoJcwLk6dehU3R24N+FbEEKDc8g==",
       "dependencies": [
         "@bcoe/v8-coverage",
         "@vitest/utils",
@@ -2033,8 +2033,8 @@
         "vitest"
       ]
     },
-    "@vitest/expect@4.1.7": {
-      "integrity": "sha512-1R+tw0ortHEbZDGMymm+pN7/AFQ/RkFFdtd7EN+VBpynKmLbP8A3rpEXdshBJ7+8hQ9zBJh/i1s0yKNtxAnU7w==",
+    "@vitest/expect@4.1.10": {
+      "integrity": "sha512-YsCn+qAk1GWjQOWFEsEcL2gNQ0zmVmQu3T03qP6UyjhtmdtwtbuI+DASn/7iQB3HGTXkdBwGddzxPlmiql5vlA==",
       "dependencies": [
         "@standard-schema/spec",
         "@types/chai",
@@ -2044,8 +2044,8 @@
         "tinyrainbow"
       ]
     },
-    "@vitest/mocker@4.1.7_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5_@types+node@25.9.5": {
-      "integrity": "sha512-vY7nuamKgfvpA1Koa3oYIw/k7D6kZnpGyNMZW8loow2bsBYla1TFdqTaXncWdRn4pgwNs+90RhnXhJScDwQeJA==",
+    "@vitest/mocker@4.1.10_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5": {
+      "integrity": "sha512-v0xaezt+DKEmKfaxg133ldzADrwLGd7Ze1MfQQTYfvs8OqZIwbxyxaYURivwV7sWy5fqn3rH5uOrSp07bp44Ow==",
       "dependencies": [
         "@vitest/spy",
         "estree-walker",
@@ -2056,21 +2056,21 @@
         "vite"
       ]
     },
-    "@vitest/pretty-format@4.1.7": {
-      "integrity": "sha512-umgCarTOYQWIaDMvGDRZij+6b9oVeLIyJzfN+AS88e0ZOU3QTgNNSTtjQOpcvWr3np1N0j4WgZj+sb3oYBDscw==",
+    "@vitest/pretty-format@4.1.10": {
+      "integrity": "sha512-W1HsjSH4MXQ9YfmmhLAoIYf1HRfekQCGngeIgcei6MP5QQGWUe0gkopdZQaVCFO+JDJMrAJGwa5pRpNpvy4P8Q==",
       "dependencies": [
         "tinyrainbow"
       ]
     },
-    "@vitest/runner@4.1.7": {
-      "integrity": "sha512-BapjmAQ2aI78WdMEfeUWivnfVzB+VPGwWRQcJE0OUq7qEeEcBsCSf+0T5iREBNE5nBb4wA5Ya0W6IA+sghdEFw==",
+    "@vitest/runner@4.1.10": {
+      "integrity": "sha512-IKI6kpIH+LmpROplyLwBBaCfMgOZOMsygVa6BARD6ahA04VRuJSa6OaVG7kRvSEMD870Vd91rSSw0eegtWyLGg==",
       "dependencies": [
         "@vitest/utils",
         "pathe"
       ]
     },
-    "@vitest/snapshot@4.1.7": {
-      "integrity": "sha512-ZacLzja+TmJeZ1h14xW2FB/WpeimUD3haBXQPyJqxvo8jQTmfeA8zv58mtjN2C7EHXZDYVcVYdYmAxjkWVvKCw==",
+    "@vitest/snapshot@4.1.10": {
+      "integrity": "sha512-xRkfOT1qpTAi/Ti4Y1LtfRc3kEuqxGw59eN2jN9pRWMtS/XDevekhcFSqvQqjUNGksfjMJu3Y+oJ+4Ypn2OaJw==",
       "dependencies": [
         "@vitest/pretty-format",
         "@vitest/utils",
@@ -2078,11 +2078,11 @@
         "pathe"
       ]
     },
-    "@vitest/spy@4.1.7": {
-      "integrity": "sha512-kbkI5LMWakyuTIvs6fUJ5qdIVb1XVKsYJAT4OJ938cHMROYMSfmoQdZy0aaAnjbbc8F61vkoTqz/Az+/HiIu5Q=="
+    "@vitest/spy@4.1.10": {
+      "integrity": "sha512-PLf/Ugvoq5wO/b4rwYCR1h2PSIdXz7wnkQFMiUpLdtM7l6pqVFcQIBEHyT1+l+cj7mNwAfZHzqXqDyjvOuwbDw=="
     },
-    "@vitest/utils@4.1.7": {
-      "integrity": "sha512-T532WBu791cBxJlCl6SO+J14l81DQx6uQHm1bQbmCDY7nqlEIgkza/UFnSBNaUtSf41unldDFjdOBYEQC4b5Hw==",
+    "@vitest/utils@4.1.10": {
+      "integrity": "sha512-fy9am/HWxbaGt/Sawrp90vt6Y6jQwf1RX77cz3uwoJwJVMli/e1IEwRPnMNJ7vKfPTwo0diXifkpPvwH9v7nGA==",
       "dependencies": [
         "@vitest/pretty-format",
         "convert-source-map",
@@ -2759,7 +2759,40 @@
       "os": ["darwin"],
       "scripts": true
     },
-    "fumadocs-core@16.9.2_@types+react@19.2.18_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3": {
+    "fumadocs-core@16.9.2_@types+react@19.2.18_lucide-react@1.17.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3": {
+      "integrity": "sha512-jyzdPmi5WbW9LucJoZEEM7TvnOnUlkm00Rab8UZyooZ+y5Ez75fqkziqmtZ4NED5eOStFBRjyIE3NUdZQRSTwQ==",
+      "dependencies": [
+        "@orama/orama",
+        "@types/react",
+        "estree-util-value-to-estree",
+        "github-slugger",
+        "hast-util-to-estree",
+        "hast-util-to-jsx-runtime",
+        "js-yaml@4.1.1",
+        "mdast-util-mdx",
+        "mdast-util-to-markdown",
+        "next",
+        "react",
+        "react-dom",
+        "remark",
+        "remark-gfm",
+        "remark-rehype",
+        "scroll-into-view-if-needed",
+        "shiki",
+        "unified",
+        "unist-util-visit",
+        "vfile",
+        "zod"
+      ],
+      "optionalPeers": [
+        "@types/react",
+        "next",
+        "react",
+        "react-dom",
+        "zod"
+      ]
+    },
+    "fumadocs-core@16.9.2_@types+react@19.2.18_lucide-react@1.31.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3": {
       "integrity": "sha512-jyzdPmi5WbW9LucJoZEEM7TvnOnUlkm00Rab8UZyooZ+y5Ez75fqkziqmtZ4NED5eOStFBRjyIE3NUdZQRSTwQ==",
       "dependencies": [
         "@mdx-js/mdx",
@@ -2770,7 +2803,7 @@
         "hast-util-to-estree",
         "hast-util-to-jsx-runtime",
         "js-yaml@4.1.1",
-        "lucide-react@0.577.0_react@19.2.6",
+        "lucide-react",
         "mdast-util-mdx",
         "mdast-util-to-markdown",
         "next",
@@ -2790,49 +2823,14 @@
       "optionalPeers": [
         "@mdx-js/mdx",
         "@types/react",
-        "lucide-react@0.577.0_react@19.2.6",
+        "lucide-react",
         "next",
         "react",
         "react-dom",
         "zod"
       ]
     },
-    "fumadocs-core@16.9.2_@types+react@19.2.18_lucide-react@1.17.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3": {
-      "integrity": "sha512-jyzdPmi5WbW9LucJoZEEM7TvnOnUlkm00Rab8UZyooZ+y5Ez75fqkziqmtZ4NED5eOStFBRjyIE3NUdZQRSTwQ==",
-      "dependencies": [
-        "@orama/orama",
-        "@types/react",
-        "estree-util-value-to-estree",
-        "github-slugger",
-        "hast-util-to-estree",
-        "hast-util-to-jsx-runtime",
-        "js-yaml@4.1.1",
-        "lucide-react@1.17.0_react@19.2.6",
-        "mdast-util-mdx",
-        "mdast-util-to-markdown",
-        "next",
-        "react",
-        "react-dom",
-        "remark",
-        "remark-gfm",
-        "remark-rehype",
-        "scroll-into-view-if-needed",
-        "shiki",
-        "unified",
-        "unist-util-visit",
-        "vfile",
-        "zod"
-      ],
-      "optionalPeers": [
-        "@types/react",
-        "lucide-react@1.17.0_react@19.2.6",
-        "next",
-        "react",
-        "react-dom",
-        "zod"
-      ]
-    },
-    "fumadocs-mdx@14.3.2_@types+mdx@2.0.14_@types+react@19.2.18_fumadocs-core@16.9.2__@types+react@19.2.18__lucide-react@0.577.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_lucide-react@0.577.0__react@19.2.6": {
+    "fumadocs-mdx@14.3.2_@types+mdx@2.0.14_@types+react@19.2.18_fumadocs-core@16.9.2__@types+react@19.2.18__lucide-react@1.31.0___react@19.2.6__next@16.2.11___babel-plugin-react-compiler@1.0.0___react@19.2.6___react-dom@19.2.6____react@19.2.6__react@19.2.6__react-dom@19.2.6___react@19.2.6__zod@4.4.3_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5_lucide-react@1.31.0__react@19.2.6": {
       "integrity": "sha512-73SoZkbUuqnD91G/0zBcaQdM1TMnYw5JJzKgkGvQTiZbtLQFuWTt8/uRqnzFMuNIUu/WY9Lo9d1iZ8G+jOVieA==",
       "dependencies": [
         "@mdx-js/mdx",
@@ -2842,7 +2840,7 @@
         "chokidar",
         "esbuild@0.28.0",
         "estree-util-value-to-estree",
-        "fumadocs-core@16.9.2_@types+react@19.2.18_lucide-react@0.577.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
+        "fumadocs-core@16.9.2_@types+react@19.2.18_lucide-react@1.31.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
         "js-yaml@4.1.1",
         "mdast-util-mdx",
         "mdast-util-to-markdown",
@@ -2886,7 +2884,7 @@
         "@types/react",
         "class-variance-authority",
         "fumadocs-core@16.9.2_@types+react@19.2.18_lucide-react@1.17.0__react@19.2.6_next@16.2.11__babel-plugin-react-compiler@1.0.0__react@19.2.6__react-dom@19.2.6___react@19.2.6_react@19.2.6_react-dom@19.2.6__react@19.2.6_zod@4.4.3",
-        "lucide-react@1.17.0_react@19.2.6",
+        "lucide-react",
         "motion",
         "next",
         "next-themes",
@@ -3335,14 +3333,8 @@
     "longest-streak@3.1.0": {
       "integrity": "sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g=="
     },
-    "lucide-react@0.577.0_react@19.2.6": {
-      "integrity": "sha512-4LjoFv2eEPwYDPg/CUdBJQSDfPyzXCRrVW1X7jrx/trgxnxkHFjnVZINbzvzxjN70dxychOfg+FTYwBiS3pQ5A==",
-      "dependencies": [
-        "react"
-      ]
-    },
-    "lucide-react@1.17.0_react@19.2.6": {
-      "integrity": "sha512-9FA9evdox/JQL5PT57fdA1x/yg8T7knJ98+zjTL3UfKza6pflQUUh3XtaQIHKvnsJw1lmsEyHVlt5jchYxOQ5w==",
+    "lucide-react@1.31.0_react@19.2.6": {
+      "integrity": "sha512-G8u2eEtoHUnUa9f8lbvqDhCiORMnYLdUEo06EEG9MQvHQrInKcX3Pa2TH39MM5qyzRcWETxB0+aOwAPI1g1kEg==",
       "dependencies": [
         "react"
       ]
@@ -4840,8 +4832,8 @@
       ],
       "bin": true
     },
-    "vitest@4.1.7_@types+node@25.9.5_@vitest+coverage-v8@4.1.7_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5": {
-      "integrity": "sha512-flYyaFd2CgoCoU+0UKt3pxksgC+S02iTDN0n3LtqaMeXsI9SBcdNujc2k0DeFLzUn/0k538yNjOSdwgCqcrwJA==",
+    "vitest@4.1.10_@types+node@25.9.5_@vitest+coverage-v8@4.1.10_vite@7.3.2__@types+node@25.9.5__picomatch@4.0.5": {
+      "integrity": "sha512-R9jUTe5S4Qb0HCd4TNqpC7oGcrMssMRGXLW80ubjWsW9VH5GF8y1Y0SFLY9AbqSk6nt0PnOx4H4WNJYZ13GUPw==",
       "dependencies": [
         "@types/node@25.9.5",
         "@vitest/coverage-v8",
@@ -4968,7 +4960,7 @@
         "npm:@standard-schema/spec@1",
         "npm:@types/bun@1.3.14",
         "npm:@types/node@25.9.5",
-        "npm:@vitest/coverage-v8@4.1.7",
+        "npm:@vitest/coverage-v8@4.1.10",
         "npm:arktype@2.2.3",
         "npm:fast-url@^6.0.2",
         "npm:knip@5.88.1",
@@ -4976,9 +4968,13 @@
         "npm:tsdown@0.22.14",
         "npm:typescript@5.9.3",
         "npm:valibot@1.4.2",
-        "npm:vitest@4.1.7",
+        "npm:vitest@4.1.10",
         "npm:zod@4.4.3"
-      ]
+      ],
+      "overrides": {
+        "lucide-react": "1.31.0",
+        "zod": "4.4.3"
+      }
     },
     "members": {
       "docs": {
@@ -4994,7 +4990,7 @@
             "npm:fumadocs-core@16.9.2",
             "npm:fumadocs-mdx@14.3.2",
             "npm:fumadocs-ui@16.9.2",
-            "npm:lucide-react@0.577.0",
+            "npm:lucide-react@1.31.0",
             "npm:next@16.2.11",
             "npm:postcss@8.5.26",
             "npm:react-dom@19.2.6",
