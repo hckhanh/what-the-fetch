@@ -57,10 +57,6 @@
     "vitest": "4.1.7",
     "zod": "4.4.3"
   },
-  "overrides": {
-    "lucide-react": "1.31.0",
-    "zod": "4.4.3"
-  },
   "workspaces": [
     ".",
     "docs"
@@ -78,5 +74,9 @@
     "standard-schema",
     "typescript"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "overrides": {
+    "lucide-react": "1.31.0",
+    "zod": "4.4.3"
+  }
 }
