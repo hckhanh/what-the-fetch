@@ -50,7 +50,7 @@
     "@vitest/coverage-v8": "4.1.10",
     "arktype": "2.2.3",
     "knip": "5.88.1",
-    "syncpack": "14.3.1",
+    "syncpack": "15.3.3",
     "tsdown": "0.22.14",
     "typescript": "5.9.3",
     "valibot": "1.4.2",
