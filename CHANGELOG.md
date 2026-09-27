@@ -1,5 +1,11 @@
 # what-the-fetch
 
+## 2.2.2
+
+### Patch Changes
+
+- Point documentation at https://docs.khanh.id/what-the-fetch and publish the changes already on main since 2.2.1.
+
 ## 2.2.1
 
 ### Patch Changes

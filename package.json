@@ -1,13 +1,13 @@
 {
   "name": "what-the-fetch",
   "description": "Type-safe API client with schema validation using Standard Schema",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "author": {
     "name": "Khánh Hoàng",
     "email": "hi@khanh.id",
     "url": "https://www.khanh.id"
   },
-  "homepage": "https://fetch.khanh.id",
+  "homepage": "https://docs.khanh.id/what-the-fetch",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hckhanh/what-the-fetch.git"
@@ -58,8 +58,7 @@
     "zod": "4.4.3"
   },
   "workspaces": [
-    ".",
-    "docs"
+    "."
   ],
   "files": [
     "dist"
