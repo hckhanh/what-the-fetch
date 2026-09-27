@@ -12,12 +12,5 @@
     ":separateMultipleMajorReleases",
     "schedule:automergeNonOfficeHours",
     ":automergeRequireAllStatusChecks"
-  ],
-  "packageRules": [
-    {
-      "groupName": "fumadocs monorepo",
-      "matchPackageNames": ["/^fumadocs-/"],
-      "matchUpdateTypes": ["digest", "patch", "minor", "major"]
-    }
   ]
 }

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "what-the-fetch",
+  "description": "Type-safe API client with schema validation using Standard Schema.",
+  "folders": [],
+  "excludeFolders": ["node_modules", "dist", "coverage"],
+  "excludeFiles": ["CHANGELOG.md"],
+  "rules": [
+    "Documentation is published at https://docs.khanh.id/what-the-fetch.",
+    "Create a typed client with createFetch and a Standard Schema API map."
+  ],
+  "url": "https://context7.com/hckhanh/what-the-fetch",
+  "public_key": "pk_5wVhL0PTjFlXiZPBk058C"
+}
