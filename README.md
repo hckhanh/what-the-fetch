@@ -1,5 +1,9 @@
 # what-the-fetch! [![NPM Downloads](https://img.shields.io/npm/dw/what-the-fetch)](https://www.npmjs.com/package/what-the-fetch) [![JSR](https://jsr.io/badges/@hckhanh/what-the-fetch/weekly-downloads)](https://jsr.io/@hckhanh/what-the-fetch)
 
+<p align="center">
+  <img src="docs/images/logo.svg" alt="what-the-fetch" width="128" />
+</p>
+
 Type-safe API client with schema validation using [Standard Schema](https://standardschema.dev).
 
 [![Test](https://github.com/hckhanh/what-the-fetch/actions/workflows/test.yml/badge.svg)](https://github.com/hckhanh/what-the-fetch/actions/workflows/test.yml)
