@@ -1,5 +1,11 @@
 # what-the-fetch
 
+## 2.2.3
+
+### Patch Changes
+
+- 0d9ed11: Link the documentation site from the readme.
+
 ## 2.2.2
 
 ### Patch Changes
