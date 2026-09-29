@@ -14,6 +14,10 @@ Type-safe API client with schema validation using [Standard Schema](https://stan
 
 what-the-fetch is a type-safe API client library that integrates schema validation with fetch requests, leveraging the [Standard Schema](https://standardschema.dev) specification for maximum flexibility and type safety.
 
+## Documentation
+
+**[https://docs.khanh.id/what-the-fetch](https://docs.khanh.id/what-the-fetch)**
+
 ## Features
 
 - **Type-safe**: Full TypeScript support with end-to-end type inference
