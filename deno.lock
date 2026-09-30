@@ -6,7 +6,7 @@
     "npm:@biomejs/biome@2.5.14": "2.5.14",
     "npm:@changesets/cli@2.31.1": "2.31.1_@types+node@25.9.8",
     "npm:@changesets/config@3.1.4": "3.1.4",
-    "npm:@codspeed/vitest-plugin@5.7.1": "5.7.1_vitest@4.1.11__@types+node@25.9.8__@vitest+coverage-v8@4.1.11__vite@7.3.6___@types+node@25.9.8_@types+node@25.9.8",
+    "npm:@codspeed/vitest-plugin@5.7.1": "5.7.1_vitest@4.1.11_@types+node@25.9.8",
     "npm:@standard-schema/spec@1": "1.1.0",
     "npm:@types/bun@1.4.2": "1.4.2",
     "npm:@types/node@25.9.8": "25.9.8",
@@ -304,7 +304,7 @@
         "stack-trace"
       ]
     },
-    "@codspeed/vitest-plugin@5.7.1_vitest@4.1.11__@types+node@25.9.8__@vitest+coverage-v8@4.1.11__vite@7.3.6___@types+node@25.9.8_@types+node@25.9.8": {
+    "@codspeed/vitest-plugin@5.7.1_vitest@4.1.11_@types+node@25.9.8": {
       "integrity": "sha512-yKNqaYVxZZPJYkhVHpz30Oem4TUgcI+/IRDD9YHvcAgi0P42CL6TB/+qYjuFOWghFzTPrm3TUbNFoBsevSTbUA==",
       "dependencies": [
         "@codspeed/core",
@@ -2243,7 +2243,7 @@
         "npm:zod@4.4.3"
       ],
       "overrides": {
-        "lucide-react": "1.31.0",
+        "lucide-react": "1.48.0",
         "zod": "4.4.3"
       }
     }
