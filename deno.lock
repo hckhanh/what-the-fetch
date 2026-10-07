@@ -4,21 +4,21 @@
     "jsr:@hckhanh/fast-url@^6.0.2": "6.0.2",
     "jsr:@standard-schema/spec@1": "1.0.0",
     "npm:@biomejs/biome@2.5.15": "2.5.15",
-    "npm:@changesets/cli@2.31.1": "2.31.1_@types+node@25.9.8",
+    "npm:@changesets/cli@2.31.1": "2.31.1_@types+node@25.9.9",
     "npm:@changesets/config@3.1.4": "3.1.4",
-    "npm:@codspeed/vitest-plugin@5.7.1": "5.7.1_vitest@4.1.11_@types+node@25.9.8",
+    "npm:@codspeed/vitest-plugin@5.7.1": "5.7.1_vitest@4.1.11__@types+node@25.9.9__@vitest+coverage-v8@4.1.11__vite@7.3.6___@types+node@25.9.9_@types+node@25.9.9",
     "npm:@standard-schema/spec@1": "1.1.0",
     "npm:@types/bun@1.4.2": "1.4.2",
-    "npm:@types/node@25.9.8": "25.9.8",
-    "npm:@vitest/coverage-v8@4.1.11": "4.1.11_vitest@4.1.11_@types+node@25.9.8_vite@7.3.6",
+    "npm:@types/node@25.9.9": "25.9.9",
+    "npm:@vitest/coverage-v8@4.1.11": "4.1.11_vitest@4.1.11_@types+node@25.9.9_vite@7.3.6__@types+node@25.9.8__picomatch@4.0.7",
     "npm:arktype@2.2.5": "2.2.5",
     "npm:fast-url@^6.0.2": "6.0.2",
-    "npm:knip@5.88.1": "5.88.1_@types+node@25.9.8_typescript@5.9.3",
+    "npm:knip@5.88.1": "5.88.1_@types+node@25.9.9_typescript@5.9.3",
     "npm:syncpack@14.3.1": "14.3.1",
     "npm:tsdown@0.23.0": "0.23.0_typescript@5.9.3",
     "npm:typescript@5.9.3": "5.9.3",
     "npm:valibot@1.4.2": "1.4.2_typescript@5.9.3",
-    "npm:vitest@4.1.11": "4.1.11_@types+node@25.9.8_@vitest+coverage-v8@4.1.11_vite@7.3.6",
+    "npm:vitest@4.1.11": "4.1.11_@types+node@25.9.9_@vitest+coverage-v8@4.1.11_vite@7.3.6__@types+node@25.9.9",
     "npm:zod@4.4.3": "4.4.3"
   },
   "jsr": {
@@ -154,7 +154,7 @@
         "@changesets/types@6.1.0"
       ]
     },
-    "@changesets/cli@2.31.1_@types+node@25.9.8": {
+    "@changesets/cli@2.31.1_@types+node@25.9.9": {
       "integrity": "sha512-uO05WTcRBwuVOJVSW8Cmpqw6q0WDL53ajGCMyszutvOe5toOnunbpM4jZzf+qxBOz7i0AzopZ8diBuewjmF40w==",
       "dependencies": [
         "@changesets/apply-release-plan",
@@ -304,7 +304,7 @@
         "stack-trace"
       ]
     },
-    "@codspeed/vitest-plugin@5.7.1_vitest@4.1.11_@types+node@25.9.8": {
+    "@codspeed/vitest-plugin@5.7.1_vitest@4.1.11__@types+node@25.9.9__@vitest+coverage-v8@4.1.11__vite@7.3.6___@types+node@25.9.9_@types+node@25.9.9": {
       "integrity": "sha512-yKNqaYVxZZPJYkhVHpz30Oem4TUgcI+/IRDD9YHvcAgi0P42CL6TB/+qYjuFOWghFzTPrm3TUbNFoBsevSTbUA==",
       "dependencies": [
         "@codspeed/core",
@@ -456,15 +456,15 @@
       "os": ["win32"],
       "cpu": ["x64"]
     },
-    "@inquirer/external-editor@1.0.3_@types+node@25.9.8": {
+    "@inquirer/external-editor@1.0.3_@types+node@25.9.9": {
       "integrity": "sha512-RWbSrDiYmO4LbejWY7ttpxczuwQyZLBUyygsA9Nsv95hpzUWwnNTVQmAq3xuh7vNwCp07UTmE5i11XAEExx4RA==",
       "dependencies": [
-        "@types/node@25.9.8",
+        "@types/node@25.9.9",
         "chardet",
         "iconv-lite"
       ],
       "optionalPeers": [
-        "@types/node@25.9.8"
+        "@types/node@25.9.9"
       ]
     },
     "@jridgewell/resolve-uri@3.1.2": {
@@ -869,13 +869,13 @@
     "@types/node@12.20.55": {
       "integrity": "sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ=="
     },
-    "@types/node@25.9.8": {
-      "integrity": "sha512-VfMrScDmMhUJQmd5hArdQnFvK0OIeD36uN2Va1FcpYaLB/BgkgM8Ulc50XtYISPMz7APJ30+N0T5EM0jlcdfRw==",
+    "@types/node@25.9.9": {
+      "integrity": "sha512-b4e2xxj/yMeT2hNlD6x7zNFiQK2Dlmkb9CQ6v3/1G2RezKN4YS2lcEv8lzGm1mhs4f2lM4yNAMI/zUDBZBBt7w==",
       "dependencies": [
         "undici-types"
       ]
     },
-    "@vitest/coverage-v8@4.1.11_vitest@4.1.11_@types+node@25.9.8_vite@7.3.6": {
+    "@vitest/coverage-v8@4.1.11_vitest@4.1.11_@types+node@25.9.9_vite@7.3.6__@types+node@25.9.8__picomatch@4.0.7": {
       "integrity": "sha512-8MVGEFnJIcdGjcbfKmeq8z0pZHH0JlVtoVZH9Q/qwUp6wyFnEJUBMrw9DCaj+ra3vShGmhavjalMIhPNxZAUcw==",
       "dependencies": [
         "@bcoe/v8-coverage",
@@ -902,7 +902,7 @@
         "tinyrainbow"
       ]
     },
-    "@vitest/mocker@4.1.11_vite@7.3.6_picomatch@4.0.7": {
+    "@vitest/mocker@4.1.11_vite@7.3.6__@types+node@25.9.9_@types+node@25.9.9": {
       "integrity": "sha512-2XJVD55d1o5AZous5CCGKS74g/riOj9odEt2bQpCVZeblHyHdnMeFl4jl0XjU21stf4mbjUkew2eXQZt65g5CQ==",
       "dependencies": [
         "@vitest/spy",
@@ -1170,7 +1170,7 @@
     "bun-types@1.4.2": {
       "integrity": "sha512-bxV1FgK7yBIzjRe5zBozIM4Bem11ZJcCXSrjWRG3YWLt8yFDePu4cLjpebO8OvPeIE9trbyPF4fuj3Cia4Fj3w==",
       "dependencies": [
-        "@types/node@25.9.8"
+        "@types/node@25.9.9"
       ]
     },
     "cac@7.0.0": {
@@ -1587,11 +1587,11 @@
         "graceful-fs"
       ]
     },
-    "knip@5.88.1_@types+node@25.9.8_typescript@5.9.3": {
+    "knip@5.88.1_@types+node@25.9.9_typescript@5.9.3": {
       "integrity": "sha512-tpy5o7zu1MjawVkLPuahymVJekYY3kYjvzcoInhIchgePxTlo+api90tBv2KfhAIe5uXh+mez1tAfmbv8/TiZg==",
       "dependencies": [
         "@nodelib/fs.walk",
-        "@types/node@25.9.8",
+        "@types/node@25.9.9",
         "fast-glob",
         "formatly",
         "jiti",
@@ -2119,10 +2119,10 @@
     "verkit@0.4.1": {
       "integrity": "sha512-mMVzj0TXExtVdlDEq+Mzp0eyOuyznNpFobNM3uAqe3HVm/Ps2c+u17BligMkZjZCA6EiXpoon8iRTer3iu40SQ=="
     },
-    "vite@7.3.6_@types+node@25.9.8_picomatch@4.0.7": {
+    "vite@7.3.6_@types+node@25.9.9": {
       "integrity": "sha512-4XP60spRGjSZFf1qYH+dJIkK2znL3zQfl9KkOV9MkkRR/3Dls0dxaBsQPTloEc5BLXWPL9vsOxopxyKoMmDueg==",
       "dependencies": [
-        "@types/node@25.9.8",
+        "@types/node@25.9.9",
         "esbuild",
         "fdir",
         "postcss",
@@ -2133,14 +2133,14 @@
         "fsevents"
       ],
       "optionalPeers": [
-        "@types/node@25.9.8"
+        "@types/node@25.9.9"
       ],
       "bin": true
     },
-    "vitest@4.1.11_@types+node@25.9.8_@vitest+coverage-v8@4.1.11_vite@7.3.6": {
+    "vitest@4.1.11_@types+node@25.9.9_@vitest+coverage-v8@4.1.11_vite@7.3.6__@types+node@25.9.9": {
       "integrity": "sha512-fhACrNXUidIbGSBr5FlbuBkO7VWC1ZyLl0DO4CU2DrQoAPxX84Ysxs+HeGQpii5lZWV1Q4gBZTTu49mF+A6Edw==",
       "dependencies": [
-        "@types/node@25.9.8",
+        "@types/node@25.9.9",
         "@vitest/coverage-v8",
         "@vitest/expect",
         "@vitest/mocker",
@@ -2164,7 +2164,7 @@
         "why-is-node-running"
       ],
       "optionalPeers": [
-        "@types/node@25.9.8",
+        "@types/node@25.9.9",
         "@vitest/coverage-v8"
       ],
       "bin": true
@@ -2258,7 +2258,7 @@
         "npm:@codspeed/vitest-plugin@5.7.1",
         "npm:@standard-schema/spec@1",
         "npm:@types/bun@1.4.2",
-        "npm:@types/node@25.9.8",
+        "npm:@types/node@25.9.9",
         "npm:@vitest/coverage-v8@4.1.11",
         "npm:arktype@2.2.5",
         "npm:fast-url@^6.0.2",
