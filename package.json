@@ -75,7 +75,7 @@
   ],
   "license": "MIT",
   "overrides": {
-    "lucide-react": "1.48.0",
+    "lucide-react": "1.52.0",
     "zod": "4.4.3"
   }
 }

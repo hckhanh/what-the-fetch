@@ -10,7 +10,7 @@
     "npm:@standard-schema/spec@1": "1.1.0",
     "npm:@types/bun@1.4.2": "1.4.2",
     "npm:@types/node@25.9.9": "25.9.9",
-    "npm:@vitest/coverage-v8@4.1.11": "4.1.11_vitest@4.1.11_@types+node@25.9.9_vite@7.3.6__@types+node@25.9.9",
+    "npm:@vitest/coverage-v8@4.1.11": "4.1.11_vitest@4.1.11_@types+node@25.9.9_vite@7.3.6",
     "npm:arktype@2.2.7": "2.2.7",
     "npm:fast-url@^6.0.2": "6.0.2",
     "npm:knip@5.88.1": "5.88.1_@types+node@25.9.9_typescript@5.9.3",
@@ -18,7 +18,7 @@
     "npm:tsdown@0.23.0": "0.23.0_typescript@5.9.3",
     "npm:typescript@5.9.3": "5.9.3",
     "npm:valibot@1.4.2": "1.4.2_typescript@5.9.3",
-    "npm:vitest@4.1.11": "4.1.11_@types+node@25.9.9_@vitest+coverage-v8@4.1.11_vite@7.3.6__@types+node@25.9.9",
+    "npm:vitest@4.1.11": "4.1.11_@types+node@25.9.9_@vitest+coverage-v8@4.1.11_vite@7.3.6",
     "npm:zod@4.4.3": "4.4.3"
   },
   "jsr": {
@@ -875,7 +875,7 @@
         "undici-types"
       ]
     },
-    "@vitest/coverage-v8@4.1.11_vitest@4.1.11_@types+node@25.9.9_vite@7.3.6__@types+node@25.9.9": {
+    "@vitest/coverage-v8@4.1.11_vitest@4.1.11_@types+node@25.9.9_vite@7.3.6": {
       "integrity": "sha512-8MVGEFnJIcdGjcbfKmeq8z0pZHH0JlVtoVZH9Q/qwUp6wyFnEJUBMrw9DCaj+ra3vShGmhavjalMIhPNxZAUcw==",
       "dependencies": [
         "@bcoe/v8-coverage",
@@ -902,7 +902,7 @@
         "tinyrainbow"
       ]
     },
-    "@vitest/mocker@4.1.11_vite@7.3.6__@types+node@25.9.9_@types+node@25.9.9": {
+    "@vitest/mocker@4.1.11_vite@7.3.6_@types+node@25.9.9": {
       "integrity": "sha512-2XJVD55d1o5AZous5CCGKS74g/riOj9odEt2bQpCVZeblHyHdnMeFl4jl0XjU21stf4mbjUkew2eXQZt65g5CQ==",
       "dependencies": [
         "@vitest/spy",
@@ -2137,7 +2137,7 @@
       ],
       "bin": true
     },
-    "vitest@4.1.11_@types+node@25.9.9_@vitest+coverage-v8@4.1.11_vite@7.3.6__@types+node@25.9.9": {
+    "vitest@4.1.11_@types+node@25.9.9_@vitest+coverage-v8@4.1.11_vite@7.3.6": {
       "integrity": "sha512-fhACrNXUidIbGSBr5FlbuBkO7VWC1ZyLl0DO4CU2DrQoAPxX84Ysxs+HeGQpii5lZWV1Q4gBZTTu49mF+A6Edw==",
       "dependencies": [
         "@types/node@25.9.9",
@@ -2271,7 +2271,7 @@
         "npm:zod@4.4.3"
       ],
       "overrides": {
-        "lucide-react": "1.48.0",
+        "lucide-react": "1.52.0",
         "zod": "4.4.3"
       }
     }
