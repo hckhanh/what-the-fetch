@@ -1,8 +1,8 @@
 import type { StandardSchemaV1 } from '@standard-schema/spec'
-import { bench, describe, vi } from 'vitest'
+import { beforeEach, test, vi } from 'vitest'
 import { createFetch } from '../src'
 
-vi.hoisted(() =>
+beforeEach(() =>
   vi.stubGlobal(
     'fetch',
     vi.fn().mockResolvedValue({
@@ -25,7 +25,7 @@ function createMockSchema<T>(_value: T): StandardSchemaV1<T> {
   }
 }
 
-describe('createFetch benchmarks', () => {
+test('createFetch benchmarks', { timeout: 120_000 }, async ({ bench }) => {
   const api = {
     '/users/:id': {
       params: createMockSchema({ id: 123 }),
@@ -40,12 +40,12 @@ describe('createFetch benchmarks', () => {
 
   const apiFetch = createFetch(api, 'https://api.example.com')
 
-  bench('GET request with params and query', async () => {
+  await bench('GET request with params and query', async () => {
     await apiFetch('/users/:id', {
       params: { id: 123 },
       query: { fields: 'name,email' },
     })
-  })
+  }).run()
 
   const apiPost = {
     '/users': {
@@ -60,11 +60,11 @@ describe('createFetch benchmarks', () => {
 
   const apiFetchPost = createFetch(apiPost, 'https://api.example.com')
 
-  bench('POST request with body', async () => {
+  await bench('POST request with body', async () => {
     await apiFetchPost('/users', {
       body: { name: 'John', email: 'john@example.com' },
     })
-  })
+  }).run()
 
   const apiWithShared = {
     '/users/:id': {
@@ -81,13 +81,13 @@ describe('createFetch benchmarks', () => {
     },
   )
 
-  bench('GET request with shared init', async () => {
+  await bench('GET request with shared init', async () => {
     await apiFetchWithShared('/users/:id', {
       params: { id: 123 },
     })
-  })
+  }).run()
 
-  bench('GET request without options', async () => {
+  await bench('GET request without options', async () => {
     const apiSimple = {
       '/users': {
         response: createMockSchema({ users: [] }),
@@ -95,11 +95,13 @@ describe('createFetch benchmarks', () => {
     }
     const apiFetchSimple = createFetch(apiSimple, 'https://api.example.com')
     await apiFetchSimple('/users')
-  })
+  }).run()
 })
 
-describe('HTTP method prefix benchmarks', () => {
-  bench('GET request with @get prefix', async () => {
+test('HTTP method prefix benchmarks', { timeout: 120_000 }, async ({
+  bench,
+}) => {
+  await bench('GET request with @get prefix', async () => {
     const api = {
       '@get/users': {
         response: createMockSchema({ users: [] }),
@@ -107,9 +109,9 @@ describe('HTTP method prefix benchmarks', () => {
     }
     const apiFetch = createFetch(api, 'https://api.example.com')
     await apiFetch('@get/users')
-  })
+  }).run()
 
-  bench('GET request without prefix (default)', async () => {
+  await bench('GET request without prefix (default)', async () => {
     const api = {
       '/users': {
         response: createMockSchema({ users: [] }),
@@ -117,9 +119,9 @@ describe('HTTP method prefix benchmarks', () => {
     }
     const apiFetch = createFetch(api, 'https://api.example.com')
     await apiFetch('/users')
-  })
+  }).run()
 
-  bench('POST request with @post prefix', async () => {
+  await bench('POST request with @post prefix', async () => {
     const api = {
       '@post/users': {
         body: createMockSchema({ name: 'John', email: 'john@example.com' }),
@@ -130,22 +132,25 @@ describe('HTTP method prefix benchmarks', () => {
     await apiFetch('@post/users', {
       body: { name: 'John', email: 'john@example.com' },
     })
-  })
+  }).run()
 
-  bench('POST request without prefix (smart default with body)', async () => {
-    const api = {
-      '/users': {
-        body: createMockSchema({ name: 'John', email: 'john@example.com' }),
-        response: createMockSchema({ id: 1, name: 'John' }),
-      },
-    }
-    const apiFetch = createFetch(api, 'https://api.example.com')
-    await apiFetch('/users', {
-      body: { name: 'John', email: 'john@example.com' },
-    })
-  })
+  await bench(
+    'POST request without prefix (smart default with body)',
+    async () => {
+      const api = {
+        '/users': {
+          body: createMockSchema({ name: 'John', email: 'john@example.com' }),
+          response: createMockSchema({ id: 1, name: 'John' }),
+        },
+      }
+      const apiFetch = createFetch(api, 'https://api.example.com')
+      await apiFetch('/users', {
+        body: { name: 'John', email: 'john@example.com' },
+      })
+    },
+  ).run()
 
-  bench('PUT request with @put prefix and params', async () => {
+  await bench('PUT request with @put prefix and params', async () => {
     const api = {
       '@put/users/:id': {
         params: createMockSchema({ id: 123 }),
@@ -158,9 +163,9 @@ describe('HTTP method prefix benchmarks', () => {
       params: { id: 123 },
       body: { name: 'Jane' },
     })
-  })
+  }).run()
 
-  bench('DELETE request with @delete prefix', async () => {
+  await bench('DELETE request with @delete prefix', async () => {
     const api = {
       '@delete/users/:id': {
         params: createMockSchema({ id: 123 }),
@@ -171,9 +176,9 @@ describe('HTTP method prefix benchmarks', () => {
     await apiFetch('@delete/users/:id', {
       params: { id: 123 },
     })
-  })
+  }).run()
 
-  bench('PATCH request with @patch prefix', async () => {
+  await bench('PATCH request with @patch prefix', async () => {
     const api = {
       '@patch/users/:id': {
         params: createMockSchema({ id: 123 }),
@@ -186,9 +191,9 @@ describe('HTTP method prefix benchmarks', () => {
       params: { id: 123 },
       body: { name: 'Updated' },
     })
-  })
+  }).run()
 
-  bench('Mixed: prefix with path params and query', async () => {
+  await bench('Mixed: prefix with path params and query', async () => {
     const api = {
       '@get/users/:id/posts': {
         params: createMockSchema({ id: 123 }),
@@ -201,5 +206,5 @@ describe('HTTP method prefix benchmarks', () => {
       params: { id: 123 },
       query: { limit: 10, offset: 0 },
     })
-  })
+  }).run()
 })

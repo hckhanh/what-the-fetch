@@ -1,44 +1,46 @@
-import { bench, describe } from 'vitest'
+import { test } from 'vitest'
 import { parseMethodFromPath } from '../src/utils'
 
-describe('parseMethodFromPath benchmarks', () => {
-  bench('parse @get prefix', () => {
+test('parseMethodFromPath benchmarks', { timeout: 120_000 }, async ({
+  bench,
+}) => {
+  await bench('parse @get prefix', () => {
     parseMethodFromPath('@get/users')
-  })
+  }).run()
 
-  bench('parse @post prefix', () => {
+  await bench('parse @post prefix', () => {
     parseMethodFromPath('@post/users')
-  })
+  }).run()
 
-  bench('parse @put prefix with params', () => {
+  await bench('parse @put prefix with params', () => {
     parseMethodFromPath('@put/users/:id')
-  })
+  }).run()
 
-  bench('parse @delete prefix', () => {
+  await bench('parse @delete prefix', () => {
     parseMethodFromPath('@delete/users/:id')
-  })
+  }).run()
 
-  bench('parse @patch prefix', () => {
+  await bench('parse @patch prefix', () => {
     parseMethodFromPath('@patch/users/:id')
-  })
+  }).run()
 
-  bench('parse path without prefix', () => {
+  await bench('parse path without prefix', () => {
     parseMethodFromPath('/users')
-  })
+  }).run()
 
-  bench('parse path without prefix with params', () => {
+  await bench('parse path without prefix with params', () => {
     parseMethodFromPath('/users/:id/posts/:postId')
-  })
+  }).run()
 
-  bench('parse @get without path', () => {
+  await bench('parse @get without path', () => {
     parseMethodFromPath('@get')
-  })
+  }).run()
 
-  bench('parse case-insensitive @GeT prefix', () => {
+  await bench('parse case-insensitive @GeT prefix', () => {
     parseMethodFromPath('@GeT/users')
-  })
+  }).run()
 
-  bench('parse complex path with @post prefix', () => {
+  await bench('parse complex path with @post prefix', () => {
     parseMethodFromPath('@post/api/v1/users/:userId/posts/:postId/comments')
-  })
+  }).run()
 })
