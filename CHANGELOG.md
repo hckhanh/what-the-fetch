@@ -1,5 +1,11 @@
 # what-the-fetch
 
+## 2.2.4
+
+### Patch Changes
+
+- Preserve source module boundaries in the published ESM output with unbundle mode, while retaining the existing public exports and TypeScript declarations.
+
 ## 2.2.3
 
 ### Patch Changes
