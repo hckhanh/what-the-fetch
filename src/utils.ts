@@ -111,6 +111,14 @@ export async function validateRequestData<
     )
   }
 
+  // Supplied values must retain validateData's promise resolution behavior.
+  if (
+    options === undefined &&
+    !('params' in apiSchema || 'query' in apiSchema || 'body' in apiSchema)
+  ) {
+    return [undefined, undefined, undefined]
+  }
+
   return Promise.all([
     validateData<Schemas, Path, 'params'>(apiSchema, 'params', options?.params),
     validateData<Schemas, Path, 'query'>(apiSchema, 'query', options?.query),

@@ -63,23 +63,3 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           use_oidc: true
-  benchmark:
-    name: Benchmark
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
-      - name: Setup toolchains
-        uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3.6.3
-      - name: Setup Aikido Safe Chain
-        run: curl -fsSL https://github.com/AikidoSec/safe-chain/releases/latest/download/install-safe-chain.sh | sh -s -- --ci
-      - name: Install Dependencies
-        run: bun ci
-      - name: Run Benchmarks
-        uses: CodSpeedHQ/action@f22792bfac16f3e14eb9fbea76f4a48e9cc22b93 # v4.19.1
-        with:
-          run: bun bench
-          mode: 'simulation'

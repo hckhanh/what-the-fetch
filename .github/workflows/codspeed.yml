@@ -1,0 +1,56 @@
+name: CodSpeed
+
+on:
+  workflow_call:
+    inputs:
+      mode:
+        type: string
+        default: simulation
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: CodSpeed instrument
+        type: choice
+        options:
+          - simulation
+          - walltime
+          - simulation,walltime
+        default: simulation
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    name: Benchmark
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - name: Setup toolchains
+        uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3.6.3
+      - name: Setup Aikido Safe Chain
+        env:
+          SAFE_CHAIN_RELEASE: '1.5.25'
+        run: |
+          curl --proto '=https' --proto-redir '=https' -fsSL \
+            "https://github.com/AikidoSec/safe-chain/releases/download/${SAFE_CHAIN_RELEASE}/install-safe-chain.sh" \
+            -o "$RUNNER_TEMP/install-safe-chain.sh"
+          echo "83069f6db4215cccf6a26bdd6e65a5c2366b9d24322b2d5d2862d47385e56682  $RUNNER_TEMP/install-safe-chain.sh" | sha256sum --check
+          sh "$RUNNER_TEMP/install-safe-chain.sh" --ci
+      - name: Install dependencies
+        run: bun ci
+      - name: Run benchmarks
+        uses: CodSpeedHQ/action@f842b9a3ffe213dbb81768fd7f7eeb4dfcf1c369 # v5.4.2
+        with:
+          runner-version: '5.4.0'
+          cycle-estimation: 'true'
+          exclude-allocations: 'false'
+          run: bun run bench
+          mode: ${{ inputs.mode || 'simulation' }}

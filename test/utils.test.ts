@@ -20,9 +20,9 @@ function createMockSchema<T>(_value: T): StandardSchemaV1<T> {
 }
 
 // Helper to create a mock Standard Schema with validation error
-function createFailingSchema<T>(
-  issues: Array<{ message: string }>,
-): StandardSchemaV1<T> {
+function createFailingSchema<
+  T extends Record<string, unknown> = Record<string, unknown>,
+>(issues: Array<{ message: string }>): StandardSchemaV1<T> {
   return {
     '~standard': {
       version: 1,
@@ -115,6 +115,46 @@ describe('validateData', () => {
 })
 
 describe('validateRequestData', () => {
+  it('resolves unvalidated promise-valued request fields', async () => {
+    const params = { id: 123 }
+    const query = { page: 2 }
+    const body = { name: 'Test' }
+    const result = await validateRequestData({}, '/users', {
+      params: Promise.resolve(params),
+      query: Promise.resolve(query),
+      body: Promise.resolve(body),
+    })
+
+    expect(result).toEqual([params, query, body])
+  })
+
+  it('rejects when an unvalidated request value has a throwing then getter', async () => {
+    const body = {
+      // biome-ignore lint/suspicious/noThenProperty: Exercise promise resolution failures.
+      get then() {
+        throw new Error('Cannot resolve request body')
+      },
+    }
+
+    await expect(validateRequestData({}, '/users', { body })).rejects.toThrow(
+      'Cannot resolve request body',
+    )
+  })
+
+  it('preserves unvalidated request values and object identities', async () => {
+    const params = { id: 123 }
+    const query = { page: 2 }
+    const body = { name: 'Test' }
+    const result = await validateRequestData({}, '/users', {
+      params,
+      query,
+      body,
+    })
+    expect(result[0]).toBe(params)
+    expect(result[1]).toBe(query)
+    expect(result[2]).toBe(body)
+  })
+
   it('should validate params, query, and body concurrently', async () => {
     const apiSchema = {
       params: createMockSchema({ id: 123 }),
