@@ -115,6 +115,32 @@ describe('validateData', () => {
 })
 
 describe('validateRequestData', () => {
+  it('resolves unvalidated promise-valued request fields', async () => {
+    const params = { id: 123 }
+    const query = { page: 2 }
+    const body = { name: 'Test' }
+    const result = await validateRequestData({}, '/users', {
+      params: Promise.resolve(params),
+      query: Promise.resolve(query),
+      body: Promise.resolve(body),
+    })
+
+    expect(result).toEqual([params, query, body])
+  })
+
+  it('rejects when an unvalidated request value has a throwing then getter', async () => {
+    const body = {
+      // biome-ignore lint/suspicious/noThenProperty: Exercise promise resolution failures.
+      get then() {
+        throw new Error('Cannot resolve request body')
+      },
+    }
+
+    await expect(validateRequestData({}, '/users', { body })).rejects.toThrow(
+      'Cannot resolve request body',
+    )
+  })
+
   it('preserves unvalidated request values and object identities', async () => {
     const params = { id: 123 }
     const query = { page: 2 }

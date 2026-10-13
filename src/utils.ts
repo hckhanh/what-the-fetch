@@ -111,8 +111,12 @@ export async function validateRequestData<
     )
   }
 
-  if (!('params' in apiSchema || 'query' in apiSchema || 'body' in apiSchema)) {
-    return [options?.params, options?.query, options?.body]
+  // Supplied values must retain validateData's promise resolution behavior.
+  if (
+    options === undefined &&
+    !('params' in apiSchema || 'query' in apiSchema || 'body' in apiSchema)
+  ) {
+    return [undefined, undefined, undefined]
   }
 
   return Promise.all([
