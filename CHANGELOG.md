@@ -1,5 +1,11 @@
 # what-the-fetch
 
+## 3.0.0
+
+### Major Changes
+
+- 011525c: Reduce request validation overhead when request options and schemas are absent, while preserving promise resolution and validation behavior for supplied values.
+
 ## 2.2.4
 
 ### Patch Changes
