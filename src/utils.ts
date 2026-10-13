@@ -111,6 +111,10 @@ export async function validateRequestData<
     )
   }
 
+  if (!('params' in apiSchema || 'query' in apiSchema || 'body' in apiSchema)) {
+    return [options?.params, options?.query, options?.body]
+  }
+
   return Promise.all([
     validateData<Schemas, Path, 'params'>(apiSchema, 'params', options?.params),
     validateData<Schemas, Path, 'query'>(apiSchema, 'query', options?.query),

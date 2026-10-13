@@ -115,6 +115,20 @@ describe('validateData', () => {
 })
 
 describe('validateRequestData', () => {
+  it('preserves unvalidated request values and object identities', async () => {
+    const params = { id: 123 }
+    const query = { page: 2 }
+    const body = { name: 'Test' }
+    const result = await validateRequestData({}, '/users', {
+      params,
+      query,
+      body,
+    })
+    expect(result[0]).toBe(params)
+    expect(result[1]).toBe(query)
+    expect(result[2]).toBe(body)
+  })
+
   it('should validate params, query, and body concurrently', async () => {
     const apiSchema = {
       params: createMockSchema({ id: 123 }),
