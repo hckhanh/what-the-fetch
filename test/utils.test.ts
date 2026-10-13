@@ -20,9 +20,9 @@ function createMockSchema<T>(_value: T): StandardSchemaV1<T> {
 }
 
 // Helper to create a mock Standard Schema with validation error
-function createFailingSchema<T>(
-  issues: Array<{ message: string }>,
-): StandardSchemaV1<T> {
+function createFailingSchema<
+  T extends Record<string, unknown> = Record<string, unknown>,
+>(issues: Array<{ message: string }>): StandardSchemaV1<T> {
   return {
     '~standard': {
       version: 1,
