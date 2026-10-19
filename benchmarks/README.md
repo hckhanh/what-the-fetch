@@ -10,7 +10,7 @@ client-construction case. The older `benchmark/` suite remains diagnostic materi
 ## Matching vn-number's CodSpeed toolchain
 
 - Node 24.21.0 and Vitest 5.0.4.
-- `@codspeed/vitest-plugin` 6.0.0, supporting Node 24 and Vitest 5.
+- `@codspeed/vitest-plugin` 6.1.0, supporting Node 24 and Vitest 5.
 - Vite 8.3.4.
 - CodSpeed action 5.4.2 with runner **5.4.0**, cycle estimation enabled, and
   allocation costs included.
@@ -19,6 +19,11 @@ Vitest 5 benchmarks use the `bench` fixture inside an async `test`, awaiting
 each `bench(name, callback).run()`. Preserve test and workload names to retain
 the existing CodSpeed benchmark IDs. Install the fetch stub in `beforeEach`
 because `unstubGlobals` clears module-level stubs before each test.
+
+CodSpeed 6.1.0 disables Vitest 5's diagnostic export-getter tracking by default.
+Results relative to 6.0.0 and 6.0.1 reflect a measurement correction, not a
+production-library speedup. See the
+[6.1.0 release notes](https://github.com/CodSpeedHQ/codspeed-node/releases/tag/v6.1.0).
 
 Routine CI measures simulation on Ubuntu 24.04, matching vn-number.
 Manual dispatch and reusable workflow calls can explicitly select walltime or
