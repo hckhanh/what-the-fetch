@@ -1,5 +1,12 @@
 # what-the-fetch
 
+## 3.0.1
+
+### Patch Changes
+
+- Refresh the benchmark toolchain with CodSpeed 6.1.0, Vitest 5, and CodSpeed runner
+  5.5.0. Public APIs and production behavior remain unchanged.
+
 ## 3.0.0
 
 ### Major Changes
