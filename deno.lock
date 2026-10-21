@@ -8,7 +8,7 @@
     "npm:@changesets/config@3.1.4": "3.1.4",
     "npm:@codspeed/vitest-plugin@6.1.0": "6.1.0_vite@8.3.4_vitest@5.0.4_@types+node@25.9.9_@vitest+coverage-v8@5.0.4",
     "npm:@standard-schema/spec@1": "1.1.0",
-    "npm:@types/bun@1.4.2": "1.4.2",
+    "npm:@types/bun@1.4.3": "1.4.3",
     "npm:@types/node@25.9.9": "25.9.9",
     "npm:@vitest/coverage-v8@5.0.4": "5.0.4_vitest@5.0.4_@types+node@25.9.9_vite@8.3.4",
     "npm:arktype@2.2.7": "2.2.7",
@@ -577,8 +577,8 @@
         "tslib"
       ]
     },
-    "@types/bun@1.4.2": {
-      "integrity": "sha512-GimotNn7+ZV0uVArItBbriZsR1oNf0+WTzPkdcFrzShI7k2norL0uzEaJT8T33dWr7O/c9ZDuAFQrctKCi72oQ==",
+    "@types/bun@1.4.3": {
+      "integrity": "sha512-N67Pqy8JXbAY/j0tNraS3V5mubGvc6rrrNDmDCtZLlFzccbUJPDb0tvgUBC5q4m8ybkP93Jcn1QB+RYQ6PvBhw==",
       "dependencies": [
         "bun-types"
       ]
@@ -857,10 +857,11 @@
         "fill-range"
       ]
     },
-    "bun-types@1.4.2": {
-      "integrity": "sha512-bxV1FgK7yBIzjRe5zBozIM4Bem11ZJcCXSrjWRG3YWLt8yFDePu4cLjpebO8OvPeIE9trbyPF4fuj3Cia4Fj3w==",
+    "bun-types@1.4.3": {
+      "integrity": "sha512-tinRJNGOmUN+tEAsn2y2e942n9JHRHR42iUYzDH75NmhJqVBokGSQkkfSFdNWwsANIdrK6ACH9t01M452YyTwg==",
       "dependencies": [
-        "@types/node@25.9.9"
+        "@types/node@25.9.9",
+        "undici-types"
       ]
     },
     "cac@7.0.0": {
@@ -1851,7 +1852,7 @@
         "npm:@changesets/config@3.1.4",
         "npm:@codspeed/vitest-plugin@6.1.0",
         "npm:@standard-schema/spec@1",
-        "npm:@types/bun@1.4.2",
+        "npm:@types/bun@1.4.3",
         "npm:@types/node@25.9.9",
         "npm:@vitest/coverage-v8@5.0.4",
         "npm:arktype@2.2.7",
