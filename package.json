@@ -48,7 +48,7 @@
     "@types/bun": "1.4.3",
     "@types/node": "25.9.9",
     "@vitest/coverage-v8": "5.0.4",
-    "arktype": "2.2.7",
+    "arktype": "2.2.8",
     "knip": "5.88.1",
     "syncpack": "14.3.1",
     "tsdown": "0.23.0",
