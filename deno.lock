@@ -11,7 +11,7 @@
     "npm:@types/bun@1.4.3": "1.4.3",
     "npm:@types/node@25.9.9": "25.9.9",
     "npm:@vitest/coverage-v8@5.0.4": "5.0.4_vitest@5.0.4_@types+node@25.9.9_vite@8.3.4",
-    "npm:arktype@2.2.8": "2.2.8",
+    "npm:arktype@2.2.9": "2.2.9",
     "npm:fast-url@^6.0.2": "6.0.3",
     "npm:knip@5.88.1": "5.88.1_@types+node@25.9.9_typescript@5.9.3",
     "npm:syncpack@14.3.1": "14.3.1",
@@ -31,14 +31,14 @@
     }
   },
   "npm": {
-    "@ark/schema@0.56.7": {
-      "integrity": "sha512-jmoOJlYIc4k1uv8oYBDNOFnAsKk2a2D9t/D6npF2JUfW4ecPB0v6ce6lruKg7lkBxIBA8Z7UtxfmvephYbhUGQ==",
+    "@ark/schema@0.56.8": {
+      "integrity": "sha512-R05TOe85oQBGFFw2zKMuZpqkXibLKuC/aJt6VwFn5Cjc4x3NkWfhvGRpRDycNkj3ddcHnOPtIsmjVowJO9Yxdw==",
       "dependencies": [
         "@ark/util"
       ]
     },
-    "@ark/util@0.56.7": {
-      "integrity": "sha512-z8pVnrPk/x9GC18yOp5wCe8rR2+Z6us4CTSg7dvxdsDLuA2xXYq+QETD1fO6f3fMuXe+PCjpvtCnhTW9RHLgEw=="
+    "@ark/util@0.56.8": {
+      "integrity": "sha512-XLiQyGfpJcws1zCtp2Cva8s1oheCdFn1Rt6JSyC4NnkDrpwCJnlaiawuuOc1Z97vMH+jEzW5vyyf0xOju5wUQA=="
     },
     "@babel/helper-string-parser@7.29.7": {
       "integrity": "sha512-Pb5ijPrZ89GDH8223L4UP8i6QApWxs04RbPQJTeWDV0/keR2E36MeKnyr6LYmUUvqRRI+Iv87SuF1W6ErINzYw=="
@@ -722,14 +722,14 @@
     "argparse@2.0.1": {
       "integrity": "sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q=="
     },
-    "arkregex@0.0.13": {
-      "integrity": "sha512-c17sqCqiiZauxyoU1KZ2zbzCgeghGmc8dR2CrdQnlEtpq3bLhRLoLrxTL52M/8yQD8e/i1/IBRpRCNAuqJa7xQ==",
+    "arkregex@0.0.14": {
+      "integrity": "sha512-G3I/uCtWE0IKQiPh0qqmmAFDdtjZKZQ5mNPR6gJBeAMZ7VqYCpoaDeXnLju2Zo6ywExtmxZJELeVFb0MPDjPyA==",
       "dependencies": [
         "@ark/util"
       ]
     },
-    "arktype@2.2.8": {
-      "integrity": "sha512-tZyLza7kO2vN8BXBKcj4t43IVMe8/ZyqlITH0chZv7FfEw+edLovpY922tqcK4mCjTpf4oNo2xV6np7tquP1ww==",
+    "arktype@2.2.9": {
+      "integrity": "sha512-Cja0IMEn19rB35on9da1i1z6QMasuS7ULffXbetCry09jvCGYT8Bi1KgYiqri5FymF4nQAXkM90yksYkgSK2EA==",
       "dependencies": [
         "@ark/schema",
         "@ark/util",
@@ -1760,7 +1760,7 @@
         "npm:@types/bun@1.4.3",
         "npm:@types/node@25.9.9",
         "npm:@vitest/coverage-v8@5.0.4",
-        "npm:arktype@2.2.8",
+        "npm:arktype@2.2.9",
         "npm:fast-url@^6.0.2",
         "npm:knip@5.88.1",
         "npm:syncpack@14.3.1",
