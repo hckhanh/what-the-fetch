@@ -6,11 +6,11 @@
     "npm:@biomejs/biome@2.5.15": "2.5.15",
     "npm:@changesets/cli@2.31.1": "2.31.1_@types+node@25.9.9",
     "npm:@changesets/config@3.1.4": "3.1.4",
-    "npm:@codspeed/vitest-plugin@6.1.0": "6.1.0_vite@8.3.4_vitest@5.0.4_@types+node@25.9.9_@vitest+coverage-v8@5.0.4",
+    "npm:@codspeed/vitest-plugin@6.1.0": "6.1.0_vite@8.3.5_vitest@5.0.4__@types+node@25.9.9__@vitest+coverage-v8@5.0.4__vite@8.3.5_@types+node@25.9.9",
     "npm:@standard-schema/spec@1": "1.1.0",
     "npm:@types/bun@1.4.3": "1.4.3",
     "npm:@types/node@25.9.9": "25.9.9",
-    "npm:@vitest/coverage-v8@5.0.4": "5.0.4_vitest@5.0.4_@types+node@25.9.9_vite@8.3.4",
+    "npm:@vitest/coverage-v8@5.0.4": "5.0.4_vitest@5.0.4_@types+node@25.9.9_vite@8.3.5",
     "npm:arktype@2.2.9": "2.2.9",
     "npm:fast-url@^6.0.2": "6.0.3",
     "npm:knip@5.88.1": "5.88.1_@types+node@25.9.9_typescript@5.9.3",
@@ -18,8 +18,8 @@
     "npm:tsdown@0.23.1": "0.23.1_typescript@5.9.3",
     "npm:typescript@5.9.3": "5.9.3",
     "npm:valibot@1.5.0": "1.5.0_typescript@5.9.3",
-    "npm:vite@8.3.4": "8.3.4_@types+node@25.9.9",
-    "npm:vitest@5.0.4": "5.0.4_@types+node@25.9.9_@vitest+coverage-v8@5.0.4_vite@8.3.4",
+    "npm:vite@8.3.5": "8.3.5_@types+node@25.9.9",
+    "npm:vitest@5.0.4": "5.0.4_@types+node@25.9.9_@vitest+coverage-v8@5.0.4_vite@8.3.5",
     "npm:zod@4.6.7": "4.6.7"
   },
   "jsr": {
@@ -304,7 +304,7 @@
         "stack-trace"
       ]
     },
-    "@codspeed/vitest-plugin@6.1.0_vite@8.3.4_vitest@5.0.4_@types+node@25.9.9_@vitest+coverage-v8@5.0.4": {
+    "@codspeed/vitest-plugin@6.1.0_vite@8.3.5_vitest@5.0.4__@types+node@25.9.9__@vitest+coverage-v8@5.0.4__vite@8.3.5_@types+node@25.9.9": {
       "integrity": "sha512-jYGZo8RSCIYD0G/+WWeZZUcQtGzz6Xl9gsdaElg9EQr5D99DbtDd2QxJYtA/9DWoWlXSP/EPR2OQR2UeHpYTSQ==",
       "dependencies": [
         "@codspeed/core",
@@ -605,7 +605,7 @@
         "undici-types"
       ]
     },
-    "@vitest/coverage-v8@5.0.4_vitest@5.0.4_@types+node@25.9.9_vite@8.3.4": {
+    "@vitest/coverage-v8@5.0.4_vitest@5.0.4_@types+node@25.9.9_vite@8.3.5": {
       "integrity": "sha512-P5YcQY8Y6RmoE9xRXI38rT8pssbcubEzqtYTM2XQoxOXMDn04nRaTI1SM8qCl9/NfW3ag9GlzdSXu7IwO5Ft8A==",
       "dependencies": [
         "@bcoe/v8-coverage",
@@ -628,7 +628,7 @@
         "@vitest/istanbul-lib-coverage"
       ]
     },
-    "@vitest/mocker@5.0.4_vite@8.3.4_@types+node@25.9.9": {
+    "@vitest/mocker@5.0.4_vite@8.3.5_@types+node@25.9.9": {
       "integrity": "sha512-tqAlrYWce4iUxhr3ncNohejtCTOcHeE8XWrSNZY3OhPoDn01yeGv+gnaBy64ATp7o6pb03eIbBAjzmibpc9vIQ==",
       "dependencies": [
         "@jridgewell/trace-mapping",
@@ -1353,8 +1353,8 @@
     "pify@4.0.1": {
       "integrity": "sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g=="
     },
-    "postcss@8.5.29": {
-      "integrity": "sha512-49cGhUbXj8Qenv0iTMxA1cFBzxXoctpC9Ujd77t1WcbJIr6nF/eI7g/8MgxrYldFRuAXvja7xQRwavoW7kgrxQ==",
+    "postcss@8.5.31": {
+      "integrity": "sha512-YUbWYCgErwnMAVkjUnYa+KlMBzGpHwiIt/DE7f0G33AuX2LH9UcTk6KgWxd3zRU+pN3u/C+Xl3EnMLM4Hea7Sg==",
       "dependencies": [
         "nanoid",
         "picocolors",
@@ -1640,8 +1640,8 @@
     "verkit@0.5.0": {
       "integrity": "sha512-u4J1hr6Y+C/hit34GwL3eIcUf3wngT8TlYUjK7tk0jxydKLAq3sYvifjdTDA6U3KCKRcQCQDGf/srjxfZF3l7g=="
     },
-    "vite@8.3.4_@types+node@25.9.9": {
-      "integrity": "sha512-IftLE8phJhdNRIGNEV4JCCvfNScoZQVfcXaN8TQropWGJtOHcu+iAB9pHcuGvmEb/kddw0LBe/jS8ztdC6xdiQ==",
+    "vite@8.3.5_@types+node@25.9.9": {
+      "integrity": "sha512-z1YpjieJ9g0ebTmQpLBv/oq9E3F9EIlOe+7LahW8SrE3LTiG3udBRUXQOlYXP9b+IC2q2phHeVxj9xGlw34OEQ==",
       "dependencies": [
         "@types/node@25.9.9",
         "lightningcss",
@@ -1658,7 +1658,7 @@
       ],
       "bin": true
     },
-    "vitest@5.0.4_@types+node@25.9.9_@vitest+coverage-v8@5.0.4_vite@8.3.4": {
+    "vitest@5.0.4_@types+node@25.9.9_@vitest+coverage-v8@5.0.4_vite@8.3.5": {
       "integrity": "sha512-z0WxZRV2Sg48wF0FSgMq3TFG8JS38/Qr96vZVZdX6+Em9raQTvnXQvdTFJe2m3rfyJnEHeHQ/snceIdi8D1pVg==",
       "dependencies": [
         "@types/chai",
@@ -1767,14 +1767,14 @@
         "npm:tsdown@0.23.1",
         "npm:typescript@5.9.3",
         "npm:valibot@1.5.0",
-        "npm:vite@8.3.4",
+        "npm:vite@8.3.5",
         "npm:vitest@5.0.4",
         "npm:zod@4.6.7"
       ],
       "overrides": {
         "postcss": "8.5.31",
         "lucide-react": "1.52.0",
-        "vite": "8.3.4",
+        "vite": "8.3.5",
         "zod": "4.6.7"
       }
     }
