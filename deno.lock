@@ -6,11 +6,11 @@
     "npm:@biomejs/biome@2.5.15": "2.5.15",
     "npm:@changesets/cli@2.31.1": "2.31.1_@types+node@25.9.9",
     "npm:@changesets/config@3.1.4": "3.1.4",
-    "npm:@codspeed/vitest-plugin@6.1.0": "6.1.0_vite@8.3.5_vitest@5.0.4__@types+node@25.9.9__@vitest+coverage-v8@5.0.4__vite@8.3.5_@types+node@25.9.9",
+    "npm:@codspeed/vitest-plugin@6.1.0": "6.1.0_vite@8.3.5_vitest@5.0.5_@types+node@25.9.9_@vitest+coverage-v8@5.0.5",
     "npm:@standard-schema/spec@1": "1.1.0",
     "npm:@types/bun@1.4.3": "1.4.3",
     "npm:@types/node@25.9.9": "25.9.9",
-    "npm:@vitest/coverage-v8@5.0.4": "5.0.4_vitest@5.0.4_@types+node@25.9.9_vite@8.3.5",
+    "npm:@vitest/coverage-v8@5.0.5": "5.0.5_vitest@5.0.5_@types+node@25.9.9_vite@8.3.5",
     "npm:arktype@2.2.9": "2.2.9",
     "npm:fast-url@^6.0.2": "6.0.3",
     "npm:knip@5.88.1": "5.88.1_@types+node@25.9.9_typescript@5.9.3",
@@ -19,7 +19,7 @@
     "npm:typescript@5.9.3": "5.9.3",
     "npm:valibot@1.5.0": "1.5.0_typescript@5.9.3",
     "npm:vite@8.3.5": "8.3.5_@types+node@25.9.9",
-    "npm:vitest@5.0.4": "5.0.4_@types+node@25.9.9_@vitest+coverage-v8@5.0.4_vite@8.3.5",
+    "npm:vitest@5.0.5": "5.0.5_@types+node@25.9.9_@vitest+coverage-v8@5.0.5_vite@8.3.5",
     "npm:zod@4.6.7": "4.6.7"
   },
   "jsr": {
@@ -304,7 +304,7 @@
         "stack-trace"
       ]
     },
-    "@codspeed/vitest-plugin@6.1.0_vite@8.3.5_vitest@5.0.4__@types+node@25.9.9__@vitest+coverage-v8@5.0.4__vite@8.3.5_@types+node@25.9.9": {
+    "@codspeed/vitest-plugin@6.1.0_vite@8.3.5_vitest@5.0.5_@types+node@25.9.9_@vitest+coverage-v8@5.0.5": {
       "integrity": "sha512-jYGZo8RSCIYD0G/+WWeZZUcQtGzz6Xl9gsdaElg9EQr5D99DbtDd2QxJYtA/9DWoWlXSP/EPR2OQR2UeHpYTSQ==",
       "dependencies": [
         "@codspeed/core",
@@ -605,8 +605,8 @@
         "undici-types"
       ]
     },
-    "@vitest/coverage-v8@5.0.4_vitest@5.0.4_@types+node@25.9.9_vite@8.3.5": {
-      "integrity": "sha512-P5YcQY8Y6RmoE9xRXI38rT8pssbcubEzqtYTM2XQoxOXMDn04nRaTI1SM8qCl9/NfW3ag9GlzdSXu7IwO5Ft8A==",
+    "@vitest/coverage-v8@5.0.5_vitest@5.0.5_@types+node@25.9.9_vite@8.3.5": {
+      "integrity": "sha512-4KpkGdIrSqBihx/JyP/e+S+IKB98etg1XDQiLAxksLfcShnwi1VReGeOT9NI43hLHbknosKp/1CCLn9Zgcs8mg==",
       "dependencies": [
         "@bcoe/v8-coverage",
         "@vitest/istanbul-lib-coverage",
@@ -628,8 +628,8 @@
         "@vitest/istanbul-lib-coverage"
       ]
     },
-    "@vitest/mocker@5.0.4_vite@8.3.5_@types+node@25.9.9": {
-      "integrity": "sha512-tqAlrYWce4iUxhr3ncNohejtCTOcHeE8XWrSNZY3OhPoDn01yeGv+gnaBy64ATp7o6pb03eIbBAjzmibpc9vIQ==",
+    "@vitest/mocker@5.0.5_vite@8.3.5": {
+      "integrity": "sha512-xLL3lkDegJZw+MGoGaCCsFayDZthGgpAtr3Vziyfc4p7xH89K7KRPcRBBh/kEYm0Aqkt5DtTmkYpBtRV/FrHZg==",
       "dependencies": [
         "@jridgewell/trace-mapping",
         "@vitest/spy",
@@ -641,8 +641,8 @@
         "vite"
       ]
     },
-    "@vitest/spy@5.0.4": {
-      "integrity": "sha512-MZKk/gSkm2q+ICobMxCpH1mA+cCAWm8WV7UhxlqGjq/sJ3AGc1BqFOs5CRVXxH78wQtme9q/NAAgBquj4AcyMw=="
+    "@vitest/spy@5.0.5": {
+      "integrity": "sha512-lwJRExuH417257Q5wv9QYugN9IMJkoxcrKrYxGPQkBzl7wlNpTUxD/5yNX4ESKVUIShKPgkGchYPFMWOOk0wzw=="
     },
     "@yuku-core/binding-android-arm64@0.19.0": {
       "integrity": "sha512-wdL2XmTiZixAOaHk9Z0JJZ8u9Qm8d333Zjpc6gaxXFX+UR5BlsfxZ7a2+2Rm71pamppsPYGUGFq2oVLbh6DISw==",
@@ -1658,8 +1658,8 @@
       ],
       "bin": true
     },
-    "vitest@5.0.4_@types+node@25.9.9_@vitest+coverage-v8@5.0.4_vite@8.3.5": {
-      "integrity": "sha512-z0WxZRV2Sg48wF0FSgMq3TFG8JS38/Qr96vZVZdX6+Em9raQTvnXQvdTFJe2m3rfyJnEHeHQ/snceIdi8D1pVg==",
+    "vitest@5.0.5_@types+node@25.9.9_@vitest+coverage-v8@5.0.5_vite@8.3.5": {
+      "integrity": "sha512-cPODOMF8YnkiiYtDdHo6n4wWmBrOBBbOIYH2d33M4l3CdNn72h+qMmO6uXffUN6A5AZFXNND/d+krS9mgkXRfg==",
       "dependencies": [
         "@types/chai",
         "@types/node@25.9.9",
@@ -1759,7 +1759,7 @@
         "npm:@standard-schema/spec@1",
         "npm:@types/bun@1.4.3",
         "npm:@types/node@25.9.9",
-        "npm:@vitest/coverage-v8@5.0.4",
+        "npm:@vitest/coverage-v8@5.0.5",
         "npm:arktype@2.2.9",
         "npm:fast-url@^6.0.2",
         "npm:knip@5.88.1",
@@ -1768,7 +1768,7 @@
         "npm:typescript@5.9.3",
         "npm:valibot@1.5.0",
         "npm:vite@8.3.5",
-        "npm:vitest@5.0.4",
+        "npm:vitest@5.0.5",
         "npm:zod@4.6.7"
       ],
       "overrides": {
