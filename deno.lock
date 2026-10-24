@@ -13,11 +13,11 @@
     "npm:@vitest/coverage-v8@5.0.4": "5.0.4_vitest@5.0.4_@types+node@25.9.9_vite@8.3.4",
     "npm:arktype@2.2.8": "2.2.8",
     "npm:fast-url@^6.0.2": "6.0.3",
-    "npm:knip@5.88.1": "5.88.1_@types+node@25.9.9_typescript@5.9.3",
+    "npm:knip@5.88.1": "5.88.1_@types+node@25.9.9_typescript@6.0.3",
     "npm:syncpack@14.3.1": "14.3.1",
-    "npm:tsdown@0.23.1": "0.23.1_typescript@5.9.3",
-    "npm:typescript@5.9.3": "5.9.3",
-    "npm:valibot@1.5.0": "1.5.0_typescript@5.9.3",
+    "npm:tsdown@0.23.1": "0.23.1_typescript@6.0.3",
+    "npm:typescript@6.0.3": "6.0.3",
+    "npm:valibot@1.5.0": "1.5.0_typescript@6.0.3",
     "npm:vite@8.3.4": "8.3.4_@types+node@25.9.9",
     "npm:vitest@5.0.4": "5.0.4_@types+node@25.9.9_@vitest+coverage-v8@5.0.4_vite@8.3.4",
     "npm:zod@4.6.5": "4.6.5"
@@ -1117,7 +1117,7 @@
         "graceful-fs"
       ]
     },
-    "knip@5.88.1_@types+node@25.9.9_typescript@5.9.3": {
+    "knip@5.88.1_@types+node@25.9.9_typescript@6.0.3": {
       "integrity": "sha512-tpy5o7zu1MjawVkLPuahymVJekYY3kYjvzcoInhIchgePxTlo+api90tBv2KfhAIe5uXh+mez1tAfmbv8/TiZg==",
       "dependencies": [
         "@nodelib/fs.walk",
@@ -1395,7 +1395,7 @@
     "reusify@1.1.0": {
       "integrity": "sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw=="
     },
-    "rolldown-plugin-dts@0.28.8_rolldown@1.2.15_typescript@5.9.3": {
+    "rolldown-plugin-dts@0.28.8_rolldown@1.2.15_typescript@6.0.3": {
       "integrity": "sha512-FVhfqxorCWcc20BVT5eVRfRjzLLl6mgzjcMR4gSBf0K4oQMXT0qoHhhzfXy0L7y83fQy7Ug5ZDNk90xM3/LiCQ==",
       "dependencies": [
         "dts-resolver",
@@ -1581,7 +1581,7 @@
       "integrity": "sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==",
       "bin": true
     },
-    "tsdown@0.23.1_typescript@5.9.3": {
+    "tsdown@0.23.1_typescript@6.0.3": {
       "integrity": "sha512-MSC2WSOts3in95J334/VIS7KPfor3eCSvndJ6KdoVj9Aak9Kh1aNfz9ws5owhdukuTNSXRdfkPEzA/ihpDD6SA==",
       "dependencies": [
         "cac",
@@ -1608,8 +1608,8 @@
     "tslib@2.8.1": {
       "integrity": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w=="
     },
-    "typescript@5.9.3": {
-      "integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==",
+    "typescript@6.0.3": {
+      "integrity": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
       "bin": true
     },
     "unbash@2.2.0": {
@@ -1628,7 +1628,7 @@
     "universalify@0.1.2": {
       "integrity": "sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg=="
     },
-    "valibot@1.5.0_typescript@5.9.3": {
+    "valibot@1.5.0_typescript@6.0.3": {
       "integrity": "sha512-nil6AkP2TChWL43Z5uJ6GTxX01CUA+g8LWUM+N/rB9NBbkUMaUsi9PUNzlUPgoKASgmx9f7eGOYpJ04/fSa6FQ==",
       "dependencies": [
         "typescript"
@@ -1765,7 +1765,7 @@
         "npm:knip@5.88.1",
         "npm:syncpack@14.3.1",
         "npm:tsdown@0.23.1",
-        "npm:typescript@5.9.3",
+        "npm:typescript@6.0.3",
         "npm:valibot@1.5.0",
         "npm:vite@8.3.4",
         "npm:vitest@5.0.4",
