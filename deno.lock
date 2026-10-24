@@ -20,7 +20,7 @@
     "npm:valibot@1.5.0": "1.5.0_typescript@5.9.3",
     "npm:vite@8.3.4": "8.3.4_@types+node@25.9.9",
     "npm:vitest@5.0.4": "5.0.4_@types+node@25.9.9_@vitest+coverage-v8@5.0.4_vite@8.3.4",
-    "npm:zod@4.6.5": "4.6.5"
+    "npm:zod@4.6.7": "4.6.7"
   },
   "jsr": {
     "@hckhanh/fast-url@6.0.6": {
@@ -1741,8 +1741,8 @@
         "yuku-core"
       ]
     },
-    "zod@4.6.5": {
-      "integrity": "sha512-v5l/aFXZQeai4awLbOpSoHecE9UiMrnfx75tEXLjNonXVARxQ5mOeipTjROUchszUNCqnE+hqAMujRsRHsut2Q=="
+    "zod@4.6.7": {
+      "integrity": "sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg=="
     }
   },
   "workspace": {
@@ -1769,13 +1769,13 @@
         "npm:valibot@1.5.0",
         "npm:vite@8.3.4",
         "npm:vitest@5.0.4",
-        "npm:zod@4.6.5"
+        "npm:zod@4.6.7"
       ],
       "overrides": {
         "postcss": "8.5.31",
         "lucide-react": "1.52.0",
         "vite": "8.3.4",
-        "zod": "4.6.5"
+        "zod": "4.6.7"
       }
     }
   }
