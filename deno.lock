@@ -14,7 +14,7 @@
     "npm:arktype@2.2.9": "2.2.9",
     "npm:fast-url@^6.0.2": "6.0.3",
     "npm:knip@5.88.1": "5.88.1_@types+node@25.9.9_typescript@5.9.3",
-    "npm:syncpack@14.3.1": "14.3.1",
+    "npm:syncpack@15.3.4": "15.3.4",
     "npm:tsdown@0.23.1": "0.23.1_typescript@5.9.3",
     "npm:typescript@5.9.3": "5.9.3",
     "npm:valibot@1.5.0": "1.5.0_typescript@5.9.3",
@@ -1510,48 +1510,48 @@
     "strip-json-comments@5.0.3": {
       "integrity": "sha512-1tB5mhVo7U+ETBKNf92xT4hrQa3pm0MZ0PQvuDnWgAAGHDsfp4lPSpiS6psrSiet87wyGPh9ft6wmhOMQ0hDiw=="
     },
-    "syncpack-darwin-arm64@14.3.1": {
-      "integrity": "sha512-WtHbqXCEDSRzdqTIroYqYSMW/0yQ8dYvpucQ6SKsbVE86K5wjFd37TOIDFM5NLudCYASJpy4FXv7G/HxHAyRLw==",
+    "syncpack-darwin-arm64@15.3.4": {
+      "integrity": "sha512-hkajipwYSSS6ngwfBOR5ei3ObZ0sE9Qb1VWpR/m+PF8s8OMUc0icxhCH8u5Ctz04vFBKh/vcPuKoiH3V2fff8w==",
       "os": ["darwin"],
       "cpu": ["arm64"]
     },
-    "syncpack-darwin-x64@14.3.1": {
-      "integrity": "sha512-K+Zx1TN67vllDLrouc6YISOhhWm7RxrRE7087ea36T85WNq4JvI+M3UBJoxRjaJ+0v3wBA2YmBzEHzJg8skAww==",
+    "syncpack-darwin-x64@15.3.4": {
+      "integrity": "sha512-FrxMjCH5pFPQTGxYJkrONkiea+VFyv/WmBUAeYI7VZ+yE8RJQIE0DU7jz1x803+boksIbIjARiAes8E+p5v9LQ==",
       "os": ["darwin"],
       "cpu": ["x64"]
     },
-    "syncpack-linux-arm64-musl@14.3.1": {
-      "integrity": "sha512-gZTLgIS0irmZx2HjZqco9YsbYe6sz/5Lce/yKmTBdCaHCpurb+TZA97nu5FxXSAA0HKs3Nzi8CDjNzv+yAQUXw==",
+    "syncpack-linux-arm64-musl@15.3.4": {
+      "integrity": "sha512-HswAwaVtFUw/DpC6cmZzN64/J538LWqypMekesTpTKjapMy53zHqe1j9mnx/0vSMePZUfvg588p8kOp9yQV+KQ==",
       "os": ["linux"],
       "cpu": ["arm64"]
     },
-    "syncpack-linux-arm64@14.3.1": {
-      "integrity": "sha512-+5fXNoKz2ZqQszplZGp6J9ZKL6JW1hr3BMjEkklYz+jufX9rH/MWY0hcRCfHJSuvcTUrsYo/koqU/UnBiANjGg==",
+    "syncpack-linux-arm64@15.3.4": {
+      "integrity": "sha512-dD7fevAPTb+LCtwJqxKO1E9P6cnty6XwGy0EllFAdporJgKwdJ25CJXNhlTC9A4wbjjk+FJHPrqo+0r0eLWB6A==",
       "os": ["linux"],
       "cpu": ["arm64"]
     },
-    "syncpack-linux-x64-musl@14.3.1": {
-      "integrity": "sha512-NK+1Qm762bbXDYqAz2+++NlJ9jONX+3Hrulp4XpytFEIGABiy8wIzouBpxZkppf30+1mxt4o8LMtZ8P54/ObNA==",
+    "syncpack-linux-x64-musl@15.3.4": {
+      "integrity": "sha512-E0lvelfYwCNtP8rGeq3Fj26NFS+MibjtUQSxsProUCCS7/9XV61Lo5ptx2zD2ux2rSpiBdLzPT5vGJ1mpj49bA==",
       "os": ["linux"],
       "cpu": ["x64"]
     },
-    "syncpack-linux-x64@14.3.1": {
-      "integrity": "sha512-v1Y4D0oB2uIx+Npy1eD384adOSKvrjtu3VodjcQ/2aK4rTjVZl3k4eOA5py4I4Qdt6+zC6n+t5KrGuiaiBlbWQ==",
+    "syncpack-linux-x64@15.3.4": {
+      "integrity": "sha512-Ep7jAeFwS5GUTzeb981ixsPiPoHjzKE6YBT0WriyfB21Tg2z1qaFHZrShAYALjOL31BMH8MCJHvZUAblwAt41Q==",
       "os": ["linux"],
       "cpu": ["x64"]
     },
-    "syncpack-windows-arm64@14.3.1": {
-      "integrity": "sha512-xf+i8B5dDc3AIG8ZFF215gLQF0PKXQC6I8skmEfGy36oFh3VTAJKBjgEg6P8R3FC9/kRzkWFcDZmNLkbKN6YmA==",
+    "syncpack-windows-arm64@15.3.4": {
+      "integrity": "sha512-UcB72GOXMPogye2gswk/Z3cXuWvYZMLbaZpScLddUUvsmU5gNkJge6KUFCvhi5EO6DMT7DO2uq4Qf8JJXF0z2w==",
       "os": ["win32"],
       "cpu": ["arm64"]
     },
-    "syncpack-windows-x64@14.3.1": {
-      "integrity": "sha512-gjbWwc05RcekcrLHOi5gq0JKvhoIMNqbUnAvPZLu46/+HrYuuJiUqruoj6y/GbCuvoQ880E820GF1pQFW9xNXA==",
+    "syncpack-windows-x64@15.3.4": {
+      "integrity": "sha512-nqSEAPNPMNrnQKkJXRIxLBUZkj0Uc6m9HwEuHP7mC2crlD1uxxN6ovMRTxRYPc4MOUlLGz0jKsgIVF8svK4UTw==",
       "os": ["win32"],
       "cpu": ["x64"]
     },
-    "syncpack@14.3.1": {
-      "integrity": "sha512-TCqOY6Z7TH5yHV3saI6sHb5XRsZ8m2DaI4FQMonKT7UoCKL2WBiI54PLEFDSv1F2sL1BZA5e1opprf190ohirg==",
+    "syncpack@15.3.4": {
+      "integrity": "sha512-QbCyCAscOKrp1wmF1zqA1jEgsGiPNjogMVn/S5wRC9Jtvljkeq2kebWtvgzAIRl48ukEzE88uCHF0NwnNq6o/w==",
       "optionalDependencies": [
         "syncpack-darwin-arm64",
         "syncpack-darwin-x64",
@@ -1718,13 +1718,15 @@
       "integrity": "sha512-PyCsiScaelhxBGzL8dyeJkLqvRZycoh78R31Vrt/WqYrm0hMFoKwIw/X7Dx5mBKLWAMlV9I9HEyBOHnj2gZVyw==",
       "dependencies": [
         "@yuku-toolchain/types"
-      ]
+      ],
+      "deprecated": true
     },
     "yuku-codegen@0.19.0": {
       "integrity": "sha512-uymAKHjDuaP4BEpkXC/BSLz4DUEF5oArZ5AuD3888nb2miChjWSgpPdojEJxm3pjpXkgUaCRJQyNAbnMN33wHg==",
       "dependencies": [
         "@yuku-toolchain/types"
-      ]
+      ],
+      "deprecated": true
     },
     "yuku-core@0.19.0": {
       "integrity": "sha512-kYK9e1XdfirNhkipzW0wmMcSWcVF/CWnuugodfVYRCUwvoBefweL9HzB96OiKEhsx78V5WbUxbJqlizMX869Qg==",
@@ -1744,14 +1746,16 @@
         "@yuku-core/binding-linux-x64-musl",
         "@yuku-core/binding-win32-arm64",
         "@yuku-core/binding-win32-x64"
-      ]
+      ],
+      "deprecated": true
     },
     "yuku-parser@0.19.0": {
       "integrity": "sha512-XrBh9ZiQK5mJVRxZBAvD6LwRyAYrK3MFtH3+onyuxFL5hFD44EC3QOmIC1FjTj6H2MMwq46/NAI+NZxLZPZgxg==",
       "dependencies": [
         "@yuku-toolchain/types",
         "yuku-core"
-      ]
+      ],
+      "deprecated": true
     },
     "zod@4.6.7": {
       "integrity": "sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg=="
@@ -1775,7 +1779,7 @@
         "npm:arktype@2.2.9",
         "npm:fast-url@^6.0.2",
         "npm:knip@5.88.1",
-        "npm:syncpack@14.3.1",
+        "npm:syncpack@15.3.4",
         "npm:tsdown@0.23.1",
         "npm:typescript@5.9.3",
         "npm:valibot@1.5.0",
